@@ -1,0 +1,183 @@
+Point 1: X : 10 Y : 10
+Point 2: X : 20 Y : 40
+operator overloading works fine
+parameters : Hello
+operator : +
+operator overloading works fine
+parameters : 2015
+operator : +
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : +
+operator overloading works fine
+parameters : Hello2
+operator : -
+operator overloading works fine
+parameters : 2014
+operator : -
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : -
+operator overloading works fine
+parameters : Hello3
+operator : *
+operator overloading works fine
+parameters : 2016
+operator : *
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : *
+operator overloading works fine
+parameters : Hello4
+operator : /
+operator overloading works fine
+parameters : 2000
+operator : /
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : /
+operator overloading works fine
+parameters : Hello5
+operator : %
+operator overloading works fine
+parameters : 2001
+operator : %
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : %
+operator overloading works fine
+parameters : 1
+2
+3
+
+operator : +
+operator overloading works fine
+parameters : 1
+2
+3
+
+operator : -
+operator overloading works fine
+parameters : 1
+2
+3
+
+operator : *
+operator overloading works fine
+parameters : 1
+2
+3
+
+operator : /
+operator overloading works fine
+parameters : 0
+operator : neg
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : =
+operator overloading works fine
+parameters : 1
+operator : =
+operator overloading works fine
+parameters : one
+operator : =
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : <=
+operator overloading works fine
+parameters : 1
+operator : <=
+operator overloading works fine
+parameters : one
+operator : <=
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : <
+operator overloading works fine
+parameters : 1
+operator : <
+operator overloading works fine
+parameters : one
+operator : <
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : >
+operator overloading works fine
+parameters : 1
+operator : >
+operator overloading works fine
+parameters : one
+operator : >
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : >=
+operator overloading works fine
+parameters : 1
+operator : >=
+operator overloading works fine
+parameters : one
+operator : >=
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : !=
+operator overloading works fine
+parameters : 1
+operator : !=
+operator overloading works fine
+parameters : one
+operator : !=
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : &
+operator overloading works fine
+parameters : 1
+operator : &
+operator overloading works fine
+parameters : one
+operator : &
+operator overloading works fine
+parameters : x: 20
+y: 40
+
+operator : |
+operator overloading works fine
+parameters : 1
+operator : |
+operator overloading works fine
+parameters : one
+operator : |
+operator overloading works fine
+parameters : 0
+operator : not
+operator overloading works fine
+parameters : 1
+2
+3
+
+operator : %
+x: 10
+y: 10
