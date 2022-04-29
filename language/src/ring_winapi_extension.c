@@ -106,6 +106,7 @@ Cleanup:
 
     if (ERROR_SUCCESS != dwError)
     {
+		/* restore original error code */
 		SetLastError(dwError);
 		return -1;
     }
@@ -179,60 +180,70 @@ RING_FUNC(ring_winapi_rwaelevate) {
 	if ( RING_API_PARACOUNT == 1 ) {
 		if ( RING_API_ISSTRING(1) ) {
 			SHELLEXECUTEINFOA sei = { sizeof(sei) };
-			char appPath[200];
-			char entAppPath[200];
+			char appPath[MAX_PATH + 1];
+			char entAppPath[MAX_PATH + 1];
 			sei.lpVerb = "runas";
 			sei.lpFile = RING_API_GETSTRING(1);
 			sei.hwnd = NULL;
 			sei.nShow = SW_NORMAL;
-			
-			// ---------------------------retrieve and unify paths-----------------------------
-			GetModuleFileName(NULL,appPath,200);
-			strcpy(entAppPath, RING_API_GETSTRING(1));
-			for (int i=0; i < strlen(appPath); i++) appPath[i] = tolower(appPath[i]);
-			for (int i=0; i < strlen(entAppPath); i++) entAppPath[i] = tolower(entAppPath[i]);
-			for (int i=0; i < strlen(appPath); i++) if (appPath[i] == '/' ) appPath[i] = '\\';
-			for (int i=0; i < strlen(entAppPath); i++) if (entAppPath[i] == '/') entAppPath[i] = '\\';
-			
-			if ( (!strcmp(entAppPath, appPath) && !IsRunAsAdmin()) || strcmp(entAppPath, appPath) ) {
-				if (!ShellExecuteExA(&sei)) {
-					char errmsg[200];
-					RING_API_ERROR(rwaGetErrorMsg(GetLastError(),errmsg,200));
+
+			if (strlen(RING_API_GETSTRING(1)) <= MAX_PATH) {
+				// ---------------------------retrieve and unify paths-----------------------------
+				GetModuleFileName(NULL, appPath, MAX_PATH+1);
+				StringCbCopyA(entAppPath, MAX_PATH+1, RING_API_GETSTRING(1));
+				for (int i = 0; i < strlen(appPath); i++) appPath[i] = tolower(appPath[i]);
+				for (int i = 0; i < strlen(entAppPath); i++) entAppPath[i] = tolower(entAppPath[i]);
+				for (int i = 0; i < strlen(appPath); i++) if (appPath[i] == '/') appPath[i] = '\\';
+				for (int i = 0; i < strlen(entAppPath); i++) if (entAppPath[i] == '/') entAppPath[i] = '\\';
+
+				if ((!strcmp(entAppPath, appPath) && !IsRunAsAdmin()) || strcmp(entAppPath, appPath)) {
+					if (!ShellExecuteExA(&sei)) {
+						char errmsg[200];
+						RING_API_ERROR(rwaGetErrorMsg(GetLastError(), errmsg, 200));
+					}
 				}
+			}
+			else {
+				RING_API_ERROR(RING_API_BADPARALENGTH);
 			}
 		} else RING_API_ERROR(RING_API_BADPARATYPE);
 	} else {
 		if ( RING_API_ISSTRING(1) && RING_API_ISSTRING(2) ) {
 			SHELLEXECUTEINFOA sei = { sizeof(sei) };
-			char appPath[200];
-			char entAppPath[200];
-			char lcFileName[200];
-			char entFilePath[200];
+			char appPath[MAX_PATH+1];
+			char entAppPath[MAX_PATH + 1];
+			char lcFileName[MAX_PATH + 1];
+			char entFilePath[MAX_PATH + 1];
 			sei.lpVerb = "runas";
 			sei.lpFile = RING_API_GETSTRING(1);
 			sei.lpParameters = RING_API_GETSTRING(2);
 			sei.hwnd = NULL;
 			sei.nShow = SW_NORMAL;
-			
-			// ---------------------------retrieve and unify paths-----------------------------
-			GetModuleFileName(NULL,appPath,200);
-			strcpy(entAppPath, RING_API_GETSTRING(1));
-			strcpy(lcFileName, ((VM *) pPointer)->cFileName);
-			strcpy(entFilePath, RING_API_GETSTRING(2));
-			for (int i=0; i < strlen(appPath); i++) appPath[i] = tolower(appPath[i]);
-			for (int i=0; i < strlen(appPath); i++) if (appPath[i] == '/' ) appPath[i] = '\\';
-			for (int i=0; i < strlen(entAppPath); i++) entAppPath[i] = tolower(entAppPath[i]);
-			for (int i=0; i < strlen(entAppPath); i++) if (entAppPath[i] == '/' ) entAppPath[i] = '\\';
-			for (int i=0; i < strlen(lcFileName); i++) lcFileName[i] = tolower(lcFileName[i]);
-			for (int i=0; i < strlen(lcFileName); i++) if (lcFileName[i] == '/') lcFileName[i] = '\\';
-			for (int i=0; i < strlen(entFilePath); i++) entFilePath[i] = tolower(entFilePath[i]);
-			for (int i=0; i < strlen(entFilePath); i++) if (entFilePath[i] == '/') entFilePath[i] = '\\';
-			
-			if ( (!strcmp(entAppPath, appPath) && !strcmp(entFilePath, lcFileName) && !IsRunAsAdmin()) || strcmp(entAppPath, appPath) || strcmp(entFilePath, lcFileName) ) {
-				if (!ShellExecuteExA(&sei)) {
-					char errmsg[200];
-					RING_API_ERROR(rwaGetErrorMsg(GetLastError(),errmsg,200));
+
+			if (strlen(RING_API_GETSTRING(1)) <= MAX_PATH && strlen(RING_API_GETSTRING(2)) <= MAX_PATH) {
+				// ---------------------------retrieve and unify paths-----------------------------
+				GetModuleFileName(NULL, appPath, MAX_PATH + 1);
+				StringCbCopyA(entAppPath, MAX_PATH + 1, RING_API_GETSTRING(1));
+				StringCbCopyA(lcFileName, MAX_PATH + 1, ((VM*)pPointer)->cFileName);
+				StringCbCopyA(entFilePath, MAX_PATH + 1, RING_API_GETSTRING(2));
+				for (int i = 0; i < strlen(appPath); i++) appPath[i] = tolower(appPath[i]);
+				for (int i = 0; i < strlen(appPath); i++) if (appPath[i] == '/') appPath[i] = '\\';
+				for (int i = 0; i < strlen(entAppPath); i++) entAppPath[i] = tolower(entAppPath[i]);
+				for (int i = 0; i < strlen(entAppPath); i++) if (entAppPath[i] == '/') entAppPath[i] = '\\';
+				for (int i = 0; i < strlen(lcFileName); i++) lcFileName[i] = tolower(lcFileName[i]);
+				for (int i = 0; i < strlen(lcFileName); i++) if (lcFileName[i] == '/') lcFileName[i] = '\\';
+				for (int i = 0; i < strlen(entFilePath); i++) entFilePath[i] = tolower(entFilePath[i]);
+				for (int i = 0; i < strlen(entFilePath); i++) if (entFilePath[i] == '/') entFilePath[i] = '\\';
+
+				if ((!strcmp(entAppPath, appPath) && !strcmp(entFilePath, lcFileName) && !IsRunAsAdmin()) || strcmp(entAppPath, appPath) || strcmp(entFilePath, lcFileName)) {
+					if (!ShellExecuteExA(&sei)) {
+						char errmsg[200];
+						RING_API_ERROR(rwaGetErrorMsg(GetLastError(), errmsg, 200));
+					}
 				}
+			}
+			else {
+				RING_API_ERROR(RING_API_BADPARALENGTH);
 			}
 		} else RING_API_ERROR(RING_API_BADPARATYPE);
 	}
@@ -386,27 +397,42 @@ RING_FUNC(ring_winapi_rwausersid) {
 	if (SUCCEEDED(res))
 	{
 		PTOKEN_USER pUserToken = NULL ;
-		DWORD dwRequiredLength = 0 ;
+		DWORD dwRequiredLength = 0, dwLastError = 0 ;
 		GetTokenInformation(hTokenHandle, TokenUser, pUserToken, 0, &dwRequiredLength);
 		pUserToken = (PTOKEN_USER) HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, dwRequiredLength) ;
 		if(NULL != pUserToken)
 		{
-			res = GetTokenInformation(hTokenHandle, TokenUser, pUserToken, dwRequiredLength, &dwRequiredLength);
-			if (SUCCEEDED(res))
+			if (GetTokenInformation(hTokenHandle, TokenUser, pUserToken, dwRequiredLength, &dwRequiredLength))
 			{
-				LPTSTR pszSID;
-				ConvertSidToStringSidA(pUserToken->User.Sid, &pszSID) ;
-				RING_API_RETSTRING(pszSID);
-				LocalFree(pszSID) ;
+				LPSTR pszSID;
+				if (ConvertSidToStringSidA(pUserToken->User.Sid, &pszSID))
+				{
+					RING_API_RETSTRING(pszSID);
+					LocalFree(pszSID);
+				}
+				else {
+					res = E_FAIL;
+					dwLastError = GetLastError();
+				}
+			}
+			else {
+				res = E_FAIL;
+				dwLastError = GetLastError();
 			}
 			HeapFree(GetProcessHeap(), 0, pUserToken) ;
 		}
 		else {
+			dwLastError = GetLastError();
 			CloseHandle(hTokenHandle);
 			RING_API_ERROR("Error: Unable to allocate pUserToken");
 		}
 
 		CloseHandle(hTokenHandle) ;
+
+		/* restore last error so that rwaGetErrorMsg uses the correct error code */
+		if (dwLastError != 0) {
+			SetLastError(dwLastError);
+		}
 	}
 
 	if (!SUCCEEDED(res)) {
@@ -454,34 +480,51 @@ RING_FUNC(ring_winapi_rwausername) {
 	if (SUCCEEDED(res))
 	{
 		PTOKEN_USER pUserToken = NULL;
-		DWORD dwRequiredLength = 0;
+		DWORD dwRequiredLength = 0, dwLastError = 0;
 		GetTokenInformation(hTokenHandle, TokenUser, pUserToken, 0, &dwRequiredLength);
 		pUserToken = (PTOKEN_USER)HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, dwRequiredLength);
 		if (NULL != pUserToken)
 		{
-			res = GetTokenInformation(hTokenHandle, TokenUser, pUserToken, dwRequiredLength, &dwRequiredLength);
-			if (SUCCEEDED(res))
+			if (GetTokenInformation(hTokenHandle, TokenUser, pUserToken, dwRequiredLength, &dwRequiredLength))
 			{
 				LPSTR AccountN;
 				SID_NAME_USE eUse;
 				DWORD AccNlen = 0;
 				DWORD DomLen = 0;
-				LookupAccountSidA(NULL, (PSID)pUserToken->User.Sid, NULL, &AccNlen, NULL, &DomLen, &eUse);
-				AccountN = (LPSTR)malloc(AccNlen + 1);
-				res = LookupAccountSidA(NULL, (PSID)pUserToken->User.Sid, AccountN, &AccNlen, NULL, &DomLen, &eUse);
-				if (SUCCEEDED(res)){
+				if (LookupAccountSidA(NULL, (PSID)pUserToken->User.Sid, NULL, &AccNlen, NULL, &DomLen, &eUse) || (GetLastError() == ERROR_INSUFFICIENT_BUFFER))
+				{
+					AccountN = (LPSTR)malloc(AccNlen + 1);
+					if (LookupAccountSidA(NULL, (PSID)pUserToken->User.Sid, AccountN, &AccNlen, NULL, &DomLen, &eUse)) {
 						RING_API_RETSTRING(AccountN);
-				} 
-				free(AccountN);
+					}
+					else {
+						res = E_FAIL;
+						dwLastError = GetLastError();
+					}
+					free(AccountN);
+				}
+				else {
+					res = E_FAIL;
+					dwLastError = GetLastError();
+				}
+			}
+			else {
+				res = E_FAIL;
+				dwLastError = GetLastError();
 			}
 			HeapFree(GetProcessHeap(), 0, pUserToken);
 		}
 		else {
+			dwLastError = GetLastError();
 			CloseHandle(hTokenHandle);
 			RING_API_ERROR("Error: Unable to allocate pUserToken");
 		}
 
 		CloseHandle(hTokenHandle);
+
+		if (dwLastError != 0) {
+			SetLastError(dwLastError);
+		}
 	}
 
 	if (!SUCCEEDED(res)) {
@@ -554,10 +597,10 @@ RING_FUNC(ring_winapi_rwasyserrormsg) {
 	}
 	if ( lresult ) {
 		RING_API_RETSTRING(pBuffer);
+		LocalFree(pBuffer);
 	} else {
 		RING_API_ERROR("Error : FormatMessage() function ended with unexpected result");
 	}
-	HeapFree(GetProcessHeap(), 0, pBuffer);
 	return;
 }
 
@@ -704,6 +747,7 @@ RING_FUNC(ring_winapi_rwaenvirvarstring) {
 	res = ExpandEnvironmentStrings(RING_API_GETSTRING(1), exStr, 200);
 	if (res > 200)
 	{
+		free(exStr);
 		exStr = (LPTSTR)malloc ((res + 1)*sizeof(TCHAR));
 		res = ExpandEnvironmentStrings(RING_API_GETSTRING(1), exStr, res +1);
 	}
