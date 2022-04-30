@@ -164,7 +164,16 @@ RING_API void * ring_vm_api_varptr ( void *pPointer,const char  *cStr,const char
     }
     else if ( ring_list_getint(pList,RING_VAR_TYPE) == RING_VM_STRING ) {
         pItem = ring_list_getitem(pList,RING_VAR_VALUE);
-        return pItem->data.pString->cStr ;
+		/* in case of double or int, check that the string has enough size before returning its pointer */
+		if ( (strcmp(cStr2,"double") == 0) && (pItem->data.pString->nSize < sizeof(double)) ) {
+			RING_API_ERROR(RING_VM_ERROR_VARSIZETOOSMALL);
+		}
+		else if ( (strcmp(cStr2,"int") == 0) && (pItem->data.pString->nSize < sizeof(int)) ) {
+			RING_API_ERROR(RING_VM_ERROR_VARSIZETOOSMALL);
+		}
+		else {
+			return pItem->data.pString->cStr ;
+		}
     }
     return NULL ;
 }
