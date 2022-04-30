@@ -21,6 +21,7 @@
 	#define RING_VM_WINCREG 1
 	#define RING_VM_THREADS 1
 	#define RING_VM_LIBZIP 1
+	#define RING_VM_SOCKETS 1
     /* Compiler - Scanner - Reading Files Functions */
     #define RING_FILE FILE *
     #define RING_OPENFILE(x,y) fopen(x,y)

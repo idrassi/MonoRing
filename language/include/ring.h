@@ -63,8 +63,12 @@
             #undef _WIN32_WINNT
         #endif
         #define _WIN32_WINNT 0x502
-        #define RING_USEDLL 1
-        #define RING_BUILDLIB 1
+		#ifndef RING_USEDLL
+			#define RING_USEDLL 1
+		#endif
+		#ifndef RING_BUILDLIB
+			#define RING_BUILDLIB 1
+		#endif
         /* Linux */
     #else
         #define RING_USEDLL 0
@@ -183,6 +187,9 @@
         #endif
         #ifdef RING_VM_LIBZIP
             #include "ring_libzip_extension.h"
+        #endif
+        #ifdef RING_VM_SOCKETS
+            #include "ring_sockets_extension.h"
         #endif
     #endif
 #endif

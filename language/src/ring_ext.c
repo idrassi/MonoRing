@@ -66,4 +66,7 @@ void ring_vm_extension ( RingState *pRingState )
 	#if RING_VM_LIBZIP
 		ring_vm_libzip_loadfunctions(pRingState);
 	#endif
+	#if RING_VM_SOCKETS
+		ring_vm_sockets_loadfunctions(pRingState);
+	#endif
 }
