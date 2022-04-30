@@ -197,5 +197,8 @@
         #ifdef RING_VM_MURMURHASH
             #include "ring_murmurhash_extension.h"
         #endif
+        #ifdef RING_VM_LIBUV
+            #include "ring_libuv_extension.h"
+        #endif
     #endif
 #endif

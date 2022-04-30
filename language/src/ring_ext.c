@@ -75,4 +75,7 @@ void ring_vm_extension ( RingState *pRingState )
 	#if RING_VM_MURMURHASH
 		ring_vm_murmurhash_loadfunctions(pRingState);
 	#endif
+	#if RING_VM_LIBUV
+		ring_vm_libuv_loadfunctions(pRingState);
+	#endif
 }
