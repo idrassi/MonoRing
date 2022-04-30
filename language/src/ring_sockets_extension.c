@@ -100,8 +100,7 @@ void ring_vm_socket_init(void *pPointer) {
 
     if((sock->sockfd = socket(sock->hints.ai_family,sock->hints.ai_socktype,sock->hints.ai_protocol)) == INVALID_SOCKET) {
         RING_API_ERROR("Sock Init Failed");
-        closesocket(sock->sockfd);
-		ring_state_free(((VM *) pPointer)->pRingState, sock);
+		RING_API_FREE(sock);
         return;
     }
 
@@ -112,8 +111,7 @@ void ring_vm_socket_init(void *pPointer) {
 
     if((sock->sockfd = socket(sock->addr.sin_family,type,proto)) == 0) {
         RING_API_ERROR("Sock Init Failed");
-        close(sock->sockfd);
-		ring_state_free(((VM *) pPointer)->pRingState, sock);
+		RING_API_FREE(sock);
         return;
     }
 
@@ -295,11 +293,12 @@ void ring_vm_socket_accept(void *pPointer) {
     }
 
     RING_SOCKET *sock = (RING_SOCKET *) RING_API_GETCPOINTER(1,RING_VM_POINTER_SOCKET);
-    RING_SOCKET *newsockfd = (RING_SOCKET *) ring_state_malloc(((VM *) pPointer)->pRingState, sizeof(RING_SOCKET));
+    RING_SOCKET *newsockfd = (RING_SOCKET *) RING_API_MALLOC(sizeof(RING_SOCKET));
     
 #ifdef win
     if((newsockfd->sockfd = accept(sock->sockfd,(struct sockaddr *) sock->addr,NULL)) == SOCKET_ERROR) {
         RING_API_ERROR("Accept Failed");
+		RING_API_FREE(newsockfd);
         return;
     }
 
