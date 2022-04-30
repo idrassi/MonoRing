@@ -9,9 +9,13 @@ The embedded extensions are:
  - httplib
  - internet
  - libui
+ - libuv
+ - murmurhash
  - odbc
  - OpenSSL
+ - sockets
  - sqlite
+ - stbimage
  - threads
  - winapi
  - wincreg
