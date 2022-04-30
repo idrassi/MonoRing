@@ -72,4 +72,7 @@ void ring_vm_extension ( RingState *pRingState )
 	#if RING_VM_STBIMAGE
 		ring_vm_stbimage_loadfunctions(pRingState);
 	#endif
+	#if RING_VM_MURMURHASH
+		ring_vm_murmurhash_loadfunctions(pRingState);
+	#endif
 }

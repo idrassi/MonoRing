@@ -15,6 +15,7 @@ ring_vmperformance.c ring_vmexit.c ring_vmstackvars.c ring_vmstate.c ring_genera
 ring_ext.c ring_dll_extension.c ring_objfile.c ring_openssl_extension.c ring_libui_extension.c ring_consolecolors_extension.c ring_libcurl_extension.c ring_internet_extension.c ring_cjson_extension.c ^
 cjson_extension\cJSON.c cjson_extension\cJSON_Utils.c ring_sqlite_extension.c sqlite_extension\sqlite3.c ring_odbc_extension.c ring_winapi_extension.c ring_threads_extension.c ring_libzip_extension.c ^
 ring_httplib_extension.cpp ring_wincreg_extension.cpp wincreg_extension\creg_registry.cpp ring_sockets_extension.c ring_stbimage_extension.c ^
+ring_murmurhash_extension.c murmurhash_extension\MurmurHash1.c murmurhash_extension\MurmurHash2.c murmurhash_extension\MurmurHash3.c ^
 -I"..\include" -I"..\..\libdepwin\openssl\%ringbuildtarget%\include" -I"..\..\libdepwin\libui\%ringbuildtarget%" -I"..\..\libdepwin\libcurl\%ringbuildtarget%\include"
   
 
@@ -27,6 +28,7 @@ ring_vmperformance.obj ring_vmexit.obj ring_vmstackvars.obj ring_vmstate.obj rin
 ring_ext.obj ring_dll_extension.obj ring_objfile.obj ring_openssl_extension.obj ring_libui_extension.obj ring_consolecolors_extension.obj ring_libcurl_extension.obj ring_internet_extension.obj ring_cjson_extension.obj ring_httplib_extension.obj ^
 cJSON.obj cJSON_Utils.obj ring_sqlite_extension.obj sqlite3.obj ring_odbc_extension.obj ring_winapi_extension.obj ring_wincreg_extension.obj creg_registry.obj ring_threads_extension.obj ring_libzip_extension.obj ^
 ring_sockets_extension.obj ring_stbimage_extension.obj ^
+ring_murmurhash_extension.obj MurmurHash1.obj MurmurHash2.obj MurmurHash3.obj ^
 /LIBPATH:..\..\libdepwin\openssl\%ringbuildtarget%\lib /LIBPATH:..\..\libdepwin\libui\%ringbuildtarget% /LIBPATH:..\..\libdepwin\libcurl\%ringbuildtarget%\lib ^
 libcrypto.lib libui.lib libcurl_a.lib Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib
 
@@ -43,6 +45,7 @@ ring_vmperformance.c ring_vmexit.c ring_vmstackvars.c ring_vmstate.c ring_genera
 ring_ext.c ring_dll_extension.c ring_objfile.c ring_openssl_extension.c ring_libui_extension.c ring_consolecolors_extension.c ring_libcurl_extension.c ring_internet_extension.c ring_cjson_extension.c ^
 cjson_extension\cJSON.c cjson_extension\cJSON_Utils.c ring_sqlite_extension.c sqlite_extension\sqlite3.c ring_odbc_extension.c ring_winapi_extension.c ring_threads_extension.c ring_libzip_extension.c ^
 ring_httplib_extension.cpp ring_wincreg_extension.cpp wincreg_extension\creg_registry.cpp ring_sockets_extension.c ring_stbimage_extension.c ^
+ring_murmurhash_extension.c murmurhash_extension\MurmurHash1.c murmurhash_extension\MurmurHash2.c murmurhash_extension\MurmurHash3.c ^
 -I"..\include" -I"..\..\libdepwin\openssl\%ringbuildtarget%\include" -I"..\..\libdepwin\libui\%ringbuildtarget%" -I"..\..\libdepwin\libcurl\%ringbuildtarget%\include"
 
 lib  /OUT:..\..\lib\ringstatic.lib ring_string.obj ^
@@ -54,6 +57,7 @@ ring_vmperformance.obj ring_vmexit.obj ring_vmstackvars.obj ring_vmstate.obj rin
 ring_ext.obj ring_dll_extension.obj ring_objfile.obj ring_openssl_extension.obj ring_libui_extension.obj ring_consolecolors_extension.obj ring_libcurl_extension.obj ring_internet_extension.obj ring_cjson_extension.obj ring_httplib_extension.obj ^
 cJSON.obj cJSON_Utils.obj ring_sqlite_extension.obj sqlite3.obj ring_odbc_extension.obj ring_winapi_extension.obj ring_wincreg_extension.obj creg_registry.obj ring_threads_extension.obj ring_libzip_extension.obj ^
 ring_sockets_extension.obj ring_stbimage_extension.obj ^
+ring_murmurhash_extension.obj MurmurHash1.obj MurmurHash2.obj MurmurHash3.obj ^
 ..\..\libdepwin\openssl\%ringbuildtarget%\lib\libcrypto.lib ..\..\libdepwin\libui\%ringbuildtarget%\libui.lib ..\..\libdepwin\libcurl\%ringbuildtarget%\lib\libcurl_a.lib
 
 cl %ringcflags% ring.c ..\..\lib\ringstatic.lib -I"..\include" /link /SUBSYSTEM:CONSOLE,"%ringsubsystem%" /OPT:REF /OUT:..\..\bin\ring.exe ^

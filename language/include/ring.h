@@ -194,5 +194,8 @@
         #ifdef RING_VM_STBIMAGE
             #include "ring_sockets_extension.h"
         #endif
+        #ifdef RING_VM_MURMURHASH
+            #include "ring_murmurhash_extension.h"
+        #endif
     #endif
 #endif
