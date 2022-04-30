@@ -191,5 +191,8 @@
         #ifdef RING_VM_SOCKETS
             #include "ring_sockets_extension.h"
         #endif
+        #ifdef RING_VM_STBIMAGE
+            #include "ring_sockets_extension.h"
+        #endif
     #endif
 #endif
