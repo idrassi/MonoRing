@@ -208,7 +208,10 @@ RING_API void ring_state_main ( int argc, char *argv[] )
     /* Print Version */
     if ( (argc == 1) || (cStr == NULL) ) {
         ring_general_printline();
-        printf( "Ring version %s \n2013-2022, Mahmoud Fayed <msfclipper@yahoo.com>\n",RING_STATE_VERSION ) ;
+        printf( "Ring version %s (MonoRing distribution by Mounir IDRASSI)\n",RING_STATE_VERSION ) ;
+		puts("2013-2022, Mahmoud Fayed <msfclipper@yahoo.com>\n") ;
+		puts("Builtin extensions: cJson,ConsoleColors,Curl,httplib,internet,libui,libuv,") ;
+		puts("murmurhash,odbc,OpenSSL,sockets,sqlite,stbimage,threads,winapi,wincreg,zip\n") ;
         puts("Usage : ring filename.ring [Options]");
         ring_general_printline();
         /* Options */
