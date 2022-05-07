@@ -1,37 +1,37 @@
-## Welcome to GitHub Pages
+# MonoRing : Monolithic distribution of the Ring Programming Language
 
-You can use the [editor on GitHub](https://github.com/idrassi/MonoRing/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+MonoRing is a monolithic build of Ring programming language that embeds popular extensions into the Ring interpreter and library.
+MonoRing doesn't provide any external extensions.
+The embedded extensions are:
+ - cJson
+ - ConsoleColors
+ - Curl
+ - httplib
+ - internet
+ - libui
+ - libuv
+ - murmurhash
+ - odbc
+ - OpenSSL
+ - sockets
+ - sqlite
+ - stbimage
+ - threads
+ - winapi
+ - wincreg
+ - zip
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+A Ring script that runs under MonoRing can be compiled as a native Windows applications that has no extra runtime dependency and so it can be deployed easily.
 
-### Markdown
+For details about the Ring programming language: https://github.com/ring-lang/ring
+			
+# Building from source code
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+We provide instructions for building on the next platforms:-
 
-```markdown
-Syntax highlighted code block
+(1) [Microsoft Windows](https://github.com/idrassi/MonoRing/blob/master/language/README_Windows.md)
 
-# Header 1
-## Header 2
-### Header 3
+# License 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/idrassi/MonoRing/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+MonoRing is distributed under the same license as the Ring programming language.
+The Ring programming language is distributed under the MIT License.
