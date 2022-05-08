@@ -1,0 +1,1660 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RingTilengine Extension &mdash; Ring 1.17 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Performance Tips" href="performancetips.html" />
+    <link rel="prev" title="The Gold Magic 800 Game" href="goldmagic800.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/ringdoclogo.jpg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="ringapps.html">Applications developed in a few hours</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringnotepad.html">Using Ring Notepad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started - First Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started2.html">Getting Started - Second Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started3.html">Getting Started - Third Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlstructures.html">Control Structures - First Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlstructures2.html">Control Structures - Second Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlstructures3.html">Control Structures - Third Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getinput.html">Getting Input</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">Functions - First Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions2.html">Functions - Second Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="functions3.html">Functions - Third Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="programstructure.html">Program Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dateandtime.html">Date and Time</a></li>
+<li class="toctree-l1"><a class="reference internal" href="checkandconvert.html">Check Data Type and Conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mathfunc.html">Mathematical Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files.html">Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="systemfunc.html">System Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaldebug.html">Eval() and Debugging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demo.html">Demo Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="odbc.html">ODBC Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mysql.html">MySQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sqlite.html">SQLite Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postgresql.html">PostgreSQL Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="secfunc.html">Security and Internet Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oop.html">Object Oriented Programming (OOP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fp.html">Functional Programming (FP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metaprog.html">Reflection and Meta-programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="declarative.html">Declarative Programming using Nested Structures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="natural.html">Natural language programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="naturallibrary.html">Using the Natural Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scope.html">Scope Rules for Variables and Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scope2.html">Scope Rules for Functions and Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntaxflexibility.html">Syntax Flexibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="typehints.html">The Type Hints Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">The Trace Library and the Interactive Debugger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringemb.html">Embedding Ring Language in Ring Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlib.html">Stdlib Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stdlibclasses.html">Stdlib Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt.html">Desktop, WebAssembly and Mobile development using RingQt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formdesigner.html">Using the Form Designer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qt3d.html">Graphics Programming using RingQt3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringqtobjects.html">Objects Library for RingQt Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multilanguage.html">Multi-language Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qtmobile.html">Building RingQt Applications for Mobile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qtwebassembly.html">Building RingQt Applications for WebAssembly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web.html">Web Development (CGI Library)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployincloud.html">Deploying Web Applications in the Cloud</a></li>
+<li class="toctree-l1"><a class="reference internal" href="allegro.html">Graphics and 2D Games programming using RingAllegro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gameengine.html">Demo Project - Game Engine for 2D Games</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gameengineandorid.html">Building Games For Android</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringraylib.html">Developing Games using RingRayLib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingopengl.html">Using RingOpenGL and RingFreeGLUT for 3D Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usingopengl2.html">Using RingOpenGL and RingAllegro for 3D Graphics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="goldmagic800.html">Demo Project - The Gold Magic 800 Game</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using RingTilengine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#more-samples">More Samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-libsdl-and-tilengine">Using LibSDL and Tilengine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="performancetips.html">Performance Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiler.html">Command Line Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distribute.html">Distributing Ring Applications (Manual)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="distribute_ring2exe.html">Distributing Ring Applications using Ring2EXE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringpm.html">The Ring Package Manager (RingPM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zerolib.html">ZeroLib Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="foxringfuncsdoc.html">FoxRing Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bignumber.html">BigNumber Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="csvlib.html">CSVLib Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jsonlib.html">JSONLib Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="httplib.html">HTTPLib Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tokenslib.html">TokensLib Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libcurl.html">Using RingLibCurl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringlibcurlfuncsdoc.html">RingLibCurl Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="socket.html">Using RingSockets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="threads.html">Using RingThreads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libui.html">Using RingLibui</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringzip.html">Using RingZip</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringlibzipfuncsdoc.html">RingLibZip Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringmurmurhashfuncsdoc.html">RingMurmurHash Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringconsolecolorsfuncsdoc.html">RingConsoleColors Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringallegrofuncsdoc.html">RingAllegro Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libsdl.html">Using RingLibSDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringlibsdlfuncsdoc.html">RingLibSDL Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="libuv.html">Using Ringlibuv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringlibuvfuncsdoc.html">RingLibuv Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringfreeglutfuncsdoc.html">RingFreeGLUT Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringstbimage.html">RingStbImage Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringopengl32funcsdoc.html">RingOpenGL (OpenGL 3.2) Functions Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="qtclassesdoc.html">RingQt Classes and Methods Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lowlevel.html">Low Level Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extension_tutorial.html">Tutorial: Ring Extensions in C/C++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extension.html">Extension using the C/C++ languages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding Ring Language in C/C++ Programs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codegenerator.html">Code Generator for wrapping C/C++ Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ringbeep.html">Create your first extension using the Code Generator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="languagedesign.html">Release Notes: Version 1.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew.html">Release Notes: Version 1.1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew2.html">Release Notes: Version 1.2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew3.html">Release Notes: Version 1.3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew4.html">Release Notes: Version 1.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew5.html">Release Notes: Version 1.5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew6.html">Release Notes: Version 1.6</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew7.html">Release Notes: Version 1.7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew8.html">Release Notes: Version 1.8</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew9.html">Release Notes: Version 1.9</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew10.html">Release Notes: Version 1.10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew11.html">Release Notes: Version 1.11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew12.html">Release Notes: Version 1.12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew13.html">Release Notes: Version 1.13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew14.html">Release Notes: Version 1.14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew15.html">Release Notes: Version 1.15</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew16.html">Release Notes: Version 1.16</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatisnew17.html">Release Notes: Version 1.17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codeeditors.html">Using Other Code Editors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sourcecode.html">How to Compile Ring From Source Code?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribute.html">How to contribute?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Language Specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resources.html">Resources</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ring</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>RingTilengine Extension</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ringtilengine-extension">
+<span id="index-0"></span><h1>RingTilengine Extension<a class="headerlink" href="#ringtilengine-extension" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter we will learn about using the RingTilengine extension.</p>
+<p>This extension provides complete support for Tilengine</p>
+<p>The 2D retro graphics engine with raster effects</p>
+<p>Tilengine URL: <a class="reference external" href="https://github.com/megamarc/Tilengine">https://github.com/megamarc/Tilengine</a></p>
+<p>Useful links (Original documentation for C programmers)</p>
+<ul class="simple">
+<li><p>Getting started: <a class="reference external" href="https://github.com/ring-lang/Tilengine/blob/master/docs/quick_guide.md">https://github.com/ring-lang/Tilengine/blob/master/docs/quick_guide.md</a></p></li>
+<li><p>Initialization: <a class="reference external" href="https://github.com/ring-lang/Tilengine/blob/master/docs/starting.md">https://github.com/ring-lang/Tilengine/blob/master/docs/starting.md</a></p></li>
+<li><p>Using the window: <a class="reference external" href="https://github.com/ring-lang/Tilengine/blob/master/docs/windowing.md">https://github.com/ring-lang/Tilengine/blob/master/docs/windowing.md</a></p></li>
+<li><p>External rendering: <a class="reference external" href="https://github.com/ring-lang/Tilengine/blob/master/docs/rendering.md">https://github.com/ring-lang/Tilengine/blob/master/docs/rendering.md</a></p></li>
+<li><p>Background layers: <a class="reference external" href="https://github.com/ring-lang/Tilengine/blob/master/docs/layers.md">https://github.com/ring-lang/Tilengine/blob/master/docs/layers.md</a></p></li>
+<li><p>Sprites: <a class="reference external" href="https://github.com/ring-lang/Tilengine/blob/master/docs/sprites.md">https://github.com/ring-lang/Tilengine/blob/master/docs/sprites.md</a></p></li>
+</ul>
+<p>Useful tools</p>
+<ul class="simple">
+<li><p>Tiled Map Editor: <a class="reference external" href="https://www.mapeditor.org/">https://www.mapeditor.org/</a></p></li>
+<li><p>aseprite: <a class="reference external" href="https://www.aseprite.org/">https://www.aseprite.org/</a></p></li>
+<li><p>Piskel: <a class="reference external" href="https://www.piskelapp.com/">https://www.piskelapp.com/</a></p></li>
+<li><p>GrafX2: <a class="reference external" href="http://grafx2.chez.com/">http://grafx2.chez.com/</a></p></li>
+</ul>
+<p>Support</p>
+<ul class="simple">
+<li><p>Tilengine Forum: <a class="reference external" href="http://www.tilengine.org/forum/">http://www.tilengine.org/forum/</a></p></li>
+</ul>
+<div class="section" id="getting-started">
+<span id="index-1"></span><h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>Example (1):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+
+<span class="n">TLN_Init</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">TLN_SetLoadPath</span><span class="p">(</span><span class="s">&quot;assets\sonic&quot;</span><span class="p">)</span>
+<span class="n">foreground</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;Sonic_md_fg1.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+<span class="n">TLN_SetLayerTilemap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">foreground</span><span class="p">)</span>
+
+<span class="n">TLN_CreateWindow</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">TLN_ProcessWindow</span><span class="p">()</span>
+        <span class="n">TLN_DrawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">TLN_DeleteTilemap</span><span class="p">(</span><span class="n">foreground</span><span class="p">)</span>
+<span class="n">TLN_Deinit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot1.png" />
+</div>
+<div class="section" id="more-samples">
+<span id="index-2"></span><h2>More Samples<a class="headerlink" href="#more-samples" title="Permalink to this headline">¶</a></h2>
+<p>Example (2):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+
+<span class="n">WIDTH</span>  <span class="o">=</span> <span class="mi">400</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">240</span>
+
+<span class="n">frame</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="o">/*</span> <span class="n">setup</span> <span class="n">engine</span> <span class="o">*/</span>
+<span class="n">TLN_Init</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="k">load</span> <span class="n">layer</span> <span class="o">*/</span>
+<span class="n">tilemap</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span><span class="p">(</span><span class="s">&quot;assets/sonic/Sonic_md_fg1.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">setup</span> <span class="n">the</span> <span class="n">layer</span> <span class="o">*/</span>
+<span class="n">TLN_SetLayer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">,</span> <span class="n">tilemap</span><span class="p">)</span>
+<span class="n">TLN_SetBGColor</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">128</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">main</span> <span class="k">loop</span> <span class="o">*/</span>
+<span class="n">TLN_CreateWindow</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">TLN_ProcessWindow</span> <span class="p">()</span>
+
+        <span class="o">/*</span> <span class="n">scroll</span> <span class="n">the</span> <span class="n">layer</span><span class="p">,</span> <span class="n">one</span> <span class="n">pixel</span> <span class="n">per</span> <span class="n">frame</span> <span class="o">*/</span>
+        <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="o">/*</span> <span class="n">render</span> <span class="k">to</span> <span class="n">the</span> <span class="n">window</span> <span class="o">*/</span>
+        <span class="n">TLN_DrawFrame</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">frame</span><span class="o">++</span>
+<span class="k">end</span>
+
+<span class="o">/*</span> <span class="n">release</span> <span class="n">resources</span> <span class="o">*/</span>
+<span class="n">TLN_DeleteTilemap</span><span class="p">(</span><span class="n">tilemap</span><span class="p">)</span>
+<span class="n">TLN_Deinit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot2.png" />
+<p>Example (3):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+
+<span class="o">/*</span> <span class="n">engine</span> <span class="n">init</span> <span class="o">*/</span>
+<span class="n">TLN_Init</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="k">load</span> <span class="n">resources</span> <span class="o">*/</span>
+<span class="n">TLN_SetLoadPath</span><span class="p">(</span><span class="s">&quot;assets/color&quot;</span><span class="p">)</span>
+<span class="n">background</span> <span class="o">=</span> <span class="n">TLN_LoadBitmap</span><span class="p">(</span><span class="s">&quot;beach.png&quot;</span><span class="p">)</span>
+<span class="n">palette</span>    <span class="o">=</span> <span class="n">TLN_GetBitmapPalette</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
+<span class="n">sp</span>         <span class="o">=</span> <span class="n">TLN_LoadSequencePack</span><span class="p">(</span><span class="s">&quot;beach.sqx&quot;</span><span class="p">)</span>
+<span class="n">sequence</span>   <span class="o">=</span> <span class="n">TLN_FindSequence</span><span class="p">(</span><span class="n">sp</span><span class="p">,</span> <span class="s">&quot;beach&quot;</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">setup</span> <span class="o">*/</span>
+<span class="n">TLN_SetBGBitmap</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
+<span class="n">TLN_SetPaletteAnimation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">palette</span><span class="p">,</span> <span class="n">sequence</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">main</span> <span class="k">loop</span> <span class="o">*/</span>
+<span class="n">TLN_CreateWindow</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">TLN_DisableCRTEffect</span><span class="p">()</span>
+<span class="k">while</span><span class="p">(</span><span class="n">TLN_ProcessWindow</span><span class="p">())</span>
+        <span class="n">TLN_DrawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">TLN_DeleteBitmap</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
+<span class="n">TLN_DeleteSequencePack</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span>
+<span class="n">TLN_Deinit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot3.png" />
+<p>Example (4):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">HEIGHT</span><span class="o">=</span> <span class="mi">240</span>
+
+<span class="n">LAYER_FOREGROUND</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LAYER_BACKGROUND</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">MAX_LAYER</span> <span class="o">=</span> <span class="mi">2</span>
+
+
+<span class="n">player_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">16</span>
+<span class="n">player_y</span> <span class="o">=</span> <span class="mi">160</span>
+
+<span class="o">/*</span> <span class="n">basic</span> <span class="n">setup</span> <span class="o">*/</span>
+<span class="n">TLN_Init</span><span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="n">MAX_LAYER</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">TLN_SetBGColor</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mi">184</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="k">load</span> <span class="n">resources</span> <span class="o">*/</span>
+<span class="n">TLN_SetLoadPath</span><span class="p">(</span><span class="s">&quot;assets/smw&quot;</span><span class="p">)</span>
+<span class="n">foreground</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span><span class="p">(</span><span class="s">&quot;smw_foreground.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+<span class="n">background</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span><span class="p">(</span><span class="s">&quot;smw_background.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+<span class="n">TLN_SetLayerTilemap</span><span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">foreground</span><span class="p">)</span>
+<span class="n">TLN_SetLayerTilemap</span><span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">background</span><span class="p">)</span>
+<span class="n">TLN_SetLayerPosition</span><span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">48</span><span class="p">)</span>
+<span class="n">TLN_SetLayerPosition</span><span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">80</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">setup</span> <span class="n">sprite</span> <span class="o">*/</span>
+<span class="n">spriteset</span> <span class="o">=</span> <span class="n">TLN_LoadSpriteset</span><span class="p">(</span><span class="s">&quot;smw_sprite&quot;</span><span class="p">)</span>
+<span class="n">TLN_SetSpriteSet</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">spriteset</span><span class="p">)</span>
+<span class="n">TLN_SetSpritePicture</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">TLN_SetSpritePosition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">setup</span> <span class="n">animations</span> <span class="o">*/</span>
+<span class="n">seq_walking</span> <span class="o">=</span> <span class="n">TLN_CreateSpriteSequence</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="n">spriteset</span><span class="p">,</span> <span class="s">&quot;walking&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">TLN_SetSpriteAnimation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">seq_walking</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">main</span> <span class="k">loop</span> <span class="o">*/</span>
+<span class="n">TLN_CreateWindow</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">TLN_ProcessWindow</span><span class="p">()</span>
+        <span class="n">player_x</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">if</span> <span class="n">player_x</span> <span class="o">&gt;=</span> <span class="n">WIDTH</span>
+                <span class="n">player_x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">16</span>
+        <span class="k">ok</span>
+        <span class="n">TLN_SetSpritePosition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">player_x</span><span class="p">,</span> <span class="n">player_y</span><span class="p">)</span>
+        <span class="n">TLN_DrawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="o">/*</span> <span class="n">deinit</span> <span class="o">*/</span>
+<span class="n">TLN_DeleteTilemap</span><span class="p">(</span><span class="n">foreground</span><span class="p">)</span>
+<span class="n">TLN_DeleteTilemap</span><span class="p">(</span><span class="n">background</span><span class="p">)</span>
+<span class="n">TLN_Deinit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot4.png" />
+<p>Example (5):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+
+<span class="n">HRES</span> <span class="o">=</span> <span class="mi">424</span>
+<span class="n">VRES</span> <span class="o">=</span> <span class="mi">240</span>
+
+<span class="n">LAYER_PROPS_FRONT</span>       <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LAYER_FOREGROUND</span>        <span class="o">=</span> <span class="mi">1</span>
+<span class="n">LAYER_PROPS</span>             <span class="o">=</span> <span class="mi">2</span>
+<span class="n">LAYER_MIDDLEGROUND</span>      <span class="o">=</span> <span class="mi">3</span>
+<span class="n">LAYER_BACKGROUND</span>        <span class="o">=</span> <span class="mi">4</span>
+<span class="n">NUM_LAYERS</span>              <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">xworld</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">oldx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="n">TLN_Init</span><span class="p">(</span><span class="n">HRES</span><span class="p">,</span> <span class="n">VRES</span><span class="p">,</span> <span class="n">NUM_LAYERS</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="k">load</span> <span class="n">assets</span> <span class="o">*/</span>
+<span class="n">TLN_SetLogLevel</span><span class="p">(</span><span class="n">TLN_LOG_ERRORS</span><span class="p">)</span>
+<span class="n">TLN_SetLoadPath</span><span class="p">(</span><span class="s">&quot;assets/forest&quot;</span><span class="p">)</span>
+<span class="n">foreground</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span><span class="p">(</span><span class="s">&quot;map.tmx&quot;</span><span class="p">,</span> <span class="s">&quot;Main Layer&quot;</span><span class="p">)</span>
+<span class="n">middleground</span> <span class="o">=</span> <span class="n">TLN_LoadBitmap</span><span class="p">(</span><span class="s">&quot;middleground.png&quot;</span><span class="p">)</span>
+<span class="n">background</span> <span class="o">=</span> <span class="n">TLN_LoadBitmap</span><span class="p">(</span><span class="s">&quot;background.png&quot;</span><span class="p">)</span>
+<span class="n">atlas</span> <span class="o">=</span> <span class="n">TLN_LoadSpriteset</span><span class="p">(</span><span class="s">&quot;atlas.png&quot;</span><span class="p">)</span>
+<span class="n">props_list</span> <span class="o">=</span> <span class="n">TLN_LoadObjectList</span><span class="p">(</span><span class="s">&quot;map.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">setup</span> <span class="n">layers</span> <span class="o">*/</span>
+<span class="n">TLN_SetLayer</span><span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">,</span> <span class="n">foreground</span><span class="p">)</span>
+<span class="n">TLN_SetLayerBitmap</span><span class="p">(</span><span class="n">LAYER_MIDDLEGROUND</span><span class="p">,</span> <span class="n">middleground</span><span class="p">)</span>
+<span class="n">TLN_SetLayerBitmap</span><span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">background</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">TLN_GetLayerWidth</span><span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">)</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">TLN_GetLayerHeight</span><span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">objects</span> <span class="n">layer</span><span class="p">:</span> <span class="n">add</span> <span class="n">back</span> <span class="n">objects</span> <span class="p">(</span><span class="n">behind</span> <span class="n">sprites</span><span class="p">)</span> <span class="o">*/</span>
+<span class="n">TLN_SetLayerObjects</span><span class="p">(</span><span class="n">LAYER_PROPS</span><span class="p">,</span> <span class="n">props_list</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">sync</span> <span class="n">props</span> <span class="n">layer</span> <span class="n">positions</span> <span class="k">to</span> <span class="n">main</span> <span class="n">layer</span> <span class="o">*/</span>
+<span class="n">TLN_SetLayerParent</span><span class="p">(</span><span class="n">LAYER_PROPS_FRONT</span><span class="p">,</span> <span class="n">LAYER_FOREGROUND</span><span class="p">)</span>
+<span class="n">TLN_SetLayerParent</span><span class="p">(</span><span class="n">LAYER_PROPS</span><span class="p">,</span> <span class="n">LAYER_FOREGROUND</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">create</span> <span class="n">sprite</span> <span class="n">sequences</span> <span class="o">*/</span>
+<span class="n">idle</span> <span class="o">=</span> <span class="n">TLN_CreateSpriteSequence</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="n">atlas</span><span class="p">,</span> <span class="s">&quot;player-idle/player-idle-&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">skip</span> <span class="o">=</span> <span class="n">TLN_CreateSpriteSequence</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="n">atlas</span><span class="p">,</span> <span class="s">&quot;player-skip/player-skip-&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">setup</span> <span class="n">main</span> <span class="n">player</span> <span class="n">sprite</span> <span class="o">*/</span>
+<span class="n">xplayer</span> <span class="o">=</span> <span class="mi">48</span>
+<span class="n">yplayer</span> <span class="o">=</span> <span class="mi">144</span>
+<span class="n">TLN_ConfigSprite</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">atlas</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">TLN_SetSpriteAnimation</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">idle</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">create</span> <span class="n">window</span> <span class="o">&amp;</span> <span class="n">main</span> <span class="k">loop</span> <span class="o">*/</span>
+<span class="n">TLN_CreateWindow</span><span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">TLN_DisableCRTEffect</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">TLN_ProcessWindow</span><span class="p">()</span>
+        <span class="n">TLN_DrawFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="o">/*</span> <span class="n">move</span> <span class="mi">3</span> <span class="n">pixels</span> <span class="n">right</span><span class="o">/</span><span class="n">left</span> <span class="n">main</span> <span class="n">layer</span> <span class="o">*/</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">TLN_GetInput</span><span class="p">(</span><span class="n">INPUT_LEFT</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">xworld</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">xworld</span> <span class="o">-=</span> <span class="mi">3</span>
+        <span class="k">elseif</span> <span class="p">(</span><span class="n">TLN_GetInput</span><span class="p">(</span><span class="n">INPUT_RIGHT</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">xworld</span> <span class="o">&lt;</span> <span class="n">width</span> <span class="o">-</span> <span class="n">HRES</span><span class="p">)</span>
+                <span class="n">xworld</span> <span class="o">+=</span> <span class="mi">3</span>
+        <span class="k">ok</span>
+
+        <span class="o">/*</span> <span class="n">update</span> <span class="k">on</span> <span class="n">change</span> <span class="o">*/</span>
+        <span class="k">if</span> <span class="n">xworld</span> <span class="o">!=</span> <span class="n">oldx</span>
+                <span class="n">TLN_SetLayerPosition</span><span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">xworld</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerPosition</span><span class="p">(</span><span class="n">LAYER_MIDDLEGROUND</span><span class="p">,</span> <span class="n">xworld</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerPosition</span><span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">xworld</span> <span class="o">/</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">TLN_SetSpritePosition</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">xplayer</span> <span class="o">-</span> <span class="n">xworld</span><span class="p">,</span> <span class="n">yplayer</span><span class="p">)</span>
+                <span class="n">oldx</span> <span class="o">=</span> <span class="n">xworld</span>
+        <span class="k">ok</span>
+<span class="k">end</span>
+
+<span class="o">/*</span> <span class="n">release</span> <span class="n">resources</span> <span class="o">*/</span>
+<span class="n">TLN_DeleteTilemap</span><span class="p">(</span><span class="n">foreground</span><span class="p">)</span>
+<span class="n">TLN_DeleteBitmap</span><span class="p">(</span><span class="n">middleground</span><span class="p">)</span>
+<span class="n">TLN_CloseResourcePack</span><span class="p">()</span>
+<span class="n">TLN_DeleteSpriteset</span><span class="p">(</span><span class="n">atlas</span><span class="p">)</span>
+<span class="n">TLN_DeleteObjectList</span><span class="p">(</span><span class="n">props_list</span><span class="p">)</span>
+
+<span class="n">TLN_DeleteWindow</span><span class="p">()</span>
+<span class="n">TLN_Deinit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot5.png" />
+<p>Example (6):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+<span class="k">load</span> <span class="s">&quot;sin.ring&quot;</span>
+
+<span class="n">WIDTH</span>            <span class="o">=</span> <span class="mi">400</span>
+<span class="n">HEIGHT</span>           <span class="o">=</span> <span class="mi">240</span>
+<span class="n">FIXED_BITS</span>       <span class="o">=</span> <span class="mi">16</span>
+<span class="n">LAYER_FOREGROUND</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LAYER_BACKGROUND</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">MAX_LAYER</span>        <span class="o">=</span> <span class="mi">2</span>
+<span class="n">MAP_HORIZON</span>      <span class="o">=</span> <span class="mi">0</span>
+<span class="n">MAP_TRACK</span>        <span class="o">=</span> <span class="mi">1</span>
+<span class="n">MAX_MAP</span>          <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">road</span>             <span class="o">=</span> <span class="kp">NULL</span>
+<span class="n">x</span>                <span class="o">=</span> <span class="kp">NULL</span>
+<span class="n">y</span>                <span class="o">=</span> <span class="kp">NULL</span>
+<span class="n">angle</span>            <span class="o">=</span> <span class="kp">NULL</span>
+
+<span class="k">func</span> <span class="n">main</span>
+
+        <span class="o">/*</span> <span class="n">setup</span> <span class="n">engine</span> <span class="o">*/</span>
+
+                <span class="n">TLN_Init</span> <span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span><span class="n">HEIGHT</span><span class="p">,</span> <span class="n">MAX_LAYER</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">TLN_SetRasterCallback</span> <span class="p">(</span><span class="s">&quot;raster_callback()&quot;</span><span class="p">)</span>
+                <span class="n">TLN_SetBGColor</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="o">/*</span> <span class="k">load</span> <span class="n">resources</span><span class="o">*/</span>
+
+                <span class="n">TLN_SetLoadPath</span> <span class="p">(</span><span class="s">&quot;assets/smk&quot;</span><span class="p">)</span>
+                <span class="n">road</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;track1.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+                <span class="n">horizon</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;track1_bg.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+
+        <span class="o">/*</span> <span class="n">startup</span> <span class="n">display</span> <span class="o">*/</span>
+
+                <span class="n">TLN_CreateWindow</span> <span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="n">int2fix</span><span class="p">(</span><span class="o">-</span><span class="mi">136</span><span class="p">)</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="n">int2fix</span><span class="p">(</span><span class="mi">336</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">a</span> <span class="o">=</span> <span class="n">float2fix</span><span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+                <span class="n">angle</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">BuildSinTable</span> <span class="p">()</span>
+
+        <span class="o">/*</span> <span class="n">main</span> <span class="k">loop</span> <span class="o">*/</span>
+
+                <span class="k">while</span> <span class="p">(</span><span class="n">TLN_ProcessWindow</span> <span class="p">())</span>
+                        <span class="n">TLN_SetLayerTilemap</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">horizon</span><span class="p">)</span>
+                        <span class="n">TLN_SetLayerTilemap</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">horizon</span><span class="p">)</span>
+                        <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">lerp</span><span class="p">(</span><span class="n">angle</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">360</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">256</span><span class="p">),</span> <span class="mi">24</span><span class="p">)</span>
+                        <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">lerp</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">360</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">256</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="n">TLN_ResetLayerMode</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">)</span>
+
+                        <span class="o">/*</span> <span class="n">input</span> <span class="o">*/</span>
+
+                                <span class="k">if</span> <span class="p">(</span><span class="n">TLN_GetInput</span> <span class="p">(</span><span class="n">INPUT_LEFT</span><span class="p">))</span>
+                                        <span class="n">angle</span><span class="o">-=</span><span class="mi">2</span>
+                                <span class="k">elseif</span> <span class="p">(</span><span class="n">TLN_GetInput</span> <span class="p">(</span><span class="n">INPUT_RIGHT</span><span class="p">))</span>
+                                        <span class="n">angle</span><span class="o">+=</span><span class="mi">2</span>
+                                <span class="k">ok</span>
+
+                                <span class="k">if</span> <span class="p">(</span><span class="n">TLN_GetInput</span> <span class="p">(</span><span class="n">INPUT_UP</span><span class="p">))</span>
+                                        <span class="n">s</span> <span class="o">+=</span> <span class="n">a</span>
+                                        <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">&gt;</span> <span class="n">int2fix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+                                                <span class="n">s</span> <span class="o">=</span> <span class="n">int2fix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                                        <span class="k">ok</span>
+                                <span class="k">elseif</span> <span class="p">(</span><span class="n">s</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="p">)</span>
+                                        <span class="n">s</span> <span class="o">-=</span> <span class="n">a</span>
+                                <span class="k">ok</span>
+
+                                <span class="k">if</span> <span class="p">(</span><span class="n">TLN_GetInput</span> <span class="p">(</span><span class="n">INPUT_DOWN</span><span class="p">))</span>
+                                        <span class="n">s</span> <span class="o">-=</span> <span class="n">a</span>
+                                        <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">int2fix</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+                                                <span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="n">int2fix</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+                                        <span class="k">ok</span>
+                                <span class="k">elseif</span> <span class="p">(</span><span class="n">s</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="n">a</span><span class="p">)</span>
+                                        <span class="n">s</span> <span class="o">+=</span> <span class="n">a</span>
+                                <span class="k">ok</span>
+
+                                <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+                                        <span class="n">angle</span> <span class="o">=</span> <span class="n">angle</span><span class="o">%</span><span class="mi">360</span>
+                                        <span class="k">if</span> <span class="p">(</span><span class="n">angle</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+                                                <span class="n">angle</span> <span class="o">+=</span> <span class="mi">360</span>
+                                        <span class="k">ok</span>
+
+                                        <span class="n">x</span> <span class="o">+=</span> <span class="n">CalcSin</span> <span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+                                        <span class="n">y</span> <span class="o">-=</span> <span class="n">CalcCos</span> <span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+                                <span class="k">ok</span>
+
+                        <span class="o">/*</span> <span class="n">render</span> <span class="k">to</span> <span class="n">window</span> <span class="o">*/</span>
+
+                                <span class="n">TLN_DrawFrame</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">end</span>
+
+        <span class="o">/*</span> <span class="n">deinit</span> <span class="o">*/</span>
+
+                <span class="n">TLN_DeleteTilemap</span> <span class="p">(</span><span class="n">road</span><span class="p">)</span>
+                <span class="n">TLN_DeleteTilemap</span> <span class="p">(</span><span class="n">horizon</span><span class="p">)</span>
+                <span class="n">TLN_DeleteWindow</span> <span class="p">()</span>
+                <span class="n">TLN_Deinit</span> <span class="p">()</span>
+
+
+<span class="o">/*</span> <span class="n">raster</span> <span class="n">callback</span> <span class="p">(</span><span class="n">virtual</span> <span class="n">HBLANK</span><span class="p">)</span> <span class="o">*/</span>
+
+<span class="k">func</span> <span class="n">raster_callback</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="n">TLN_GETSCANLINE</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">line</span> <span class="o">=</span> <span class="mi">24</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTilemap</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">road</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">fix2int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">fix2int</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+                <span class="n">TLN_DisableLayer</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">)</span>
+        <span class="k">elseif</span> <span class="p">(</span><span class="n">line</span> <span class="o">&gt;=</span> <span class="mi">24</span><span class="p">)</span>
+                <span class="n">s0</span> <span class="o">=</span> <span class="n">float2fix</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">)</span>
+                <span class="n">s1</span> <span class="o">=</span> <span class="n">float2fix</span> <span class="p">(</span><span class="mf">5.0</span><span class="p">)</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span><span class="n">HEIGHT</span><span class="p">,</span> <span class="n">s0</span><span class="p">,</span><span class="n">s1</span><span class="p">)</span>
+                <span class="n">scale</span> <span class="o">=</span> <span class="n">fix2float</span> <span class="p">(</span><span class="n">s</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTransform</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">WIDTH</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">scale</span><span class="p">)</span>
+        <span class="k">ok</span>
+
+<span class="k">func</span> <span class="n">lerp</span> <span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">fx0</span><span class="p">,</span><span class="n">fx1</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">fx0</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">fx1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">fx0</span><span class="p">))</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span><span class="p">))</span>
+
+<span class="k">func</span> <span class="n">float2fix</span> <span class="n">f</span>        <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">FIXED_BITS</span><span class="p">)</span>
+<span class="k">func</span> <span class="n">int2fix</span> <span class="n">i</span>          <span class="k">return</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">FIXED_BITS</span>
+<span class="k">func</span> <span class="n">fix2int</span> <span class="n">f</span>          <span class="k">return</span> <span class="n">f</span> <span class="o">&gt;&gt;</span> <span class="n">FIXED_BITS</span>
+<span class="k">func</span> <span class="n">fix2float</span> <span class="n">f</span>        <span class="k">return</span> <span class="n">f</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">FIXED_BITS</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot6.png" />
+<p>Example (7):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+<span class="k">load</span> <span class="s">&quot;sin.ring&quot;</span>
+
+<span class="n">WIDTH</span>   <span class="o">=</span>       <span class="mi">320</span>
+<span class="n">HEIGHT</span>  <span class="o">=</span>       <span class="mi">192</span>
+<span class="n">COLUMNS</span> <span class="o">=</span> <span class="n">WIDTH</span><span class="o">/</span><span class="mi">8</span> <span class="o">+</span> <span class="mi">2</span>
+
+<span class="o">/*</span> <span class="n">layers</span> <span class="o">*/</span>
+<span class="n">LAYER_FOREGROUND</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">LAYER_BACKGROUND</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">MAX_LAYER</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">frame</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">column</span> <span class="o">=</span> <span class="kt">list</span><span class="p">(</span><span class="n">COLUMNS</span><span class="p">)</span>
+
+<span class="o">/*</span> <span class="n">entry</span> <span class="n">point</span> <span class="o">*/</span>
+<span class="k">func</span> <span class="n">main</span>
+
+        <span class="o">/*</span> <span class="n">setup</span> <span class="n">engine</span> <span class="o">*/</span>
+
+                <span class="n">TLN_Init</span> <span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span><span class="n">HEIGHT</span><span class="p">,</span> <span class="n">MAX_LAYER</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+                <span class="n">TLN_SetRasterCallback</span> <span class="p">(</span><span class="s">&quot;raster_callback()&quot;</span><span class="p">)</span>
+                <span class="n">TLN_SetBGColor</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="o">/*</span> <span class="k">load</span> <span class="n">resources</span><span class="o">*/</span>
+
+                <span class="n">TLN_SetLoadPath</span> <span class="p">(</span><span class="s">&quot;assets/tf3&quot;</span><span class="p">)</span>
+                <span class="n">foreground</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;tf3_bg2.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+                <span class="n">background</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;tf3_bg3.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTilemap</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">foreground</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTilemap</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">background</span><span class="p">)</span>
+
+                <span class="n">BuildSinTable</span> <span class="p">()</span>
+
+                <span class="c"># Convert the Column List to Array of Integers</span>
+                        <span class="n">intArray</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="k">for</span> <span class="n">item</span> <span class="k">in</span> <span class="n">column</span> <span class="n">intArray</span> <span class="o">+=</span> <span class="n">int2Bytes</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">next</span>
+
+                <span class="n">TLN_SetLayerColumnOffset</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="p">:</span><span class="n">intArray</span><span class="p">)</span>
+
+        <span class="o">/*</span> <span class="n">main</span> <span class="k">loop</span> <span class="o">*/</span>
+
+                <span class="n">TLN_CreateWindow</span> <span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="k">while</span> <span class="p">(</span><span class="n">TLN_ProcessWindow</span> <span class="p">())</span>
+
+                        <span class="o">/*</span> <span class="n">scroll</span> <span class="o">*/</span>
+
+                                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">frame</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+                        <span class="o">/*</span> <span class="n">update</span> <span class="n">column</span> <span class="n">offset</span> <span class="n">table</span> <span class="o">*/</span>
+
+                                <span class="k">for</span> <span class="n">c</span><span class="o">=</span><span class="mi">1</span> <span class="k">to</span> <span class="n">COLUMNS</span>
+                                        <span class="n">column</span><span class="o">[</span><span class="n">c</span><span class="o">]</span> <span class="o">=</span> <span class="n">CalcSin</span> <span class="p">(</span><span class="n">frame</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="n">c</span><span class="o">*</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+                                <span class="k">next</span>
+
+                        <span class="o">/*</span> <span class="n">render</span> <span class="k">to</span> <span class="n">window</span> <span class="o">*/</span>
+
+                                <span class="n">TLN_DrawFrame</span> <span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+                                <span class="n">frame</span><span class="o">++</span>
+
+                <span class="k">end</span>
+
+                <span class="o">/*</span> <span class="n">deinit</span> <span class="o">*/</span>
+
+                        <span class="n">TLN_DeleteTilemap</span> <span class="p">(</span><span class="n">foreground</span><span class="p">)</span>
+                        <span class="n">TLN_DeleteTilemap</span> <span class="p">(</span><span class="n">background</span><span class="p">)</span>
+                        <span class="n">TLN_Deinit</span> <span class="p">()</span>
+
+<span class="k">func</span> <span class="n">raster_callback</span>
+
+        <span class="o">/*</span> <span class="n">raster</span> <span class="n">callback</span> <span class="p">(</span><span class="n">virtual</span> <span class="n">HBLANK</span><span class="p">)</span> <span class="o">*/</span>
+
+                <span class="n">line</span> <span class="o">=</span> <span class="n">TLN_GetScanLine</span><span class="p">()</span>
+                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">frame</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">CalcSin</span><span class="p">((</span><span class="n">frame</span><span class="o">+</span><span class="n">line</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">frame</span> <span class="o">+</span> <span class="n">CalcSin</span><span class="p">((</span><span class="n">frame</span> <span class="o">+</span> <span class="n">line</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">func</span> <span class="n">lerp</span> <span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">fx0</span><span class="p">,</span><span class="n">fx1</span>
+
+        <span class="o">/*</span> <span class="n">linear</span> <span class="n">interpolation</span> <span class="o">*/</span>
+
+                <span class="k">return</span> <span class="p">(</span><span class="n">fx0</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">fx1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">fx0</span><span class="p">))</span><span class="o">*</span><span class="p">((</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="n">x1</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">x0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot7.png" />
+<p>Example (8):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+
+<span class="n">WIDTH</span>  <span class="o">=</span> <span class="mi">400</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">240</span>
+
+<span class="n">sky</span> <span class="o">=</span> <span class="o">[</span>
+        <span class="o">[</span><span class="mh">0x1D</span><span class="p">,</span> <span class="mh">0x44</span><span class="p">,</span> <span class="mh">0x7B</span><span class="o">]</span><span class="p">,</span>
+        <span class="o">[</span><span class="mh">0x7F</span><span class="p">,</span> <span class="mh">0xA4</span><span class="p">,</span> <span class="mh">0xD9</span><span class="o">]</span><span class="p">,</span>
+        <span class="o">[</span><span class="mh">0x0B</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x4E</span><span class="o">]</span><span class="p">,</span>
+        <span class="o">[</span><span class="mh">0xEB</span><span class="p">,</span> <span class="mh">0x99</span><span class="p">,</span> <span class="mh">0x9D</span><span class="o">]</span>
+<span class="o">]</span>
+
+<span class="n">sky_hi_r</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sky_hi_g</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sky_hi_b</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sky_lo_r</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sky_lo_g</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">sky_lo_b</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">frame</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">xpos</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">speed</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">max_xpos</span> <span class="o">=</span> <span class="mi">4720</span>
+
+<span class="o">/*</span> <span class="n">layers</span> <span class="o">*/</span>
+        <span class="n">LAYER_FOREGROUND</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">LAYER_BACKGROUND</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">MAX_LAYER</span> <span class="o">=</span> <span class="mi">2</span>
+
+
+<span class="o">/*</span> <span class="n">entry</span> <span class="n">point</span> <span class="o">*/</span>
+<span class="k">func</span> <span class="n">main</span>
+
+        <span class="o">/*</span> <span class="n">setup</span> <span class="n">engine</span> <span class="o">*/</span>
+                <span class="n">TLN_Init</span> <span class="p">(</span><span class="n">WIDTH</span><span class="p">,</span> <span class="n">HEIGHT</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">TLN_SetBGColor</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">238</span><span class="p">)</span>
+                <span class="n">TLN_SetRasterCallback</span> <span class="p">(</span><span class="s">&quot;raster_callback()&quot;</span><span class="p">)</span>
+
+        <span class="o">/*</span> <span class="k">load</span> <span class="n">resources</span> <span class="o">*/</span>
+                <span class="n">TLN_SetLoadPath</span> <span class="p">(</span><span class="s">&quot;assets/sotb&quot;</span><span class="p">)</span>
+                <span class="n">foreground</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;SOTB_fg.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+                <span class="n">background</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;SOTB_bg.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTilemap</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">foreground</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTilemap</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">background</span><span class="p">)</span>
+
+        <span class="n">spriteset</span> <span class="o">=</span> <span class="n">TLN_LoadSpriteset</span> <span class="p">(</span><span class="s">&quot;SOTB&quot;</span><span class="p">)</span>
+        <span class="n">walk</span> <span class="o">=</span> <span class="n">TLN_CreateSpriteSequence</span> <span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="n">spriteset</span><span class="p">,</span> <span class="s">&quot;walk&quot;</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+        <span class="n">TLN_SetSpriteSet</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">spriteset</span><span class="p">)</span>
+        <span class="n">TLN_SetSpritePosition</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span><span class="mi">160</span><span class="p">)</span>
+        <span class="n">TLN_SetSpriteAnimation</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">walk</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">xpos</span> <span class="o">=</span> <span class="mi">2000</span>
+
+        <span class="n">sky_hi_r</span> <span class="o">=</span> <span class="n">sky</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span>
+        <span class="n">sky_hi_g</span> <span class="o">=</span> <span class="n">sky</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span>
+        <span class="n">sky_hi_b</span> <span class="o">=</span> <span class="n">sky</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span>
+        <span class="n">sky_lo_r</span> <span class="o">=</span> <span class="n">sky</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span>
+        <span class="n">sky_lo_g</span> <span class="o">=</span> <span class="n">sky</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span>
+        <span class="n">sky_lo_b</span> <span class="o">=</span> <span class="n">sky</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span>
+
+        <span class="o">/*</span> <span class="n">main</span> <span class="k">loop</span> <span class="o">*/</span>
+        <span class="n">TLN_CreateWindow</span> <span class="p">(</span><span class="kp">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">TLN_DisableCRTEffect</span><span class="p">()</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">TLN_ProcessWindow</span> <span class="p">())</span>
+        <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">xpos</span> <span class="o">&lt;</span> <span class="n">max_xpos</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">xpos</span> <span class="o">+=</span> <span class="n">speed</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">xpos</span> <span class="o">&gt;=</span> <span class="n">max_xpos</span><span class="p">)</span>
+                        <span class="p">{</span>
+                                <span class="n">TLN_DisableSpriteAnimation</span> <span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                                <span class="n">TLN_SetSpritePicture</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+
+                <span class="o">/*</span> <span class="n">sky</span> <span class="n">gradient</span> <span class="o">*/</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">frame</span><span class="o">&gt;=</span><span class="mi">300</span> <span class="o">&amp;&amp;</span> <span class="n">frame</span><span class="o">&lt;=</span><span class="mi">900</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="o">/*</span> <span class="n">interpolate</span> <span class="n">upper</span> <span class="n">color</span> <span class="o">*/</span>
+                        <span class="n">sky_hi_r</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+                        <span class="n">sky_hi_g</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">)</span>
+                        <span class="n">sky_hi_b</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">1</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">)</span>
+
+                        <span class="o">/*</span> <span class="n">interpolate</span> <span class="n">lower</span> <span class="n">color</span> <span class="o">*/</span>
+                        <span class="n">sky_lo_r</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">4</span><span class="o">][</span><span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+                        <span class="n">sky_lo_g</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">4</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">)</span>
+                        <span class="n">sky_lo_b</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span><span class="mi">900</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">,</span> <span class="n">sky</span><span class="o">[</span><span class="mi">4</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">)</span>
+                <span class="p">}</span>
+
+                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">xpos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+                <span class="o">/*</span> <span class="n">render</span> <span class="k">to</span> <span class="n">the</span> <span class="n">window</span> <span class="o">*/</span>
+                <span class="n">TLN_DrawFrame</span> <span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+                <span class="n">frame</span><span class="o">++</span>
+        <span class="p">}</span>
+
+        <span class="o">/*</span> <span class="n">release</span> <span class="n">resources</span> <span class="o">*/</span>
+        <span class="n">TLN_DeleteSequence</span><span class="p">(</span><span class="n">walk</span><span class="p">)</span>
+        <span class="n">TLN_DeleteTilemap</span> <span class="p">(</span><span class="n">foreground</span><span class="p">)</span>
+        <span class="n">TLN_DeleteTilemap</span> <span class="p">(</span><span class="n">background</span><span class="p">)</span>
+        <span class="n">TLN_Deinit</span> <span class="p">()</span>
+
+<span class="k">func</span> <span class="n">raster_callback</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="n">TLN_GetScanLine</span><span class="p">()</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="o">/*</span> <span class="n">sky</span> <span class="n">color</span> <span class="o">*/</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">line</span> <span class="o">&lt;</span> <span class="mi">192</span><span class="p">)</span>
+        <span class="p">{</span>
+                <span class="o">//</span><span class="n">color</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RGB</span>
+                <span class="o">/*</span> <span class="n">interpolate</span> <span class="n">between</span> <span class="n">upper</span> <span class="ow">and</span> <span class="n">lower</span> <span class="n">color</span> <span class="o">*/</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span> <span class="n">sky_hi_r</span><span class="p">,</span> <span class="n">sky_lo_r</span><span class="p">)</span>
+                <span class="n">g</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span> <span class="n">sky_hi_g</span><span class="p">,</span> <span class="n">sky_lo_g</span><span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">191</span><span class="p">,</span> <span class="n">sky_hi_b</span><span class="p">,</span> <span class="n">sky_lo_b</span><span class="p">)</span>
+                <span class="n">TLN_SetBGColor</span> <span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+        <span class="p">}</span>
+
+        <span class="o">/*</span> <span class="n">background</span> <span class="n">layer</span> <span class="o">*/</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">line</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">line</span> <span class="o">=</span> <span class="mi">24</span> <span class="o">||</span> <span class="n">line</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">||</span> <span class="n">line</span> <span class="o">=</span> <span class="mi">88</span> <span class="o">||</span> <span class="n">line</span> <span class="o">=</span> <span class="mi">96</span><span class="p">)</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">96</span><span class="p">,</span> <span class="n">xpos</span><span class="o">*</span><span class="mf">0.7</span> <span class="p">,</span> <span class="n">xpos</span><span class="o">*</span><span class="mf">0.2</span> <span class="p">)</span>
+        <span class="k">elseif</span> <span class="p">(</span><span class="n">line</span> <span class="o">=</span> <span class="mi">120</span><span class="p">)</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">xpos</span><span class="o">/</span><span class="mi">2</span>
+        <span class="k">elseif</span> <span class="p">(</span><span class="n">line</span> <span class="o">=</span> <span class="mi">208</span> <span class="o">||</span> <span class="n">line</span> <span class="o">=</span> <span class="mi">216</span> <span class="o">||</span> <span class="n">line</span> <span class="o">=</span> <span class="mi">224</span> <span class="o">||</span> <span class="n">line</span> <span class="o">=</span> <span class="mi">232</span><span class="p">)</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">lerp</span> <span class="p">(</span><span class="n">line</span><span class="p">,</span><span class="mi">208</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="n">xpos</span><span class="o">*</span><span class="mi">1</span><span class="p">,</span><span class="n">xpos</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">ok</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_BACKGROUND</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">ok</span>
+
+        <span class="o">/*</span> <span class="n">foreground</span> <span class="n">layer</span> <span class="o">*/</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">line</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">xpos</span>
+        <span class="k">elseif</span> <span class="p">(</span><span class="n">line</span> <span class="o">=</span> <span class="mi">216</span><span class="p">)</span>
+                <span class="n">pos</span> <span class="o">=</span> <span class="n">xpos</span><span class="o">*</span><span class="mi">3</span>
+        <span class="k">ok</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerPosition</span> <span class="p">(</span><span class="n">LAYER_FOREGROUND</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">ok</span>
+
+<span class="k">func</span> <span class="n">lerp</span> <span class="n">x</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">fx0</span><span class="p">,</span><span class="n">fx1</span>
+        <span class="o">/*</span> <span class="n">linear</span> <span class="n">interpolation</span> <span class="o">*/</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">fx0</span> <span class="o">+</span> <span class="p">(</span><span class="n">fx1</span><span class="o">-</span><span class="n">fx0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot8.png" />
+<p>Example (9):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span>load &quot;tilengine.ring&quot;
+
+WIDTH    = 400
+HEIGHT = 240
+
+MIN_SCALE = 50
+MAX_SCALE       = 200
+
+/* RGB sky colors */
+sky = [
+        [0x19, 0x54, 0x75],
+        [0x2C, 0xB0, 0xDC]
+]
+
+/* layers */
+LAYER_FOREGROUND = 0
+LAYER_BACKGROUND = 1
+MAX_LAYER = 2
+
+xpos=0 ypos=0 scale=0
+
+/* entry point */
+func main
+
+        /* setup engine */
+        TLN_Init (WIDTH, HEIGHT, MAX_LAYER,0,0)
+        TLN_SetBGColor (34,136,170)
+        TLN_SetRasterCallback (&quot;raster_callback()&quot;)
+
+        /* load resources */
+        TLN_SetLoadPath (&quot;assets/fox&quot;)
+        foreground = TLN_LoadTilemap (&quot;psycho.tmx&quot;, NULL)
+        background = TLN_LoadTilemap (&quot;rolo.tmx&quot;, NULL)
+        TLN_SetLayerTilemap (LAYER_FOREGROUND, foreground)
+        TLN_SetLayerTilemap (LAYER_BACKGROUND, background)
+
+        /* initial values */
+        xpos = 0
+        ypos = 192
+        scale = 100
+
+        /* main loop */
+        TLN_CreateWindow (NULL, 0)
+        TLN_DisableCRTEffect()
+        while TLN_ProcessWindow ()
+                /* user input */
+                if TLN_GetInput (INPUT_LEFT)
+                        xpos-- ok
+                if TLN_GetInput (INPUT_RIGHT)
+                        xpos++ ok
+                if TLN_GetInput (INPUT_UP) &amp;&amp; ypos &gt; 0
+                        ypos-- ok
+                if TLN_GetInput (INPUT_DOWN)
+                        ypos++ ok
+                if TLN_GetInput (INPUT_A) &amp;&amp; scale &lt; MAX_SCALE
+                        scale += 1 ok
+                if TLN_GetInput (INPUT_B) &amp;&amp; scale &gt; MIN_SCALE
+                        scale -= 1 ok
+
+                /* calculate scale factor from fixed point base */
+                fgscale = scale/100.0f
+                bgscale = lerp(scale, MIN_SCALE,MAX_SCALE, 0.75,1.5)
+
+                /* scale dependant lower clipping */
+                maxy = 640 - (240*100/scale)
+                if ypos &gt; maxy
+                        ypos = maxy
+                ok
+
+                /* update position */
+                bgypos = lerp(scale,MIN_SCALE,MAX_SCALE, 0,80)
+                TLN_SetLayerPosition (LAYER_FOREGROUND, xpos*2, ypos)
+                TLN_SetLayerPosition (LAYER_BACKGROUND, xpos, bgypos)
+                TLN_SetLayerScaling (LAYER_FOREGROUND, fgscale, fgscale)
+                TLN_SetLayerScaling (LAYER_BACKGROUND, bgscale, bgscale)
+
+                /* render to the window */
+                TLN_DrawFrame (0)
+        end
+
+        /* release resources */
+        TLN_DeleteTilemap (foreground)
+        TLN_DeleteTilemap (background)
+        TLN_Deinit ()
+
+
+/* sky color gradient with raster effect */
+func raster_callback
+        line = TLN_GetScanLine()
+        if line &lt;= 152
+                r = lerp (line, 0,152, sky[1][1], sky[2][1])
+                g = lerp (line, 0,152, sky[1][2], sky[2][2])
+                b = lerp (line, 0,152, sky[1][3], sky[2][3])
+                TLN_SetBGColor (r, g, b)
+        ok
+
+/* linear interpolation */
+func lerp x,x0,x1,fx0,fx1
+        return (fx0) + ((fx1) - (fx0))*((x) - (x0))/((x1) - (x0))
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot9.png" />
+<p>Example (10):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span>load &quot;tilengine.ring&quot;
+
+WIDTH    = 400
+HEIGHT = 240
+
+sky = [
+        [0x1B, 0x00, 0x8B],
+        [0x00, 0x74, 0xD7],
+        [0x24, 0x92, 0xDB],
+        [0x1F, 0x7F, 0xBE]
+]
+
+/* layers */
+LAYER_FOREGROUND = 0
+LAYER_BACKGROUND = 1
+MAX_LAYER = 2
+
+pos_foreground = 0
+pos_background = list(6)
+inc_background = list(6)
+speed = 0
+ypos = 0
+
+color = list(3)
+
+/* entry point */
+func main
+
+        /* setup engine */
+        TLN_Init (WIDTH,HEIGHT, MAX_LAYER, 0, 1)
+        TLN_SetRasterCallback (&quot;raster_callback()&quot;)
+        TLN_SetBGColor (0,128,238)
+
+        /* load resources*/
+        TLN_SetLoadPath (&quot;assets/sonic&quot;)
+        foreground = TLN_LoadTilemap (&quot;Sonic_md_fg1.tmx&quot;, NULL)
+        background = TLN_LoadTilemap (&quot;Sonic_md_bg1.tmx&quot;, NULL)
+        TLN_SetLayerTilemap (LAYER_FOREGROUND, foreground)
+        TLN_SetLayerTilemap (LAYER_BACKGROUND, background)
+        sp = TLN_LoadSequencePack (&quot;Sonic_md_seq.sqx&quot;)
+        sequence = TLN_FindSequence (sp, &quot;seq_water&quot;)
+
+        /* assign color sequence to various entries in palette */
+        palette = TLN_GetLayerPalette (LAYER_BACKGROUND)
+        TLN_SetPaletteAnimation (TLN_GetAvailableAnimation(), palette, sequence, true)
+
+        /* compute increments for variable background scrolling speeds */
+        inc_background[1] = 0.562f
+        inc_background[2] = 0.437f
+        inc_background[3] = 0.375f
+        inc_background[4] = 0.625f
+        inc_background[5] = 1.0f
+        inc_background[6] = 2.0f
+
+        /* startup display */
+        TLN_CreateWindow (NULL, 0)
+
+        /* main loop */
+        while TLN_ProcessWindow ()
+                if TLN_GetInput (INPUT_RIGHT)
+                        speed += 0.02
+                        if speed &gt; 1.0
+                                speed = 1.0f
+                        ok
+                elseif speed &gt; 0.0
+                        speed -= 0.02
+                        if speed &lt; 0.0
+                                speed = 0.0f
+                        ok
+                ok
+
+                if TLN_GetInput (INPUT_LEFT)
+                        speed -= 0.02
+                        if speed &lt; -1
+                                speed = -1
+                        ok
+                elseif speed &lt; 0
+                        speed += 0.02
+                        if speed &gt; 0
+                                speed = 0
+                        ok
+                ok
+
+                /* scroll */
+                pos_foreground += 3*speed
+                TLN_SetLayerPosition (LAYER_FOREGROUND, pos_foreground, ypos)
+                for c=1 to 6
+                        pos_background[c] += (inc_background[c] * speed)
+                next
+
+                /* render to window */
+                TLN_DrawFrame (0)
+        end
+
+        /* deinit */
+        TLN_DeleteTilemap (foreground)
+        TLN_DeleteTilemap (background)
+        TLN_DeleteSequencePack (sp)
+        TLN_Deinit ()
+
+/* raster callback (virtual HBLANK) */
+func raster_callback
+
+        line = TLN_GetScanLine()
+        pos =- 1
+
+        if line=0
+                pos = pos_background[1]
+        elseif line=32
+                pos = pos_background[2]
+        elseif line=48
+                pos = pos_background[3]
+        elseif line=64
+                pos = pos_background[4]
+        elseif line=112
+                pos = pos_background[5]
+        elseif line &gt;= 152
+                pos = lerp (line, 152,224, pos_background[5], pos_background[6])
+        ok
+
+        if pos != -1
+                TLN_SetLayerPosition (LAYER_BACKGROUND, pos, 0)
+        ok
+
+        /* background color gradients */
+        if line &lt; 112
+                InterpolateColor (line, 0,112, sky[1], sky[2], color)
+                TLN_SetBGColor (color[1], color[2], color[3])
+        elseif line &gt;= 144
+                InterpolateColor (line, 144,HEIGHT, sky[3], sky[4], color)
+                TLN_SetBGColor (color[1], color[2], color[3])
+        ok
+
+func InterpolateColor v,v1,v2,color1,color2,result
+        result[1] = lerp (v, v1,v2, color1[1], color2[1])
+        result[2] = lerp (v, v1,v2, color1[2], color2[2])
+        result[3] = lerp (v, v1,v2, color1[3], color2[3])
+
+/* linear interpolation */
+func lerp x,x0,x1,fx0,fx1
+        return (fx0) + ((fx1) - (fx0))*((x) - (x0))/((x1) - (x0))
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot10.png" />
+</div>
+<div class="section" id="using-libsdl-and-tilengine">
+<span id="index-3"></span><h2>Using LibSDL and Tilengine<a class="headerlink" href="#using-libsdl-and-tilengine" title="Permalink to this headline">¶</a></h2>
+<p>Example (11):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+<span class="k">load</span> <span class="s">&quot;libsdl.ring&quot;</span>
+
+<span class="n">width</span>  <span class="o">=</span> <span class="mi">640</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">480</span>
+
+<span class="k">func</span> <span class="n">main</span>
+
+        <span class="c"># Start Tilengine</span>
+                <span class="n">TLN_Init</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c"># Start LibSDL</span>
+                <span class="n">SDL_Init</span><span class="p">(</span><span class="n">SDL_INIT_EVERYTHING</span><span class="p">)</span>
+                <span class="n">win</span> <span class="o">=</span> <span class="n">SDL_CreateWindow</span><span class="p">(</span><span class="s">&quot;Using LibSDL and Tilengine&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">SDL_WINDOW_SHOWN</span><span class="o">|</span><span class="n">SDL_WINDOW_OPENGL</span><span class="p">)</span>
+                <span class="n">ren</span> <span class="o">=</span> <span class="n">SDL_CreateRenderer</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">SDL_RENDERER_ACCELERATED</span> <span class="o">|</span> <span class="n">SDL_RENDERER_PRESENTVSYNC</span> <span class="p">)</span>
+
+        <span class="c"># Create the Surface in LibSDL that will be used by Tilengine for Drawing</span>
+                <span class="n">surface</span> <span class="o">=</span> <span class="n">SDL_CreateRGBSurface</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c"># Get the Surface Pixels pointer from the Surface Structure</span>
+                <span class="n">pixels</span> <span class="o">=</span> <span class="n">SDL_Get_SDL_Surface_Pixels</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+        <span class="c"># Pass the Pixels pointer to Tilengine</span>
+                <span class="n">TLN_SetRenderTarget</span><span class="p">(</span><span class="n">pixels</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+
+        <span class="c"># Using Tilengine</span>
+                <span class="n">TLN_SetLoadPath</span><span class="p">(</span><span class="s">&quot;assets\sonic&quot;</span><span class="p">)</span>
+                <span class="n">foreground</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;Sonic_md_fg1.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTilemap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">foreground</span><span class="p">)</span>
+
+        <span class="c"># Using LibSDL Events Loop</span>
+                <span class="n">oEvent</span> <span class="o">=</span> <span class="n">SDL_New_SDL_Event</span><span class="p">()</span>
+
+                <span class="k">while</span> <span class="kp">true</span>
+
+                        <span class="c"># Using Tilengine to Update the Frame</span>
+                                        <span class="n">TLN_UpdateFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+                        <span class="c"># Draw Tilengine results using LibSDL</span>
+                        <span class="c"># ( Surface --&gt; Texture --&gt; Render)</span>
+                                <span class="n">tex</span> <span class="o">=</span> <span class="n">SDL_CreateTextureFromSurface</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span> <span class="n">surface</span><span class="p">);</span>
+                                <span class="n">SDL_RenderCopy2</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span><span class="n">tex</span><span class="p">)</span>
+                                <span class="n">SDL_DestroyTexture</span><span class="p">(</span><span class="n">tex</span><span class="p">)</span>
+
+                        <span class="c"># Draw Rectangle using LibSDL</span>
+                                <span class="n">rect</span> <span class="o">=</span> <span class="n">SDL_New_SDL_Rect</span><span class="p">()</span>
+                                <span class="n">SDL_Set_SDL_Rect_x</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_y</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_w</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_h</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+                                <span class="n">SDL_SetRenderDrawColor</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+                                <span class="n">SDL_RenderDrawRect</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span><span class="n">rect</span><span class="p">)</span>
+                                <span class="n">SDL_Destroy_SDL_Rect</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+
+                        <span class="c"># Display Results using LibSDL</span>
+                                <span class="n">SDL_RenderPresent</span><span class="p">(</span><span class="n">ren</span><span class="p">)</span>
+
+                        <span class="c"># Check Events</span>
+
+                                        <span class="n">SDL_PollEvent</span><span class="p">(</span><span class="n">oEvent</span><span class="p">)</span>
+                                        <span class="k">switch</span> <span class="n">SDL_Get_SDL_Event_Type</span><span class="p">(</span><span class="n">oEvent</span><span class="p">)</span>
+                                                        <span class="k">on</span> <span class="n">SDL_Get_SDL_Quit</span><span class="p">()</span>
+                                                                        <span class="k">exit</span>
+                                                        <span class="k">on</span> <span class="n">SDL_Get_SDL_Keydown</span><span class="p">()</span>
+                                                                        <span class="n">Key</span> <span class="o">=</span> <span class="n">SDL_Get_SDL_Event_key_Keysym_Sym</span><span class="p">(</span><span class="n">oEvent</span><span class="p">)</span>
+                                                                        <span class="k">if</span> <span class="n">key</span> <span class="o">=</span> <span class="mi">27</span> <span class="k">exit</span> <span class="k">ok</span>
+                                        <span class="k">off</span>
+                <span class="k">end</span>
+
+        <span class="c"># End of Tilengine Usage</span>
+                <span class="n">TLN_Deinit</span><span class="p">()</span>
+
+        <span class="c"># End of LibSDL Usage</span>
+                <span class="n">SDL_DestroyWindow</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+                <span class="n">SDL_Quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot11.png" />
+<p>Example (12):</p>
+<div class="highlight-ring notranslate"><div class="highlight"><pre><span></span><span class="k">load</span> <span class="s">&quot;tilengine.ring&quot;</span>
+<span class="k">load</span> <span class="s">&quot;libsdl.ring&quot;</span>
+
+<span class="n">factor</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">width</span>  <span class="o">=</span> <span class="mi">400</span><span class="o">*</span><span class="n">factor</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mi">220</span><span class="o">*</span><span class="n">factor</span>
+
+<span class="k">func</span> <span class="n">main</span>
+
+        <span class="c"># Start Tilengine</span>
+                <span class="n">TLN_Init</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="c"># Start LibSDL</span>
+                <span class="n">SDL_Init</span><span class="p">(</span><span class="n">SDL_INIT_EVERYTHING</span><span class="p">)</span>
+                <span class="n">win</span> <span class="o">=</span> <span class="n">SDL_CreateWindow</span><span class="p">(</span><span class="s">&quot;Using LibSDL and Tilengine&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">SDL_WINDOW_SHOWN</span><span class="o">|</span><span class="n">SDL_WINDOW_OPENGL</span><span class="p">)</span>
+                <span class="n">ren</span> <span class="o">=</span> <span class="n">SDL_CreateRenderer</span><span class="p">(</span><span class="n">win</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">SDL_RENDERER_ACCELERATED</span> <span class="o">|</span> <span class="n">SDL_RENDERER_PRESENTVSYNC</span> <span class="p">)</span>
+
+        <span class="c"># Create the Surface in LibSDL that will be used by Tilengine for Drawing</span>
+                <span class="n">surface</span> <span class="o">=</span> <span class="n">SDL_CreateRGBSurface</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c"># Get the Surface Pixels pointer from the Surface Structure</span>
+                <span class="n">pixels</span> <span class="o">=</span> <span class="n">SDL_Get_SDL_Surface_Pixels</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+        <span class="c"># Pass the Pixels pointer to Tilengine</span>
+                <span class="n">TLN_SetRenderTarget</span><span class="p">(</span><span class="n">pixels</span><span class="p">,</span> <span class="n">width</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>
+
+        <span class="c"># Using Tilengine</span>
+                <span class="n">TLN_SetLoadPath</span><span class="p">(</span><span class="s">&quot;assets\sonic&quot;</span><span class="p">)</span>
+                <span class="n">foreground</span> <span class="o">=</span> <span class="n">TLN_LoadTilemap</span> <span class="p">(</span><span class="s">&quot;Sonic_md_fg1.tmx&quot;</span><span class="p">,</span> <span class="kp">NULL</span><span class="p">)</span>
+                <span class="n">TLN_SetLayerTilemap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">foreground</span><span class="p">)</span>
+
+        <span class="c"># Using LibSDL Events Loop</span>
+                <span class="n">oEvent</span> <span class="o">=</span> <span class="n">SDL_New_SDL_Event</span><span class="p">()</span>
+
+                <span class="k">while</span> <span class="kp">true</span>
+
+                        <span class="c"># Using Tilengine to Update the Frame</span>
+                                        <span class="n">TLN_UpdateFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+                        <span class="c"># Draw Tilengine results using LibSDL</span>
+                        <span class="c"># ( Surface --&gt; Texture --&gt; Render)</span>
+                                <span class="n">tex</span> <span class="o">=</span> <span class="n">SDL_CreateTextureFromSurface</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span> <span class="n">surface</span><span class="p">);</span>
+
+                                <span class="n">rectSource</span> <span class="o">=</span> <span class="n">SDL_New_SDL_Rect</span><span class="p">()</span>
+                                <span class="n">SDL_Set_SDL_Rect_x</span><span class="p">(</span><span class="n">rectSource</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_y</span><span class="p">(</span><span class="n">rectSource</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_w</span><span class="p">(</span><span class="n">rectSource</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_h</span><span class="p">(</span><span class="n">rectSource</span><span class="p">,</span><span class="mi">220</span><span class="p">)</span>
+
+                                <span class="n">rectDest</span> <span class="o">=</span> <span class="n">SDL_New_SDL_Rect</span><span class="p">()</span>
+                                <span class="n">SDL_Set_SDL_Rect_x</span><span class="p">(</span><span class="n">rectDest</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_y</span><span class="p">(</span><span class="n">rectDest</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_w</span><span class="p">(</span><span class="n">rectDest</span><span class="p">,</span><span class="n">width</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_h</span><span class="p">(</span><span class="n">rectDest</span><span class="p">,</span><span class="n">height</span><span class="p">)</span>
+
+                                <span class="n">SDL_RenderCopy</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span><span class="n">tex</span><span class="p">,</span><span class="n">rectSource</span><span class="p">,</span><span class="n">rectDest</span><span class="p">)</span>
+                                <span class="n">SDL_Destroy_SDL_Rect</span><span class="p">(</span><span class="n">rectSource</span><span class="p">)</span>
+                                <span class="n">SDL_Destroy_SDL_Rect</span><span class="p">(</span><span class="n">rectDest</span><span class="p">)</span>
+                                <span class="n">SDL_DestroyTexture</span><span class="p">(</span><span class="n">tex</span><span class="p">)</span>
+
+                        <span class="c"># Draw Rectangle using LibSDL</span>
+                                <span class="n">rect</span> <span class="o">=</span> <span class="n">SDL_New_SDL_Rect</span><span class="p">()</span>
+                                <span class="n">SDL_Set_SDL_Rect_x</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">40</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_y</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_w</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">230</span><span class="p">)</span>
+                                <span class="n">SDL_Set_SDL_Rect_h</span><span class="p">(</span><span class="n">rect</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+                                <span class="n">SDL_SetRenderDrawColor</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)</span>
+                                <span class="n">SDL_RenderDrawRect</span><span class="p">(</span><span class="n">ren</span><span class="p">,</span><span class="n">rect</span><span class="p">)</span>
+                                <span class="n">SDL_Destroy_SDL_Rect</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+
+                        <span class="c"># Display Results using LibSDL</span>
+                                <span class="n">SDL_RenderPresent</span><span class="p">(</span><span class="n">ren</span><span class="p">)</span>
+
+                        <span class="c"># Check Events</span>
+
+                                        <span class="n">SDL_PollEvent</span><span class="p">(</span><span class="n">oEvent</span><span class="p">)</span>
+                                        <span class="k">switch</span> <span class="n">SDL_Get_SDL_Event_Type</span><span class="p">(</span><span class="n">oEvent</span><span class="p">)</span>
+                                                        <span class="k">on</span> <span class="n">SDL_Get_SDL_Quit</span><span class="p">()</span>
+                                                                        <span class="k">exit</span>
+                                                        <span class="k">on</span> <span class="n">SDL_Get_SDL_Keydown</span><span class="p">()</span>
+                                                                        <span class="n">Key</span> <span class="o">=</span> <span class="n">SDL_Get_SDL_Event_key_Keysym_Sym</span><span class="p">(</span><span class="n">oEvent</span><span class="p">)</span>
+                                                                        <span class="k">if</span> <span class="n">key</span> <span class="o">=</span> <span class="mi">27</span> <span class="k">exit</span> <span class="k">ok</span>
+                                        <span class="k">off</span>
+                <span class="k">end</span>
+
+        <span class="c"># End of Tilengine Usage</span>
+                <span class="n">TLN_Deinit</span><span class="p">()</span>
+
+        <span class="c"># End of LibSDL Usage</span>
+                <span class="n">SDL_DestroyWindow</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+                <span class="n">SDL_Quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Screen Shot:</p>
+<img alt="tilengine" src="_images/tilengine_shot12.png" />
+</div>
+<div class="section" id="reference">
+<span id="index-4"></span><h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>Constants:</p>
+<ul class="simple">
+<li><p>TILENGINE_VER_MAJ</p></li>
+<li><p>TILENGINE_VER_MIN</p></li>
+<li><p>TILENGINE_VER_REV</p></li>
+<li><p>TILENGINE_HEADER_VERSION</p></li>
+<li><p>FLAG_NONE</p></li>
+<li><p>FLAG_FLIPX</p></li>
+<li><p>FLAG_FLIPY</p></li>
+<li><p>FLAG_ROTATE</p></li>
+<li><p>FLAG_PRIORITY</p></li>
+<li><p>FLAG_MASKED</p></li>
+<li><p>BLEND_NONE</p></li>
+<li><p>BLEND_MIX25</p></li>
+<li><p>BLEND_MIX50</p></li>
+<li><p>BLEND_MIX75</p></li>
+<li><p>BLEND_ADD</p></li>
+<li><p>BLEND_SUB</p></li>
+<li><p>BLEND_MOD</p></li>
+<li><p>BLEND_CUSTOM</p></li>
+<li><p>MAX_BLEND</p></li>
+<li><p>BLEND_MIX</p></li>
+<li><p>TLN_OVERLAY_NONE</p></li>
+<li><p>TLN_OVERLAY_SHADOWMASK</p></li>
+<li><p>TLN_OVERLAY_APERTURE</p></li>
+<li><p>TLN_OVERLAY_SCANLINES</p></li>
+<li><p>TLN_OVERLAY_CUSTOM</p></li>
+<li><p>TLN_MAX_OVERLAY</p></li>
+<li><p>PLAYER1</p></li>
+<li><p>PLAYER2</p></li>
+<li><p>PLAYER3</p></li>
+<li><p>PLAYER4</p></li>
+<li><p>INPUT_NONE</p></li>
+<li><p>INPUT_UP</p></li>
+<li><p>INPUT_DOWN</p></li>
+<li><p>INPUT_LEFT</p></li>
+<li><p>INPUT_RIGHT</p></li>
+<li><p>INPUT_BUTTON1</p></li>
+<li><p>INPUT_BUTTON2</p></li>
+<li><p>INPUT_BUTTON3</p></li>
+<li><p>INPUT_BUTTON4</p></li>
+<li><p>INPUT_BUTTON5</p></li>
+<li><p>INPUT_BUTTON6</p></li>
+<li><p>INPUT_START</p></li>
+<li><p>INPUT_QUIT</p></li>
+<li><p>INPUT_CRT</p></li>
+<li><p>INPUT_P1</p></li>
+<li><p>INPUT_P2</p></li>
+<li><p>INPUT_P3</p></li>
+<li><p>INPUT_P4</p></li>
+<li><p>INPUT_A</p></li>
+<li><p>INPUT_B</p></li>
+<li><p>INPUT_C</p></li>
+<li><p>INPUT_D</p></li>
+<li><p>INPUT_E</p></li>
+<li><p>INPUT_F</p></li>
+<li><p>CWF_FULLSCREEN</p></li>
+<li><p>CWF_VSYNC</p></li>
+<li><p>CWF_S1</p></li>
+<li><p>CWF_S2</p></li>
+<li><p>CWF_S3</p></li>
+<li><p>CWF_S4</p></li>
+<li><p>CWF_S5</p></li>
+<li><p>TLN_ERR_OK</p></li>
+<li><p>TLN_ERR_OUT_OF_MEMORY</p></li>
+<li><p>TLN_ERR_IDX_LAYER</p></li>
+<li><p>TLN_ERR_IDX_SPRITE</p></li>
+<li><p>TLN_ERR_IDX_ANIMATION</p></li>
+<li><p>TLN_ERR_IDX_PICTURE</p></li>
+<li><p>TLN_ERR_REF_TILESET</p></li>
+<li><p>TLN_ERR_REF_TILEMAP</p></li>
+<li><p>TLN_ERR_REF_SPRITESET</p></li>
+<li><p>TLN_ERR_REF_PALETTE</p></li>
+<li><p>TLN_ERR_REF_SEQUENCE</p></li>
+<li><p>TLN_ERR_REF_SEQPACK</p></li>
+<li><p>TLN_ERR_REF_BITMAP</p></li>
+<li><p>TLN_ERR_NULL_POINTER</p></li>
+<li><p>TLN_ERR_FILE_NOT_FOUND</p></li>
+<li><p>TLN_ERR_WRONG_FORMAT</p></li>
+<li><p>TLN_ERR_WRONG_SIZE</p></li>
+<li><p>TLN_ERR_UNSUPPORTED</p></li>
+<li><p>TLN_ERR_REF_LIST</p></li>
+<li><p>TLN_MAX_ERR</p></li>
+<li><p>TLN_LOG_NONE</p></li>
+<li><p>TLN_LOG_ERRORS</p></li>
+<li><p>TLN_LOG_VERBOSE</p></li>
+</ul>
+<p>Functions:</p>
+<ul class="simple">
+<li><p>TLN_Engine TLN_Init(int hres, int vres, int numlayers, int numsprites, int numanimations)</p></li>
+<li><p>void TLN_Deinit(void)</p></li>
+<li><p>bool TLN_DeleteContext(TLN_Engine context)</p></li>
+<li><p>bool TLN_SetContext(TLN_Engine context)</p></li>
+<li><p>TLN_Engine TLN_GetContext(void)</p></li>
+<li><p>int TLN_GetWidth(void)</p></li>
+<li><p>int TLN_GetHeight(void)</p></li>
+<li><p>uint32_t TLN_GetNumObjects(void)</p></li>
+<li><p>uint32_t TLN_GetUsedMemory(void)</p></li>
+<li><p>uint32_t TLN_GetVersion(void)</p></li>
+<li><p>int TLN_GetNumLayers(void)</p></li>
+<li><p>int TLN_GetNumSprites(void)</p></li>
+<li><p>void TLN_SetBGColor(uint8_t r, uint8_t g, uint8_t b)</p></li>
+<li><p>bool TLN_SetBGColorFromTilemap(TLN_Tilemap tilemap)</p></li>
+<li><p>void TLN_DisableBGColor(void)</p></li>
+<li><p>bool TLN_SetBGBitmap(TLN_Bitmap bitmap)</p></li>
+<li><p>bool TLN_SetBGPalette(TLN_Palette palette)</p></li>
+<li><p>void TLN_SetRenderTarget(uint8_t* data, int pitch)</p></li>
+<li><p>void TLN_UpdateFrame(int frame)</p></li>
+<li><p>void TLN_SetLoadPath(const char * path)</p></li>
+<li><p>void TLN_SetCustomBlendFunction(TLN_BlendFunction)</p></li>
+<li><p>void TLN_SetLogLevel(TLN_LogLevel log_level)</p></li>
+<li><p>bool TLN_OpenResourcePack(const char * filename, const char * key)</p></li>
+<li><p>void TLN_CloseResourcePack(void)</p></li>
+<li><p>void TLN_SetLastError(TLN_Error error)</p></li>
+<li><p>TLN_Error TLN_GetLastError(void)</p></li>
+<li><p>const char <a href="#id1"><span class="problematic" id="id2">*</span></a>TLN_GetErrorString(TLN_Error error)</p></li>
+<li><p>bool TLN_CreateWindow(const char * overlay, int flags)</p></li>
+<li><p>bool TLN_CreateWindowThread(const char * overlay, int flags)</p></li>
+<li><p>void TLN_SetWindowTitle(const char * title)</p></li>
+<li><p>bool TLN_ProcessWindow(void)</p></li>
+<li><p>bool TLN_IsWindowActive(void)</p></li>
+<li><p>bool TLN_GetInput(TLN_Input id)</p></li>
+<li><p>void TLN_EnableInput(TLN_Player player, bool enable)</p></li>
+<li><p>void TLN_AssignInputJoystick(TLN_Player player, int index)</p></li>
+<li><p>void TLN_DefineInputKey(TLN_Player player, TLN_Input input, uint32_t keycode)</p></li>
+<li><p>void TLN_DefineInputButton(TLN_Player player, TLN_Input input, uint8_t joybutton)</p></li>
+<li><p>void TLN_DrawFrame(int frame)</p></li>
+<li><p>void TLN_WaitRedraw(void)</p></li>
+<li><p>void TLN_DeleteWindow(void)</p></li>
+<li><p>void TLN_EnableBlur(bool mode)</p></li>
+<li><p>void TLN_EnableCRTEffect(TLN_Overlay overlay, uint8_t overlay_factor, uint8_t threshold, uint8_t v0, uint8_t v1, uint8_t v2, uint8_t v3, bool blur, uint8_t glow_factor)</p></li>
+<li><p>void TLN_DisableCRTEffect(void)</p></li>
+<li><p>void TLN_Delay(uint32_t msecs)</p></li>
+<li><p>uint32_t TLN_GetTicks(void)</p></li>
+<li><p>int TLN_GetWindowWidth(void)</p></li>
+<li><p>int TLN_GetWindowHeight(void)</p></li>
+<li><p>TLN_Spriteset TLN_CreateSpriteset(TLN_Bitmap bitmap, TLN_SpriteData* data, int num_entries)</p></li>
+<li><p>TLN_Spriteset TLN_LoadSpriteset(const char * name)</p></li>
+<li><p>TLN_Spriteset TLN_CloneSpriteset(TLN_Spriteset src)</p></li>
+<li><p>bool TLN_GetSpriteInfo(TLN_Spriteset spriteset, int entry, TLN_SpriteInfo* info)</p></li>
+<li><p>TLN_Palette TLN_GetSpritesetPalette(TLN_Spriteset spriteset)</p></li>
+<li><p>int TLN_FindSpritesetSprite(TLN_Spriteset spriteset, const char * name)</p></li>
+<li><p>bool TLN_SetSpritesetData(TLN_Spriteset spriteset, int entry, TLN_SpriteData* data, void* pixels, int pitch)</p></li>
+<li><p>bool TLN_DeleteSpriteset(TLN_Spriteset Spriteset)</p></li>
+<li><p>TLN_Tileset TLN_CreateTileset(int numtiles, int width, int height, TLN_Palette palette, TLN_SequencePack sp, TLN_TileAttributes* attributes)</p></li>
+<li><p>TLN_Tileset TLN_CreateImageTileset(int numtiles, TLN_TileImage* images)</p></li>
+<li><p>TLN_Tileset TLN_LoadTileset(const char * filename)</p></li>
+<li><p>TLN_Tileset TLN_CloneTileset(TLN_Tileset src)</p></li>
+<li><p>bool TLN_SetTilesetPixels(TLN_Tileset tileset, int entry, uint8_t* srcdata, int srcpitch)</p></li>
+<li><p>int TLN_GetTileWidth(TLN_Tileset tileset)</p></li>
+<li><p>int TLN_GetTileHeight(TLN_Tileset tileset)</p></li>
+<li><p>int TLN_GetTilesetNumTiles(TLN_Tileset tileset)</p></li>
+<li><p>TLN_Palette TLN_GetTilesetPalette(TLN_Tileset tileset)</p></li>
+<li><p>TLN_SequencePack TLN_GetTilesetSequencePack(TLN_Tileset tileset)</p></li>
+<li><p>bool TLN_DeleteTileset(TLN_Tileset tileset)</p></li>
+<li><p>TLN_Tilemap TLN_CreateTilemap(int rows, int cols, TLN_Tile tiles, uint32_t bgcolor, TLN_Tileset tileset)</p></li>
+<li><p>TLN_Tilemap TLN_LoadTilemap(const char * filename, const char * layername)</p></li>
+<li><p>TLN_Tilemap TLN_CloneTilemap(TLN_Tilemap src)</p></li>
+<li><p>int TLN_GetTilemapRows(TLN_Tilemap tilemap)</p></li>
+<li><p>int TLN_GetTilemapCols(TLN_Tilemap tilemap)</p></li>
+<li><p>TLN_Tileset TLN_GetTilemapTileset(TLN_Tilemap tilemap)</p></li>
+<li><p>bool TLN_GetTilemapTile(TLN_Tilemap tilemap, int row, int col, TLN_Tile tile)</p></li>
+<li><p>bool TLN_SetTilemapTile(TLN_Tilemap tilemap, int row, int col, TLN_Tile tile)</p></li>
+<li><p>bool TLN_CopyTiles(TLN_Tilemap src, int srcrow, int srccol, int rows, int cols, TLN_Tilemap dst, int dstrow, int dstcol)</p></li>
+<li><p>bool TLN_DeleteTilemap(TLN_Tilemap tilemap)</p></li>
+<li><p>TLN_Palette TLN_CreatePalette(int entries)</p></li>
+<li><p>TLN_Palette TLN_LoadPalette(const char * filename)</p></li>
+<li><p>TLN_Palette TLN_ClonePalette(TLN_Palette src)</p></li>
+<li><p>bool TLN_SetPaletteColor(TLN_Palette palette, int color, uint8_t r, uint8_t g, uint8_t b)</p></li>
+<li><p>bool TLN_MixPalettes(TLN_Palette src1, TLN_Palette src2, TLN_Palette dst, uint8_t factor)</p></li>
+<li><p>bool TLN_AddPaletteColor(TLN_Palette palette, uint8_t r, uint8_t g, uint8_t b, uint8_t start, uint8_t num)</p></li>
+<li><p>bool TLN_SubPaletteColor(TLN_Palette palette, uint8_t r, uint8_t g, uint8_t b, uint8_t start, uint8_t num)</p></li>
+<li><p>bool TLN_ModPaletteColor(TLN_Palette palette, uint8_t r, uint8_t g, uint8_t b, uint8_t start, uint8_t num)</p></li>
+<li><p>uint8_t* TLN_GetPaletteData(TLN_Palette palette, int index)</p></li>
+<li><p>bool TLN_DeletePalette(TLN_Palette palette)</p></li>
+<li><p>TLN_Bitmap TLN_CreateBitmap(int width, int height, int bpp)</p></li>
+<li><p>TLN_Bitmap TLN_LoadBitmap(const char * filename)</p></li>
+<li><p>TLN_Bitmap TLN_CloneBitmap(TLN_Bitmap src)</p></li>
+<li><p>uint8_t* TLN_GetBitmapPtr(TLN_Bitmap bitmap, int x, int y)</p></li>
+<li><p>int TLN_GetBitmapWidth(TLN_Bitmap bitmap)</p></li>
+<li><p>int TLN_GetBitmapHeight(TLN_Bitmap bitmap)</p></li>
+<li><p>int TLN_GetBitmapDepth(TLN_Bitmap bitmap)</p></li>
+<li><p>int TLN_GetBitmapPitch(TLN_Bitmap bitmap)</p></li>
+<li><p>TLN_Palette TLN_GetBitmapPalette(TLN_Bitmap bitmap)</p></li>
+<li><p>bool TLN_SetBitmapPalette(TLN_Bitmap bitmap, TLN_Palette palette)</p></li>
+<li><p>bool TLN_DeleteBitmap(TLN_Bitmap bitmap)</p></li>
+<li><p>TLN_ObjectList TLN_CreateObjectList(void)</p></li>
+<li><p>bool TLN_AddTileObjectToList(TLN_ObjectList list, uint16_t id, uint16_t gid, uint16_t flags, int x, int y)</p></li>
+<li><p>TLN_ObjectList TLN_LoadObjectList(const char * filename, const char * layername)</p></li>
+<li><p>TLN_ObjectList TLN_CloneObjectList(TLN_ObjectList src)</p></li>
+<li><p>int TLN_GetListNumObjects(TLN_ObjectList list)</p></li>
+<li><p>bool TLN_GetListObject(TLN_ObjectList list, TLN_ObjectInfo* info)</p></li>
+<li><p>bool TLN_DeleteObjectList(TLN_ObjectList list)</p></li>
+<li><p>bool TLN_SetLayer(int nlayer, TLN_Tileset tileset, TLN_Tilemap tilemap)</p></li>
+<li><p>bool TLN_SetLayerTilemap(int nlayer, TLN_Tilemap tilemap)</p></li>
+<li><p>bool TLN_SetLayerBitmap(int nlayer, TLN_Bitmap bitmap)</p></li>
+<li><p>bool TLN_SetLayerPalette(int nlayer, TLN_Palette palette)</p></li>
+<li><p>bool TLN_SetLayerPosition(int nlayer, int hstart, int vstart)</p></li>
+<li><p>bool TLN_SetLayerScaling(int nlayer, float xfactor, float yfactor)</p></li>
+<li><p>bool TLN_SetLayerAffineTransform(int nlayer, TLN_Affine <a href="#id3"><span class="problematic" id="id4">*</span></a>affine)</p></li>
+<li><p>bool TLN_SetLayerTransform(int layer, float angle, float dx, float dy, float sx, float sy)</p></li>
+<li><p>bool TLN_SetLayerPixelMapping(int nlayer, TLN_PixelMap* table)</p></li>
+<li><p>bool TLN_SetLayerBlendMode(int nlayer, TLN_Blend mode, uint8_t factor)</p></li>
+<li><p>bool TLN_SetLayerColumnOffset(int nlayer, int* offset)</p></li>
+<li><p>bool TLN_SetLayerClip(int nlayer, int x1, int y1, int x2, int y2)</p></li>
+<li><p>bool TLN_DisableLayerClip(int nlayer)</p></li>
+<li><p>bool TLN_SetLayerMosaic(int nlayer, int width, int height)</p></li>
+<li><p>bool TLN_DisableLayerMosaic(int nlayer)</p></li>
+<li><p>bool TLN_ResetLayerMode(int nlayer)</p></li>
+<li><p>bool TLN_SetLayerObjects(int nlayer, TLN_ObjectList objects, TLN_Tileset tileset)</p></li>
+<li><p>bool TLN_SetLayerPriority(int nlayer, bool enable)</p></li>
+<li><p>bool TLN_SetLayerParent(int nlayer, int parent)</p></li>
+<li><p>bool TLN_DisableLayerParent(int nlayer)</p></li>
+<li><p>bool TLN_DisableLayer(int nlayer)</p></li>
+<li><p>TLN_Palette TLN_GetLayerPalette(int nlayer)</p></li>
+<li><p>bool TLN_GetLayerTile(int nlayer, int x, int y, TLN_TileInfo* info)</p></li>
+<li><p>int  TLN_GetLayerWidth(int nlayer)</p></li>
+<li><p>int  TLN_GetLayerHeight(int nlayer)</p></li>
+<li><p>bool TLN_ConfigSprite(int nsprite, TLN_Spriteset spriteset, uint32_t flags)</p></li>
+<li><p>bool TLN_SetSpriteSet(int nsprite, TLN_Spriteset spriteset)</p></li>
+<li><p>bool TLN_SetSpriteFlags(int nsprite, uint32_t flags)</p></li>
+<li><p>bool TLN_EnableSpriteFlag(int nsprite, uint32_t flag, bool enable)</p></li>
+<li><p>bool TLN_SetSpritePosition(int nsprite, int x, int y)</p></li>
+<li><p>bool TLN_SetSpritePicture(int nsprite, int entry)</p></li>
+<li><p>bool TLN_SetSpritePalette(int nsprite, TLN_Palette palette)</p></li>
+<li><p>bool TLN_SetSpriteBlendMode(int nsprite, TLN_Blend mode, uint8_t factor)</p></li>
+<li><p>bool TLN_SetSpriteScaling(int nsprite, float sx, float sy)</p></li>
+<li><p>bool TLN_ResetSpriteScaling(int nsprite)</p></li>
+<li><p>int  TLN_GetSpritePicture(int nsprite)</p></li>
+<li><p>int  TLN_GetAvailableSprite(void)</p></li>
+<li><p>bool TLN_EnableSpriteCollision(int nsprite, bool enable)</p></li>
+<li><p>bool TLN_GetSpriteCollision(int nsprite)</p></li>
+<li><p>bool TLN_GetSpriteState(int nsprite, TLN_SpriteState* state)</p></li>
+<li><p>bool TLN_SetFirstSprite(int nsprite)</p></li>
+<li><p>bool TLN_SetNextSprite(int nsprite, int next)</p></li>
+<li><p>bool TLN_EnableSpriteMasking(int nsprite, bool enable)</p></li>
+<li><p>void TLN_SetSpritesMaskRegion(int top_line, int bottom_line)</p></li>
+<li><p>bool TLN_SetSpriteAnimation(int nsprite, TLN_Sequence sequence, int loop)</p></li>
+<li><p>bool TLN_DisableSpriteAnimation(int nsprite)</p></li>
+<li><p>bool TLN_DisableSprite(int nsprite)</p></li>
+<li><p>TLN_Palette TLN_GetSpritePalette(int nsprite)</p></li>
+<li><p>TLN_Sequence TLN_CreateSequence(const char * name, int target, int num_frames, TLN_SequenceFrame* frames)</p></li>
+<li><p>TLN_Sequence TLN_CreateCycle(const char * name, int num_strips, TLN_ColorStrip* strips)</p></li>
+<li><p>TLN_Sequence TLN_CreateSpriteSequence(const char * name, TLN_Spriteset spriteset, const char * basename, int delay)</p></li>
+<li><p>TLN_Sequence TLN_CloneSequence(TLN_Sequence src)</p></li>
+<li><p>bool TLN_GetSequenceInfo(TLN_Sequence sequence, TLN_SequenceInfo* info)</p></li>
+<li><p>bool TLN_DeleteSequence(TLN_Sequence sequence)</p></li>
+<li><p>TLN_SequencePack TLN_CreateSequencePack(void)</p></li>
+<li><p>TLN_SequencePack TLN_LoadSequencePack(const char * filename)</p></li>
+<li><p>TLN_Sequence TLN_GetSequence(TLN_SequencePack sp, int index)</p></li>
+<li><p>TLN_Sequence TLN_FindSequence(TLN_SequencePack sp, const char * name)</p></li>
+<li><p>int TLN_GetSequencePackCount(TLN_SequencePack sp)</p></li>
+<li><p>bool TLN_AddSequenceToPack(TLN_SequencePack sp, TLN_Sequence sequence)</p></li>
+<li><p>bool TLN_DeleteSequencePack(TLN_SequencePack sp)</p></li>
+<li><p>bool TLN_SetPaletteAnimation(int index, TLN_Palette palette, TLN_Sequence sequence, bool blend)</p></li>
+<li><p>bool TLN_SetPaletteAnimationSource(int index, TLN_Palette)</p></li>
+<li><p>bool TLN_GetAnimationState(int index)</p></li>
+<li><p>bool TLN_SetAnimationDelay(int index, int frame, int delay)</p></li>
+<li><p>int  TLN_GetAvailableAnimation(void)</p></li>
+<li><p>bool TLN_DisablePaletteAnimation(int index)</p></li>
+<li><p>void TLN_SetRasterCallback(const char <a href="#id5"><span class="problematic" id="id6">*</span></a>cCode)</p></li>
+<li><p>void TLN_SetFrameCallback(const char <a href="#id7"><span class="problematic" id="id8">*</span></a>cCode)</p></li>
+<li><p>void TLN_SetSDLCallback(const char <a href="#id9"><span class="problematic" id="id10">*</span></a>cCode)</p></li>
+<li><p>int TLN_GetScanLine(void)</p></li>
+<li><p>SDL_Event <a href="#id11"><span class="problematic" id="id12">*</span></a>TLN_GetSDLEvent(void)</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="performancetips.html" class="btn btn-neutral float-right" title="Performance Tips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="goldmagic800.html" class="btn btn-neutral float-left" title="The Gold Magic 800 Game" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2022, Ring Team
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

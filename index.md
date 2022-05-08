@@ -24,6 +24,8 @@ The embedded extensions are:
 A Ring script that runs under MonoRing can be compiled as a native Windows applications that has no extra runtime dependency and so it can be deployed easily.
 
 For details about the Ring programming language: [https://github.com/ring-lang/ring](https://github.com/ring-lang/ring)
+
+The documentation for the latest Ring development branch used by MonoRing can be found at [https://idrassi.github.io/MonoRing/doc1.17](https://idrassi.github.io/MonoRing/doc1.17)
 			
 # Building from source code
 

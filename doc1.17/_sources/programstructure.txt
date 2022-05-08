@@ -1,0 +1,162 @@
+.. index:: 
+	single: Program Structure;  Introduction
+
+=================
+Program Structure
+=================
+In this chapter we will learn about using many source code files in the same project.
+
+
+.. index:: 
+	pair: Program Structure;  Source Code File Sections
+
+Source Code File Sections
+=========================
+
+Each source code file may contains the next sections (in the same order).
+
++--------------------------------+
+| Source Code File Sections	 |
++================================+
+| Load Files			 |
++--------------------------------+
+| Statements and Global Variables|
++--------------------------------+
+| Functions 			 |
++--------------------------------+
+| Packages and Classes		 |
++--------------------------------+
+
+The application maybe one or more of files.
+
+.. index:: 
+	pair: Program Structure;  Using Many Source Code Files
+
+Using Many Source Code Files
+============================
+
+To include another source file in the project, just use the load command.
+
+
+Syntax:
+
+.. code-block:: ring
+
+	Load  "filename.ring"
+
+.. note:: The Load command is executed directly by the compiler in the parsing stage
+
+.. tip:: if you don't know the file name until the runtime, or you need to use functions to get the file path, just use eval().
+
+Example:
+
+.. code-block:: ring
+
+	# File : Start.ring
+
+	Load "sub.ring"
+
+	sayhello("Mahmoud")
+
+.. code-block:: ring
+
+	# File : sub.ring
+
+	func sayhello cName
+		see "Hello " + cName + nl
+
+
+.. index:: 
+	pair: Program Structure;  Load Package
+
+Load Package
+============
+
+Using the 'load' command we can use many ring source files in the same project
+
+But all of these files will share the same global scope 
+
+We have also the "Load Package" command
+
+Using "Load Package" we can load a library (*.ring file) in new global scope
+
+This is very useful to create libraries that avoid conflicts in global variables
+
+Example:
+
+File: loadpackage.ring
+
+.. code-block:: ring
+
+	x = 100
+	? "Hello, World!"
+	load package "testloadpackage.ring"
+
+	? x
+	test()
+
+File: testloadpackage.ring
+
+.. code-block:: ring
+
+	? "Hello from testloadpackage.ring"
+
+	x = 1000
+
+	test()
+
+	func test
+		? x
+
+Output:
+
+.. code-block:: none
+
+	Hello, World!
+	Hello from testloadpackage.ring
+	1000
+	100
+	1000
+
+.. index:: 
+	pair: Program Structure;  Load Again
+
+Load Again
+==========
+
+Ring 1.12 comes with the Load Again command
+
+Using this command we can load the Ring source file which contains constants more than one time.
+
+This is useful when using Ring source files for translations through global constants.
+
+Example:
+
+The next function is part from a project which support Arabic and English languages
+
+The files english.ring and arabic.ring contains constants for translation
+
+One of these files is loaded in the start of the program
+
+Loading the same file again using the (Load) command is not possible
+
+Because the (Load) command load the same source file only for the first time and ignore next times.
+
+So we have to use the (Load Again) command.
+
+Where we can use these files again during the runtime as in the next code
+
+.. code-block:: ring
+
+	func setLang nLanguage
+		if C_ENV_DEFAULT_LANG = nLanguage
+			return
+		ok
+		C_ENV_DEFAULT_LANG = nLanguage
+		# Change the language
+			switch nLanguage 
+				on C_TRANSLATION_ENGLISH
+					load again "translation/english.ring"
+				on C_TRANSLATION_ARABIC 
+					load again "translation/arabic.ring"
+			off

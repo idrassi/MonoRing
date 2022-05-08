@@ -1,0 +1,211 @@
+.. index:: 
+	single: What is new in Ring 1.10?; Introduction
+
+=========================
+What is new in Ring 1.10?
+=========================
+
+In this chapter we will learn about the changes and new features in Ring 1.10 release.
+
+.. index:: 
+	pair: What is new in Ring 1.10?; List of changes and new features
+
+List of changes and new features
+================================
+
+Ring 1.10 comes with the next features!
+
+* Chess Game
+* Minesweeper Game
+* Knight Tour Game
+* Game of Life Game
+* Pong Game
+* Snakes and Ladder Game
+* More Games
+* Ring Extension for Visual Studio Code
+* The Ring Package Manager (RingPM)
+* Better Tests
+* More Improvements
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Chess Game
+
+Chess Game
+==========
+
+Chess Game (2 Players)
+
+.. image:: chessgame.png
+	:width: 400pt
+	:height: 300pt
+	:alt: Chess Game
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Minesweeper Game
+
+Minesweeper Game
+================
+
+The objective of the game is to clear a rectangular board containing hidden "mines" or bombs without detonating any of them.
+
+.. image:: minesweeper.png
+	:width: 400pt
+	:height: 300pt
+	:alt: Minesweeper Game
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Knight Tour Game
+
+Knight Tour Game
+================
+
+Move to every square on the chess board, using only the moves of a knight.
+
+Can you visit every square in just 63 moves? 
+
+.. image:: knighttour.png
+	:width: 400pt
+	:height: 300pt
+	:alt: Knight Tour Game
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Game of Life Game
+
+Game of Life Game
+=================
+
+The game is a zero-player game, meaning that its evolution is determined by its initial state, 
+requiring no further input. 
+
+One interacts with the Game of Life by creating an initial configuration and observing how it evolves, 
+or, for advanced players, by creating patterns with particular properties.
+
+.. image:: gameoflife.jpg
+	:width: 400pt
+	:height: 300pt
+	:alt: Game of Life Game
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Pong Game
+
+Pong Game
+=========
+
+Simple "tennis like" game features two paddles and a ball.
+
+The goal is to defeat your opponent once the opponent misses a ball.
+
+.. image:: ponggame.png
+	:width: 400pt
+	:height: 300pt
+	:alt: Pong Game
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Snakes And Ladder Game
+
+Snakes And Ladder Game
+======================
+
+The Snakes and Ladder Game using Ring Game Engine for 2D Games
+
+.. image:: snakesgame.png
+	:width: 400pt
+	:height: 300pt
+	:alt: Snakes Game
+
+.. index:: 
+	pair: What is new in Ring 1.10?; More Games
+
+More Games
+==========
+
+The next games are added to the application folder
+
+* Lights Out Game
+* Dots and Boxes Game
+* Magic Four Game
+* Sum Puzzle Game
+
+The next screen shot for the Sum Puzzle Game
+
+.. image:: sumpuzzle.png
+	:width: 400pt
+	:height: 300pt
+	:alt: Sum Puzzle Game
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Ring Extension for Visual Studio Code
+
+Ring Extension for Visual Studio Code
+=====================================
+
+This extension support the Ring programming language in Visual Studio Code
+
+.. image:: ringinvscode.png
+	:width: 500pt
+	:height: 300pt
+	:alt: Ring in Visual Studio Code
+
+.. index:: 
+	pair: What is new in Ring 1.10?; The Ring Package Manager (RingPM)
+
+The Ring Package Manager (RingPM)
+=================================
+
+Ring comes with a package manager (RingPM) that we can use to install, update and remove packages.
+
+The Package Manager uses Semantic Versioning to check compatibility between packages 
+
+The Package Manager comes with the next options
+
+.. code-block:: none
+
+	===========================================================================
+	Usage   : ringpm [command]
+	Command : search  [keywords...]
+	Command : refresh : Update the Registry (Packages List)
+	Command : install [ <packagename> [from <UserName>] [branch <branchname>] ]
+	Command : list    [-u : Check updates]
+	Command : run     [packagename]
+	Command : update  <packagename>
+	Command : remove  <packagename>
+	Command : format  : Delete All Packages
+	Command : new     <packagename>
+	Command : package : Create package in the current folder
+	===========================================================================
+
+.. index:: 
+	pair: What is new in Ring 1.10?; Better Tests
+
+Better Tests
+============
+
+New framework for Ring programming language tests that test the language.
+
+.. image:: tests_shot.png
+	:width: 500pt
+	:height: 300pt
+	:alt: Tests
+
+
+.. index:: 
+	pair: What is new in Ring 1.10?; More Improvements
+
+More Improvements
+=================
+
+(1)  Ring Compiler : Better support for (Operator Operator) to avoid checking the first operator when it's a literal.
+(2)  Ring Compiler : When we load a file that doesn't exist, display the caller file name in the error message.
+(3)  Ring Compiler : Support source code files with one line of comment without end of line.
+(4)  Ring Compiler : change nNoAssignment attribute in Parser Structure to nNewObject.
+(5)  Ring VM : Better support for the (Return) command inside braces that access new objects.
+(6)  Ring VM : Dir() Function - Don't add "." and ".." to the output
+(7)  Ring VM : Dir() Function - Correct output for the item type (file|directory) on Linux and macOS.
+(8)  Ring VM : ICO_LISTSTART - Clean pVM->aSetProperty when setting an object attribute.
+(9)  Ring VM : ICO_NEWOBJECT - Clean pVM->aSetProperty when setting an object attribute.
+(10) Ring VM : Better code for Setter and Getter methods support.
+(11) Ring2EXE: The libraries information are stored in separated files in ring/ring2exe/libs folder.
+(12) WebLib  : Separate the library to many source code files.
+(13) StdLib  : IsVowel() function - Better Code.
+(14) RingQt  : Count(), Left(), Mid() and Right() methods are added to QString class.
+(15) Better Read Me File 

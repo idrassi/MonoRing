@@ -1,0 +1,251 @@
+.. index:: 
+	single: Getting Started - Third Style; Introduction
+
+==============================
+Getting Started - Third Style
+==============================
+
+.. index:: 
+	pair: Getting Started - Third Style; Hello World
+
+Hello World
+===========
+
+The next program prints the Hello World message on the screen (std-out).
+
+.. code-block:: ring
+
+	print("Hello, World!\n")
+
+.. index:: 
+	pair: Getting Started - Third Style; Run the program
+
+Run the program
+===============
+
+to run the program, save the code in a file, for example : hello.ring
+then from the command line or terminal, run it using Ring
+
+.. code-block:: ring
+
+	ring hello.ring
+
+.. index:: 
+	pair: Getting Started - Third Style; Create Executable File
+
+Create Executable File
+======================
+
+Using Ring2EXE we can create executable file for our application
+
+.. code-block:: ring
+
+	ring2exe hello.ring -static
+
+The -static option will avoid the need to ring.dll|ring.so|ring.dylib
+
+.. code-block:: ring
+
+	ring2exe hello.ring -dist -allruntime -noqt -noallegro
+
+.. index:: 
+	pair: Getting Started - Third Style; Not Case-Sensitive
+
+Not Case-Sensitive
+==================
+
+Since the Ring language is not case-sensitive, the same program can
+be written in different styles
+
+.. tip:: It's better to select one style and use it in all of the program source code
+
+.. code-block:: ring
+
+	PRINT("Hello World")
+
+.. code-block:: ring
+
+	Print("Hello World")
+
+
+.. index:: 
+	pair: Getting Started - Third Style; Multi-Line literals
+
+Multi-Line literals
+===================
+
+Using Ring we can write multi-line literal, see the next example
+
+.. code-block:: ring
+
+	Print("
+		Hello 
+		Welcome to the Ring programming language
+		How are you?
+
+	    ")
+
+Also you can use the \\n to insert new line
+and you can use #{variable_name} to insert variables values.
+
+
+.. code-block:: ring
+
+	Print( "Hello\nWelcome to the Ring programming language\nHow are you?")
+
+.. index:: 
+	pair: Getting Started - Third Style; Getting Input
+
+Getting Input
+=============
+
+You can get the input from the user using the getstring() function
+
+.. code-block:: ring
+
+	Print("What is your name? ")
+	cName = GetString()
+	Print("Hello #{cName}")
+
+.. index:: 
+	pair: Getting Started - Third Style; No Explicit End For Statements
+
+No Explicit End For Statements
+==============================
+
+You don't need to use ';' or press ENTER to separate statements.
+The previous program can be written in one line.
+
+.. code-block:: ring
+
+	Print("What is your name? ") cName=getstring() print("Hello #{cName}")
+
+.. index:: 
+	pair: Getting Started - Third Style; Writing Comments
+
+Writing Comments
+================
+
+We can write one line comments and multi-line comments
+
+The comment starts with # or //
+
+Multi-lines comments are written between /* and */
+
+.. code-block:: ring
+
+
+	/* 
+		Program Name : My first program using Ring
+		Date         : 2016.09.09
+		Author       : Mahmoud Fayed
+	*/
+
+	Print("What is your name? ") 	# print message on screen
+	cName=GetString()		# get input from the user
+	print("Hello #{cName}")		# say hello!
+
+	// print("Bye!")
+
+.. note:: Using // to comment a lines of code is just a code style.
+
+.. index:: 
+	pair: Stdlib Functions; puts()
+
+Puts() function
+===============
+
+print the value then print new line (nl)
+
+Syntax:
+
+.. code-block:: ring
+
+	puts(expr)
+
+Example:
+
+.. code-block:: ring
+
+	Puts("Hello, World!")
+
+.. index:: 
+	pair: Getting Started - Third Style; print()
+
+Print() function
+=================
+
+print string - support \\n,\\t and \\r
+
+Also we can use #{variable_name} to insert variables values.
+
+Syntax:
+
+.. code-block:: ring
+
+	print(string) ---> String
+
+Example:
+
+.. code-block:: ring
+
+	print("\nHello, World\n\nHow are you? \t\t I'm fine!\n")
+	x=10 y=20
+	print("\nx value = #{x} , y value = #{y} \n")
+
+
+.. index:: 
+	pair: Getting Started - Third Style; Print2Str() Function
+
+Print2Str() Function
+====================
+
+Syntax:
+
+.. code-block:: ring
+
+	print2Str(string) ---> String
+
+
+Example:
+
+.. code-block:: ring
+
+	world = "World!"
+	mystring = print2str("Hello, #{world} \nIn Year \n#{2000+17} \n")
+
+	see mystring + nl
+
+Output:
+
+.. code-block:: ring
+
+	Hello, World!
+	In Year
+	2017
+
+
+.. index:: 
+	pair: Getting Started - Third Style; getstring()
+
+GetString() function
+====================
+
+Get input from the keyboard - return value as string
+
+.. code-block:: ring
+
+	getstring() ---> string
+
+
+.. index:: 
+	pair: Getting Started - Third Style; getnumber()
+
+GetNumber() function
+====================
+
+Get input from the keyboard - return value as number
+
+.. code-block:: ring
+
+	getnumber() ---> number
