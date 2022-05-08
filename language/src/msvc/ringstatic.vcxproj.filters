@@ -1,0 +1,449 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\cjson_extension">
+      <UniqueIdentifier>{64c6fea1-a9e0-4016-bd35-08a884dd4925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\consolecolors_extension">
+      <UniqueIdentifier>{26a3ade8-1381-4532-86fd-57a33720aaec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\httplib_extension">
+      <UniqueIdentifier>{dbadd3d5-992b-4604-a017-0810dfa94707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libzip_extension">
+      <UniqueIdentifier>{7726d951-a4b4-4659-b365-709166b62070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\murmurhash_extension">
+      <UniqueIdentifier>{2087a788-17c2-4230-958c-64dc3a86ae56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\wincreg_extension">
+      <UniqueIdentifier>{950c716d-fd21-4f01-832e-44cc6d6cb7a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\winapi_extension">
+      <UniqueIdentifier>{1f3074db-3e64-4afe-8d54-0e8a436026f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\threads_extension">
+      <UniqueIdentifier>{5fb02a91-bcd7-41c9-8606-52d8c72947e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\stbimage_extension">
+      <UniqueIdentifier>{e6b269e8-2bd0-4049-b6b7-21980ef9ff09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sqlite_extension">
+      <UniqueIdentifier>{9ecc3134-6325-44c7-9d2a-7fc048d92ebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\sockets_extension">
+      <UniqueIdentifier>{fcfefc3c-bbda-4625-a90d-c3128a724ca8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\openssl_extension">
+      <UniqueIdentifier>{8677fd6e-8cc7-457f-bc6d-0ab7b762dbb3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\ring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_api.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_cjson_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_codegen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_consolecolors_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_dll_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_ext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_file_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_general.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_generallib_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_hashlib.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_hashtable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_httplib_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_internet_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_item.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_items.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_libcurl_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_libui_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_libuv_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_libzip_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_list.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_list_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_math_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_murmurhash_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_objfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_odbc_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_openssl_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_os_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_pooldata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_refmeta_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_scanner.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_sockets_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_sqlite_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_state.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_stbimage_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_string.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_threads_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_vm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_vmgc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_vmgcdata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_winapi_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_wincreg_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cjson_extension\cJSON.h">
+      <Filter>Source Files\cjson_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\cjson_extension\cJSON_Utils.h">
+      <Filter>Source Files\cjson_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\consolecolors_extension\console-colors.h">
+      <Filter>Source Files\consolecolors_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\httplib_extension\httplib.h">
+      <Filter>Source Files\httplib_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libzip_extension\miniz.h">
+      <Filter>Source Files\libzip_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libzip_extension\zip.h">
+      <Filter>Source Files\libzip_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\murmurhash_extension\MurmurHash1.h">
+      <Filter>Source Files\murmurhash_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\murmurhash_extension\MurmurHash2.h">
+      <Filter>Source Files\murmurhash_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\murmurhash_extension\MurmurHash3.h">
+      <Filter>Source Files\murmurhash_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wincreg_extension\creg_regentry.h">
+      <Filter>Source Files\wincreg_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wincreg_extension\creg_registry.h">
+      <Filter>Source Files\wincreg_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\threads_extension\tinycthread.h">
+      <Filter>Source Files\threads_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stbimage_extension\stb_image.h">
+      <Filter>Source Files\stbimage_extension</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sqlite_extension\sqlite3.h">
+      <Filter>Source Files\sqlite_extension</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\cjson_extension\cJSON.c">
+      <Filter>Source Files\cjson_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\cjson_extension\cJSON_Utils.c">
+      <Filter>Source Files\cjson_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\consolecolors_extension\console-colors.c">
+      <Filter>Source Files\consolecolors_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libzip_extension\zip.c">
+      <Filter>Source Files\libzip_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\murmurhash_extension\MurmurHash1.c">
+      <Filter>Source Files\murmurhash_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\murmurhash_extension\MurmurHash2.c">
+      <Filter>Source Files\murmurhash_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\murmurhash_extension\MurmurHash3.c">
+      <Filter>Source Files\murmurhash_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wincreg_extension\creg_registry.cpp">
+      <Filter>Source Files\wincreg_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\threads_extension\tinycthread.c">
+      <Filter>Source Files\threads_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sqlite_extension\sqlite3.c">
+      <Filter>Source Files\sqlite_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sockets_extension\constants.c">
+      <Filter>Source Files\sockets_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\openssl_extension\encrypt_v1.c">
+      <Filter>Source Files\openssl_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\openssl_extension\encrypt_v2.c">
+      <Filter>Source Files\openssl_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\openssl_extension\openssl_rsa.c">
+      <Filter>Source Files\openssl_extension</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_api.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_cjson_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_codegen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_consolecolors_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_dll_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_expr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_ext.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_file_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_general.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_generallib_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_hashlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_hashtable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_httplib_extension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_internet_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_item.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_items.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_libcurl_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_libui_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_libuv_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_libzip_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_list.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_list_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_math_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_murmurhash_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_objfile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_odbc_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_openssl_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_os_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_parser.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_refmeta_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_scanner.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_sockets_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_sqlite_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_state.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_stbimage_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_stmt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_string.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_test.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_threads_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmcui.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmduprange.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmexit.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmexpr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmfuncs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmgc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmjump.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmlists.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmoop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmperformance.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmstackvars.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmstate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmstrindex.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmtrycatch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_vmvars.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_winapi_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_wincreg_extension.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\winapi_extension\Documentation.txt">
+      <Filter>Source Files\winapi_extension</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

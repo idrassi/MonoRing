@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{21f6dfde-b7a8-44bd-8b47-835dc5898b5b}</ProjectGuid>
+    <RootNamespace>ringdll</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)..\..\..\lib\</OutDir>
+    <TargetName>ring</TargetName>
+    <IntDir>$(Configuration)_$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)..\..\..\lib\</OutDir>
+    <TargetName>ring</TargetName>
+    <IntDir>$(Configuration)_$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(ProjectDir)..\..\..\lib\</OutDir>
+    <TargetName>ring</TargetName>
+    <IntDir>$(Platform)\$(Configuration)_$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(ProjectDir)..\..\..\lib\</OutDir>
+    <TargetName>ring</TargetName>
+    <IntDir>$(Platform)\$(Configuration)_$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x86\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x86\include;$(ProjectDir)..\..\..\libdepwin\libuv\x86\include;$(ProjectDir)..\..\..\libdepwin\libui\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libdepwin\openssl\x86\lib;$(ProjectDir)..\..\..\libdepwin\libcurl\x86\lib;$(ProjectDir)..\..\..\libdepwin\libuv\x86\lib;$(ProjectDir)..\..\..\libdepwin\libui\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;libui.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) $(ProjectDir)..\..\..\bin</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x86\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x86\include;$(ProjectDir)..\..\..\libdepwin\libuv\x86\include;$(ProjectDir)..\..\..\libdepwin\libui\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libdepwin\openssl\x86\lib;$(ProjectDir)..\..\..\libdepwin\libcurl\x86\lib;$(ProjectDir)..\..\..\libdepwin\libuv\x86\lib;$(ProjectDir)..\..\..\libdepwin\libui\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libcrypto.lib;libui.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) $(ProjectDir)..\..\..\bin
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x64\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x64\include;$(ProjectDir)..\..\..\libdepwin\libuv\x64\include;$(ProjectDir)..\..\..\libdepwin\libui\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libcrypto.lib;libui.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libdepwin\openssl\x64\lib;$(ProjectDir)..\..\..\libdepwin\libcurl\x64\lib;$(ProjectDir)..\..\..\libdepwin\libuv\x64\lib;$(ProjectDir)..\..\..\libdepwin\libui\x64;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) $(ProjectDir)..\..\..\bin</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x64\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x64\include;$(ProjectDir)..\..\..\libdepwin\libuv\x64\include;$(ProjectDir)..\..\..\libdepwin\libui\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DebugInformationFormat>None</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>libcrypto.lib;libui.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libdepwin\openssl\x64\lib;$(ProjectDir)..\..\..\libdepwin\libcurl\x64\lib;$(ProjectDir)..\..\..\libdepwin\libuv\x64\lib;$(ProjectDir)..\..\..\libdepwin\libui\x64;</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy $(TargetPath) $(ProjectDir)..\..\..\bin
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\cjson_extension\cJSON.c" />
+    <ClCompile Include="..\cjson_extension\cJSON_Utils.c" />
+    <ClCompile Include="..\consolecolors_extension\console-colors.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\libzip_extension\zip.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\murmurhash_extension\MurmurHash1.c" />
+    <ClCompile Include="..\murmurhash_extension\MurmurHash2.c" />
+    <ClCompile Include="..\murmurhash_extension\MurmurHash3.c" />
+    <ClCompile Include="..\openssl_extension\encrypt_v1.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\openssl_extension\encrypt_v2.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\openssl_extension\openssl_rsa.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\ring_api.c" />
+    <ClCompile Include="..\ring_cjson_extension.c" />
+    <ClCompile Include="..\ring_codegen.c" />
+    <ClCompile Include="..\ring_consolecolors_extension.c" />
+    <ClCompile Include="..\ring_dll_extension.c" />
+    <ClCompile Include="..\ring_expr.c" />
+    <ClCompile Include="..\ring_ext.c" />
+    <ClCompile Include="..\ring_file_extension.c" />
+    <ClCompile Include="..\ring_general.c" />
+    <ClCompile Include="..\ring_generallib_extension.c" />
+    <ClCompile Include="..\ring_hashlib.c" />
+    <ClCompile Include="..\ring_hashtable.c" />
+    <ClCompile Include="..\ring_httplib_extension.cpp" />
+    <ClCompile Include="..\ring_internet_extension.c" />
+    <ClCompile Include="..\ring_item.c" />
+    <ClCompile Include="..\ring_items.c" />
+    <ClCompile Include="..\ring_libcurl_extension.c" />
+    <ClCompile Include="..\ring_libui_extension.c" />
+    <ClCompile Include="..\ring_libuv_extension.c" />
+    <ClCompile Include="..\ring_libzip_extension.c" />
+    <ClCompile Include="..\ring_list.c" />
+    <ClCompile Include="..\ring_list_extension.c" />
+    <ClCompile Include="..\ring_math_extension.c" />
+    <ClCompile Include="..\ring_murmurhash_extension.c" />
+    <ClCompile Include="..\ring_objfile.c" />
+    <ClCompile Include="..\ring_odbc_extension.c" />
+    <ClCompile Include="..\ring_openssl_extension.c" />
+    <ClCompile Include="..\ring_os_extension.c" />
+    <ClCompile Include="..\ring_parser.c" />
+    <ClCompile Include="..\ring_refmeta_extension.c" />
+    <ClCompile Include="..\ring_scanner.c" />
+    <ClCompile Include="..\ring_sockets_extension.c" />
+    <ClCompile Include="..\ring_sqlite_extension.c" />
+    <ClCompile Include="..\ring_state.c" />
+    <ClCompile Include="..\ring_stbimage_extension.c" />
+    <ClCompile Include="..\ring_stmt.c" />
+    <ClCompile Include="..\ring_string.c" />
+    <ClCompile Include="..\ring_test.c" />
+    <ClCompile Include="..\ring_threads_extension.c" />
+    <ClCompile Include="..\ring_vm.c" />
+    <ClCompile Include="..\ring_vmcui.c" />
+    <ClCompile Include="..\ring_vmduprange.c" />
+    <ClCompile Include="..\ring_vmexit.c" />
+    <ClCompile Include="..\ring_vmexpr.c" />
+    <ClCompile Include="..\ring_vmfuncs.c" />
+    <ClCompile Include="..\ring_vmgc.c" />
+    <ClCompile Include="..\ring_vmjump.c" />
+    <ClCompile Include="..\ring_vmlists.c" />
+    <ClCompile Include="..\ring_vmoop.c" />
+    <ClCompile Include="..\ring_vmperformance.c" />
+    <ClCompile Include="..\ring_vmstackvars.c" />
+    <ClCompile Include="..\ring_vmstate.c" />
+    <ClCompile Include="..\ring_vmstrindex.c" />
+    <ClCompile Include="..\ring_vmtrycatch.c" />
+    <ClCompile Include="..\ring_vmvars.c" />
+    <ClCompile Include="..\ring_winapi_extension.c" />
+    <ClCompile Include="..\ring_wincreg_extension.cpp" />
+    <ClCompile Include="..\sockets_extension\constants.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\sqlite_extension\sqlite3.c" />
+    <ClCompile Include="..\threads_extension\tinycthread.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\wincreg_extension\creg_registry.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\ring.h" />
+    <ClInclude Include="..\..\include\ring_api.h" />
+    <ClInclude Include="..\..\include\ring_cjson_extension.h" />
+    <ClInclude Include="..\..\include\ring_codegen.h" />
+    <ClInclude Include="..\..\include\ring_consolecolors_extension.h" />
+    <ClInclude Include="..\..\include\ring_dll_extension.h" />
+    <ClInclude Include="..\..\include\ring_ext.h" />
+    <ClInclude Include="..\..\include\ring_file_extension.h" />
+    <ClInclude Include="..\..\include\ring_general.h" />
+    <ClInclude Include="..\..\include\ring_generallib_extension.h" />
+    <ClInclude Include="..\..\include\ring_hashlib.h" />
+    <ClInclude Include="..\..\include\ring_hashtable.h" />
+    <ClInclude Include="..\..\include\ring_httplib_extension.h" />
+    <ClInclude Include="..\..\include\ring_internet_extension.h" />
+    <ClInclude Include="..\..\include\ring_item.h" />
+    <ClInclude Include="..\..\include\ring_items.h" />
+    <ClInclude Include="..\..\include\ring_libcurl_extension.h" />
+    <ClInclude Include="..\..\include\ring_libui_extension.h" />
+    <ClInclude Include="..\..\include\ring_libuv_extension.h" />
+    <ClInclude Include="..\..\include\ring_libzip_extension.h" />
+    <ClInclude Include="..\..\include\ring_list.h" />
+    <ClInclude Include="..\..\include\ring_list_extension.h" />
+    <ClInclude Include="..\..\include\ring_math_extension.h" />
+    <ClInclude Include="..\..\include\ring_murmurhash_extension.h" />
+    <ClInclude Include="..\..\include\ring_objfile.h" />
+    <ClInclude Include="..\..\include\ring_odbc_extension.h" />
+    <ClInclude Include="..\..\include\ring_openssl_extension.h" />
+    <ClInclude Include="..\..\include\ring_os_extension.h" />
+    <ClInclude Include="..\..\include\ring_parser.h" />
+    <ClInclude Include="..\..\include\ring_pooldata.h" />
+    <ClInclude Include="..\..\include\ring_refmeta_extension.h" />
+    <ClInclude Include="..\..\include\ring_scanner.h" />
+    <ClInclude Include="..\..\include\ring_sockets_extension.h" />
+    <ClInclude Include="..\..\include\ring_sqlite_extension.h" />
+    <ClInclude Include="..\..\include\ring_state.h" />
+    <ClInclude Include="..\..\include\ring_stbimage_extension.h" />
+    <ClInclude Include="..\..\include\ring_string.h" />
+    <ClInclude Include="..\..\include\ring_test.h" />
+    <ClInclude Include="..\..\include\ring_threads_extension.h" />
+    <ClInclude Include="..\..\include\ring_vm.h" />
+    <ClInclude Include="..\..\include\ring_vmgc.h" />
+    <ClInclude Include="..\..\include\ring_vmgcdata.h" />
+    <ClInclude Include="..\..\include\ring_winapi_extension.h" />
+    <ClInclude Include="..\..\include\ring_wincreg_extension.h" />
+    <ClInclude Include="..\cjson_extension\cJSON.h" />
+    <ClInclude Include="..\cjson_extension\cJSON_Utils.h" />
+    <ClInclude Include="..\consolecolors_extension\console-colors.h" />
+    <ClInclude Include="..\httplib_extension\httplib.h" />
+    <ClInclude Include="..\libzip_extension\miniz.h" />
+    <ClInclude Include="..\libzip_extension\zip.h" />
+    <ClInclude Include="..\murmurhash_extension\MurmurHash1.h" />
+    <ClInclude Include="..\murmurhash_extension\MurmurHash2.h" />
+    <ClInclude Include="..\murmurhash_extension\MurmurHash3.h" />
+    <ClInclude Include="..\sqlite_extension\sqlite3.h" />
+    <ClInclude Include="..\stbimage_extension\stb_image.h" />
+    <ClInclude Include="..\threads_extension\tinycthread.h" />
+    <ClInclude Include="..\wincreg_extension\creg_regentry.h" />
+    <ClInclude Include="..\wincreg_extension\creg_registry.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\winapi_extension\Documentation.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
