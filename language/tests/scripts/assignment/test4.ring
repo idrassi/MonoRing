@@ -1,6 +1,6 @@
 # no problem
 
-load "guilib.ring"
+load "assignment/testlib.ring"
 
 new test  
 
@@ -8,7 +8,7 @@ new test
 
 class test
 
-	myobj = new QSqlDatabase()
-	myobj = myobj.addDatabase("QSQLITE") 
+	myobj = new sqlite_ex()
+	myobj = myobj.getInstance("QSQLITE") 
 	myobj.close()
  
