@@ -292,9 +292,15 @@ func GenerateBatchGeneral aPara,aOptions
 		if cBuildtarget = "unknown"
 			cBuildtarget = "x86"
 		ok
-		cCode = "setlocal enableextensions enabledelayedexpansion" + nl + "call "+exefolder()+"../language/src/locatevc.bat " + cBuildtarget + nl +
+		cBuildConfig = ""
+		cLinkIgnoreLib = ""
+		if find(aOptions,"-debug")
+			cBuildConfig = "debug"
+			cLinkIgnoreLib = "/NODEFAULTLIB:libcmt.lib"
+		ok
+		cCode = "setlocal enableextensions enabledelayedexpansion" + nl + "call "+exefolder()+"../language/src/locatevc.bat " + cBuildtarget + " " + cBuildConfig + nl +
 			"#{f3}" + nl +
-			'cl /O2 #{f1}.c #{f2} #{f4} -I"#{f6}..\language\include" -I"#{f6}../language/src/" /link Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib Iphlpapi.lib Userenv.lib #{f5} /OPT:REF /OUT:#{f1}.exe' + nl +
+			'cl %ringcflags% #{f1}.c #{f2} #{f4} -I"#{f6}..\language\include" -I"#{f6}../language/src/" /link ' + cLinkIgnoreLib + ' Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib Iphlpapi.lib Userenv.lib #{f5} /OPT:REF /OUT:#{f1}.exe' + nl +
 			'timeout 2 /nobreak' +nl +
 			'mt.exe -manifest #{f1}.exe.manifest -outputresource:#{f1}.exe;1' + nl +
 			"endlocal" + nl 

@@ -155,7 +155,7 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DeploymentContent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set PATH=$(ProjectDir)..\..\..\bin;%PATH%
 cd $(ProjectDir)..\..\..\tools\ringrepl
-ring2exe ringrepl.ring -static
+ring2exe ringrepl.ring -static -debug
 
 copy ringrepl.exe ..\..\bin\ringrepl.exe</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\..\bin\ringrepl.exe</Outputs>
@@ -167,7 +167,7 @@ copy ringrepl.exe ..\..\bin\ringrepl.exe</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\..\bin\ringrepl.exe</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">set PATH=$(ProjectDir)..\..\..\bin;%PATH%
 cd $(ProjectDir)..\..\..\tools\ringrepl
-ring2exe ringrepl.ring -static
+ring2exe ringrepl.ring -static -debug
 
 copy ringrepl.exe ..\..\bin\ringrepl.exe</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\..\..\bin\ringrepl.exe</Outputs>

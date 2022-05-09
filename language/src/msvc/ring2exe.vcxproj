@@ -26,15 +26,8 @@
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DeploymentContent>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DeploymentContent>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">set RINGSCRIPTPATH=$(ProjectDir)..\..\..\tools\ring2exe\
-set RINGEXEPATH="%RINGSCRIPTPATH%..\..\bin\ring.exe"
-
-
 cd %RINGSCRIPTPATH%
-%RINGEXEPATH% %RINGSCRIPTPATH%ring2exe.ring %RINGSCRIPTPATH%ring2exe.ring -static
-
-copy %RINGSCRIPTPATH%ring2exe.exe %RINGSCRIPTPATH%..\..\bin\ring2exe.exe
-
-cleartemp</Command>
+call buildring2exe.bat -debug</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\..\bin\ring2exe.exe</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">set RINGSCRIPTPATH=$(ProjectDir)..\..\..\tools\ring2exe\
@@ -50,15 +43,8 @@ cleartemp</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\..\bin\ring2exe.exe</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">set RINGSCRIPTPATH=$(ProjectDir)..\..\..\tools\ring2exe\
-set RINGEXEPATH="%RINGSCRIPTPATH%..\..\bin\ring.exe"
-
-
 cd %RINGSCRIPTPATH%
-%RINGEXEPATH% %RINGSCRIPTPATH%ring2exe.ring %RINGSCRIPTPATH%ring2exe.ring -static
-
-copy %RINGSCRIPTPATH%ring2exe.exe %RINGSCRIPTPATH%..\..\bin\ring2exe.exe
-
-cleartemp</Command>
+call buildring2exe.bat -debug</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\..\..\bin\ring2exe.exe</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">set RINGSCRIPTPATH=$(ProjectDir)..\..\..\tools\ring2exe\

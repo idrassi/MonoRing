@@ -107,7 +107,8 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libdepwin\openssl\x86\lib;$(ProjectDir)..\..\..\libdepwin\libcurl\x86\lib;$(ProjectDir)..\..\..\libdepwin\libuv\x86\lib;$(ProjectDir)..\..\..\libdepwin\libui\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libcrypto.lib;libui.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libuid.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)..\..\..\bin</Command>
@@ -150,8 +151,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libcrypto.lib;libui.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libcrypto.lib;libuid.lib;libcurl_a.lib;uv_a.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\libdepwin\openssl\x64\lib;$(ProjectDir)..\..\..\libdepwin\libcurl\x64\lib;$(ProjectDir)..\..\..\libdepwin\libuv\x64\lib;$(ProjectDir)..\..\..\libdepwin\libui\x64;</AdditionalLibraryDirectories>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TargetPath) $(ProjectDir)..\..\..\bin</Command>
