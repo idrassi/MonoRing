@@ -2,6 +2,10 @@
 #ifndef ring_h
     #define ring_h
     /* Include C Headers */
+    #ifdef _MSC_VER
+        /* required for rand_s definition */
+        #define _CRT_RAND_S
+    #endif
     #include <stdlib.h>
     #include <stdio.h>
     #include <time.h>
