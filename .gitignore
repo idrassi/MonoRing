@@ -1,0 +1,30 @@
+# For those using Visual Studio Code for development
+.vscode/
+
+# Linux build artifacts
+*.o
+*.d
+*.a
+
+*.obj
+*.pdb
+*.idb
+
+bin/ring.dll
+bin/ring.exe
+bin/ring2exe.exe
+bin/ringrepl.exe
+bin/ringw.exe
+
+lib/ring.lib
+lib/ringstatic.lib
+lib/ring.dll
+lib/ring.exp
+
+tools/ring2exe/ring2exe.exe
+tools/ringrepl/ringrepl.exe
+
+language/src/.vs
+
+language/src/msvc/x64
+language/src/msvc/Win32
