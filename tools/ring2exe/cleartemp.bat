@@ -7,3 +7,5 @@ del *buildclang.sh
 del *.exp
 del *.lib
 del *.manifest
+del *.pdb
+del *.idb
