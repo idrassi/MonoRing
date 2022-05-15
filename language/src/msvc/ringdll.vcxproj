@@ -98,7 +98,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x86\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x86\include;$(ProjectDir)..\..\..\libdepwin\libuv\x86\include;$(ProjectDir)..\..\..\libdepwin\libui\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -120,7 +120,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x86\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x86\include;$(ProjectDir)..\..\..\libdepwin\libuv\x86\include;$(ProjectDir)..\..\..\libdepwin\libui\x86;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -143,7 +143,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x64\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x64\include;$(ProjectDir)..\..\..\libdepwin\libuv\x64\include;$(ProjectDir)..\..\..\libdepwin\libui\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -165,7 +165,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RING_USEDLL=1;RING_BUILDLIB=1;CJSON_HIDE_SYMBOLS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;$(ProjectDir)..\..\..\libdepwin\openssl\x64\include;$(ProjectDir)..\..\..\libdepwin\libcurl\x64\include;$(ProjectDir)..\..\..\libdepwin\libuv\x64\include;$(ProjectDir)..\..\..\libdepwin\libui\x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
