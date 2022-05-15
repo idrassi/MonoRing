@@ -7,20 +7,15 @@ aLibrary = [:name = :lightguilib ,
 		"Qt5Widgets.dll",
 		"ringqt_light.dll",
 		"msvcp140.dll",
-		"vccorlib140.dll",
+		"msvcp140_1.dll",
 		"vcruntime140.dll",
 		"libEGL.dll",
 		"libGLESv2.dll",
 		"d3dcompiler_47.dll",
-		'"libstdc++-6.dll"',
-		'"libwinpthread-1.dll"',
 		"api-ms-win-core-winrt-l1-1-0.dll",
 		"api-ms-win-core-winrt-string-l1-1-0.dll",
-		"concrt140.dll",
-		"libgcc_s_dw2-1.dll",
 		"platforms\qwindows.dll",
-		"styles\qwindowsvistastyle.dll",
-		"styles\qwindowsvistastyled.dll"
+		"styles\qwindowsvistastyle.dll"
 	 ] ,
 	 :windowsfolders = [
 		"imageformats"
