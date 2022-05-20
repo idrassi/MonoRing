@@ -451,7 +451,7 @@ func DistributeForLinux cBaseFolder,cFileName,aOptions
 	OSCreateOpenFolder(:bin)
 	# copy the executable file 
 		msg("Copy the executable file to target/linux/bin")
-		OSCopyFile(cBaseFolder+"/"+cFileName,aOptions)
+		OSCopyFile(cBaseFolder+"/"+cFileName)
 		CheckNoCCompiler(cBaseFolder,cFileName,aOptions)
 	# Copy Files (Images, etc) in Resources File
 		CheckQtResourceFile(cBaseFolder,cFileName,aOptions)
