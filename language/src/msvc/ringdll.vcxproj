@@ -258,7 +258,6 @@
     <ClCompile Include="..\ring_stmt.c" />
     <ClCompile Include="..\ring_string.c" />
     <ClCompile Include="..\ring_test.c" />
-    <ClCompile Include="..\ring_threads_extension.c" />
     <ClCompile Include="..\ring_vm.c" />
     <ClCompile Include="..\ring_vmcui.c" />
     <ClCompile Include="..\ring_vmduprange.c" />
@@ -284,12 +283,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\sqlite_extension\sqlite3.c" />
-    <ClCompile Include="..\threads_extension\tinycthread.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="..\wincreg_extension\creg_registry.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -331,7 +324,6 @@
     <ClInclude Include="..\..\include\ring_stbimage_extension.h" />
     <ClInclude Include="..\..\include\ring_string.h" />
     <ClInclude Include="..\..\include\ring_test.h" />
-    <ClInclude Include="..\..\include\ring_threads_extension.h" />
     <ClInclude Include="..\..\include\ring_vm.h" />
     <ClInclude Include="..\..\include\ring_vmgc.h" />
     <ClInclude Include="..\..\include\ring_vmgcdata.h" />
@@ -348,7 +340,6 @@
     <ClInclude Include="..\murmurhash_extension\MurmurHash3.h" />
     <ClInclude Include="..\sqlite_extension\sqlite3.h" />
     <ClInclude Include="..\stbimage_extension\stb_image.h" />
-    <ClInclude Include="..\threads_extension\tinycthread.h" />
     <ClInclude Include="..\wincreg_extension\creg_regentry.h" />
     <ClInclude Include="..\wincreg_extension\creg_registry.h" />
   </ItemGroup>

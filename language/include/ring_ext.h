@@ -43,9 +43,6 @@
 		#define RING_VM_WINCREG 1
 		#endif
 	#endif
-	#ifndef RING_VM_NO_THREADS
-	#define RING_VM_THREADS 1
-	#endif
 	#ifndef RING_VM_NO_LIBZIP
 	#define RING_VM_LIBZIP 1
 	#endif

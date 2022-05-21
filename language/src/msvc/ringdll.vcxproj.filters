@@ -40,9 +40,6 @@
     <Filter Include="Source Files\stbimage_extension">
       <UniqueIdentifier>{2f440f2a-f56e-4986-9a8a-f757079c3799}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\threads_extension">
-      <UniqueIdentifier>{208073a0-e531-4b51-ab20-35463db04c4f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\winapi_extension">
       <UniqueIdentifier>{e2830be8-3d9b-48d7-a420-50e5ab181577}</UniqueIdentifier>
     </Filter>
@@ -162,9 +159,6 @@
     <ClCompile Include="..\ring_test.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\ring_threads_extension.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\ring_vm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -258,9 +252,6 @@
     <ClCompile Include="..\sqlite_extension\sqlite3.c">
       <Filter>Source Files\sqlite_extension</Filter>
     </ClCompile>
-    <ClCompile Include="..\threads_extension\tinycthread.c">
-      <Filter>Source Files\threads_extension</Filter>
-    </ClCompile>
     <ClCompile Include="..\wincreg_extension\creg_registry.cpp">
       <Filter>Source Files\wincreg_extension</Filter>
     </ClCompile>
@@ -298,9 +289,6 @@
     </ClInclude>
     <ClInclude Include="..\stbimage_extension\stb_image.h">
       <Filter>Source Files\stbimage_extension</Filter>
-    </ClInclude>
-    <ClInclude Include="..\threads_extension\tinycthread.h">
-      <Filter>Source Files\threads_extension</Filter>
     </ClInclude>
     <ClInclude Include="..\wincreg_extension\creg_regentry.h">
       <Filter>Source Files\wincreg_extension</Filter>
@@ -420,9 +408,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\ring_test.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\include\ring_threads_extension.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\ring_vm.h">

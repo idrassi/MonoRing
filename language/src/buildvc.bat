@@ -13,7 +13,7 @@ ring_vmlists.c ring_vmfuncs.c ring_api.c ring_vmoop.c ring_vmcui.c ^
 ring_vmtrycatch.c ring_vmstrindex.c ring_vmjump.c ring_vmduprange.c ^
 ring_vmperformance.c ring_vmexit.c ring_vmstackvars.c ring_vmstate.c ring_generallib_extension.c ring_math_extension.c ring_file_extension.c ring_os_extension.c ring_list_extension.c ring_refmeta_extension.c ^
 ring_ext.c ring_dll_extension.c ring_objfile.c ring_openssl_extension.c ring_libui_extension.c ring_consolecolors_extension.c ring_libcurl_extension.c ring_internet_extension.c ring_cjson_extension.c ^
-cjson_extension\cJSON.c cjson_extension\cJSON_Utils.c ring_sqlite_extension.c sqlite_extension\sqlite3.c ring_odbc_extension.c ring_winapi_extension.c ring_threads_extension.c ring_libzip_extension.c ^
+cjson_extension\cJSON.c cjson_extension\cJSON_Utils.c ring_sqlite_extension.c sqlite_extension\sqlite3.c ring_odbc_extension.c ring_winapi_extension.c ring_libzip_extension.c ^
 ring_httplib_extension.cpp ring_wincreg_extension.cpp wincreg_extension\creg_registry.cpp ring_sockets_extension.c ring_stbimage_extension.c ring_libuv_extension.c ^
 ring_murmurhash_extension.c murmurhash_extension\MurmurHash1.c murmurhash_extension\MurmurHash2.c murmurhash_extension\MurmurHash3.c ^
 -I"..\include" -I"..\..\libdepwin\openssl\%ringbuildtarget%\include" -I"..\..\libdepwin\libui\%ringbuildtarget%" -I"..\..\libdepwin\libcurl\%ringbuildtarget%\include" ^
@@ -27,7 +27,7 @@ ring_vmlists.obj ring_vmfuncs.obj ring_api.obj ring_vmoop.obj ring_vmcui.obj ^
 ring_vmtrycatch.obj ring_vmstrindex.obj ring_vmjump.obj ring_vmduprange.obj ^
 ring_vmperformance.obj ring_vmexit.obj ring_vmstackvars.obj ring_vmstate.obj ring_generallib_extension.obj ring_math_extension.obj ring_file_extension.obj ring_os_extension.obj ring_list_extension.obj ring_refmeta_extension.obj ^
 ring_ext.obj ring_dll_extension.obj ring_objfile.obj ring_openssl_extension.obj ring_libui_extension.obj ring_consolecolors_extension.obj ring_libcurl_extension.obj ring_internet_extension.obj ring_cjson_extension.obj ring_httplib_extension.obj ^
-cJSON.obj cJSON_Utils.obj ring_sqlite_extension.obj sqlite3.obj ring_odbc_extension.obj ring_winapi_extension.obj ring_wincreg_extension.obj creg_registry.obj ring_threads_extension.obj ring_libzip_extension.obj ^
+cJSON.obj cJSON_Utils.obj ring_sqlite_extension.obj sqlite3.obj ring_odbc_extension.obj ring_winapi_extension.obj ring_wincreg_extension.obj creg_registry.obj ring_libzip_extension.obj ^
 ring_sockets_extension.obj ring_stbimage_extension.obj ring_libuv_extension.obj ^
 ring_murmurhash_extension.obj MurmurHash1.obj MurmurHash2.obj MurmurHash3.obj ^
 /LIBPATH:..\..\libdepwin\openssl\%ringbuildtarget%\lib /LIBPATH:..\..\libdepwin\libui\%ringbuildtarget% /LIBPATH:..\..\libdepwin\libcurl\%ringbuildtarget%\lib /LIBPATH:..\..\libdepwin\libuv\%ringbuildtarget%\lib ^
@@ -44,7 +44,7 @@ ring_vmlists.c ring_vmfuncs.c ring_api.c ring_vmoop.c ring_vmcui.c ^
 ring_vmtrycatch.c ring_vmstrindex.c ring_vmjump.c ring_vmduprange.c ^
 ring_vmperformance.c ring_vmexit.c ring_vmstackvars.c ring_vmstate.c ring_generallib_extension.c ring_math_extension.c ring_file_extension.c ring_os_extension.c ring_list_extension.c ring_refmeta_extension.c ^
 ring_ext.c ring_dll_extension.c ring_objfile.c ring_openssl_extension.c ring_libui_extension.c ring_consolecolors_extension.c ring_libcurl_extension.c ring_internet_extension.c ring_cjson_extension.c ^
-cjson_extension\cJSON.c cjson_extension\cJSON_Utils.c ring_sqlite_extension.c sqlite_extension\sqlite3.c ring_odbc_extension.c ring_winapi_extension.c ring_threads_extension.c ring_libzip_extension.c ^
+cjson_extension\cJSON.c cjson_extension\cJSON_Utils.c ring_sqlite_extension.c sqlite_extension\sqlite3.c ring_odbc_extension.c ring_winapi_extension.c ring_libzip_extension.c ^
 ring_httplib_extension.cpp ring_wincreg_extension.cpp wincreg_extension\creg_registry.cpp ring_sockets_extension.c ring_stbimage_extension.c ring_libuv_extension.c ^
 ring_murmurhash_extension.c murmurhash_extension\MurmurHash1.c murmurhash_extension\MurmurHash2.c murmurhash_extension\MurmurHash3.c ^
 -I"..\include" -I"..\..\libdepwin\openssl\%ringbuildtarget%\include" -I"..\..\libdepwin\libui\%ringbuildtarget%" -I"..\..\libdepwin\libcurl\%ringbuildtarget%\include" ^
@@ -57,7 +57,7 @@ ring_vmlists.obj ring_vmfuncs.obj ring_api.obj ring_vmoop.obj ring_vmcui.obj ^
 ring_vmtrycatch.obj ring_vmstrindex.obj ring_vmjump.obj ring_vmduprange.obj ^
 ring_vmperformance.obj ring_vmexit.obj ring_vmstackvars.obj ring_vmstate.obj ring_generallib_extension.obj ring_math_extension.obj ring_file_extension.obj ring_os_extension.obj ring_list_extension.obj ring_refmeta_extension.obj ^
 ring_ext.obj ring_dll_extension.obj ring_objfile.obj ring_openssl_extension.obj ring_libui_extension.obj ring_consolecolors_extension.obj ring_libcurl_extension.obj ring_internet_extension.obj ring_cjson_extension.obj ring_httplib_extension.obj ^
-cJSON.obj cJSON_Utils.obj ring_sqlite_extension.obj sqlite3.obj ring_odbc_extension.obj ring_winapi_extension.obj ring_wincreg_extension.obj creg_registry.obj ring_threads_extension.obj ring_libzip_extension.obj ^
+cJSON.obj cJSON_Utils.obj ring_sqlite_extension.obj sqlite3.obj ring_odbc_extension.obj ring_winapi_extension.obj ring_wincreg_extension.obj creg_registry.obj ring_libzip_extension.obj ^
 ring_sockets_extension.obj ring_stbimage_extension.obj ring_libuv_extension.obj ^
 ring_murmurhash_extension.obj MurmurHash1.obj MurmurHash2.obj MurmurHash3.obj ^
 ..\..\libdepwin\openssl\%ringbuildtarget%\lib\libcrypto.lib ..\..\libdepwin\libui\%ringbuildtarget%\libui.lib ..\..\libdepwin\libcurl\%ringbuildtarget%\lib\libcurl_a.lib ^

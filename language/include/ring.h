@@ -186,9 +186,6 @@
         #ifdef RING_VM_WINCREG
             #include "ring_wincreg_extension.h"
         #endif
-        #ifdef RING_VM_THREADS
-            #include "ring_threads_extension.h"
-        #endif
         #ifdef RING_VM_LIBZIP
             #include "ring_libzip_extension.h"
         #endif
