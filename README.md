@@ -16,7 +16,6 @@ The embedded extensions are:
  - sockets
  - sqlite
  - stbimage
- - threads
  - winapi
  - wincreg
  - zip
