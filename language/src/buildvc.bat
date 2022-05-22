@@ -69,11 +69,24 @@ Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.li
 cl %ringcflags% ringw.c ..\..\lib\ringstatic.lib -I"..\include" /link %ringldflags% /SUBSYSTEM:WINDOWS,"%ringsubsystem%" /STACK:8388608 /OPT:REF /OUT:..\..\bin\ringw.exe ^
 Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib Iphlpapi.lib Userenv.lib
 
+rem macro for testing errorlevel
+rem https://stackoverflow.com/questions/10935693/foolproof-way-to-check-for-nonzero-error-return-code-in-windows-batch-file/10936093#10936093
+set "ifErr=set foundErr=1&(if errorlevel 0 if not errorlevel 1 set foundErr=)&if defined foundErr"
+
 rem wait 2 second to avoid issue with antivirus locking the created exe
 timeout 2 /nobreak
 rem embed the manifest for ui controls
 mt.exe -manifest ..\..\bin\ring.exe.manifest -outputresource:..\..\bin\ring.exe;1
+%ifErr% (
+	timeout 5 /nobreak
+	mt.exe -manifest ..\..\bin\ring.exe.manifest -outputresource:..\..\bin\ring.exe;1
+)
+
 mt.exe -manifest ..\..\bin\ringw.exe.manifest -outputresource:..\..\bin\ringw.exe;1
+%ifErr% (
+	timeout 5 /nobreak
+	mt.exe -manifest ..\..\bin\ringw.exe.manifest -outputresource:..\..\bin\ringw.exe;1
+)
 
 del *.obj
 
