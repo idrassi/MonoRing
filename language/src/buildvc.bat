@@ -63,10 +63,10 @@ ring_murmurhash_extension.obj MurmurHash1.obj MurmurHash2.obj MurmurHash3.obj ^
 ..\..\libdepwin\openssl\%ringbuildtarget%\lib\libcrypto.lib ..\..\libdepwin\libui\%ringbuildtarget%\libui.lib ..\..\libdepwin\libcurl\%ringbuildtarget%\lib\libcurl_a.lib ^
 ..\..\libdepwin\libuv\%ringbuildtarget%\lib\uv_a.lib
 
-cl %ringcflags% ring.c ..\..\lib\ringstatic.lib -I"..\include" /link %ringldflags% /SUBSYSTEM:CONSOLE,"%ringsubsystem%" /OPT:REF /OUT:..\..\bin\ring.exe ^
+cl %ringcflags% ring.c ..\..\lib\ringstatic.lib -I"..\include" /link %ringldflags% /SUBSYSTEM:CONSOLE,"%ringsubsystem%" /STACK:8388608 /OPT:REF /OUT:..\..\bin\ring.exe ^
 Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib Iphlpapi.lib Userenv.lib
 
-cl %ringcflags% ringw.c ..\..\lib\ringstatic.lib -I"..\include" /link %ringldflags% /SUBSYSTEM:WINDOWS,"%ringsubsystem%" /OPT:REF /OUT:..\..\bin\ringw.exe ^
+cl %ringcflags% ringw.c ..\..\lib\ringstatic.lib -I"..\include" /link %ringldflags% /SUBSYSTEM:WINDOWS,"%ringsubsystem%" /STACK:8388608 /OPT:REF /OUT:..\..\bin\ringw.exe ^
 Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib Iphlpapi.lib Userenv.lib
 
 rem wait 2 second to avoid issue with antivirus locking the created exe

@@ -105,6 +105,7 @@
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <StackReserveSize>8388608</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -126,6 +127,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackReserveSize>8388608</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -143,6 +145,7 @@
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <StackReserveSize>8388608</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -164,6 +167,7 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
       <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackReserveSize>8388608</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
