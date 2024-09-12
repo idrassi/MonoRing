@@ -1,0 +1,7 @@
+
+
+Error (E9) : Can't open file guilib.ring 
+
+assignment/test2.ring Line (1) Error (C27) : Syntax Error!
+
+assignment/test2.ring errors count : 1 

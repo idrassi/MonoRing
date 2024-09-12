@@ -543,7 +543,7 @@ Func FuncPower(num1, num2)
     ### Repeated multiply on Num1
     
     result = "1"
-    for n = num2 to 1 step -1
+    for n = number(num2) to 1 step -1
         result = FuncMultiply( result, num1)
         
         #SEE "Result "+ n +" - "+ num1 +" "+ result +nl

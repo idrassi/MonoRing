@@ -1,6 +1,6 @@
 /*
-	Ring programming language
-	2018, Mahmoud Fayed
+	Ring programming language - Test.ring
+	2018-2023, Mahmoud Fayed
 */
 
 
@@ -78,22 +78,23 @@ func RunTest nIndex,aTest
 		 Width(aTest[:Name],65)
 	cDir = CurrentDir()
 	chDir("scripts")
-		System(aTest[:Command]+" > "+cOutputFolder+
-				"/test"+nIndex+".txt")
+		cCurrentFileName = cOutputFolder+"/"+GetOutputFile(nIndex)
+		remove(cCurrentFileName)
+		System(aTest[:Command]+" > " + cCurrentFileName)
 	chDir(cDir)
 
 func ShowTestResult  nIndex,aTest
 	if nTestMode = C_MODE_TESTING
-		cFileNameCorrect = C_CORRECT_FOLDER+"/test"+nIndex+".txt"
-		cFileNameCurrent = C_CURRENT_FOLDER +"/test"+nIndex+".txt"
-		if ! fexists(cFileNameCorrect)
+		cCorrectFileName = C_CORRECT_FOLDER+"/"+GetOutputFile(nIndex)
+		cCurrentFileName = C_CURRENT_FOLDER +"/"+GetOutputFile(nIndex)
+		if ! fexists(cCorrectFileName)
 			? ""
 			? C_ERROR_FILEDOESNOTEXIST + " - File Name : " +
-					 cFileNameCorrect 
+					 cCorrectFileName 
 			return 
 		ok
 		see " --- " 
-		if substr(read(cFileNameCorrect),windowsnl(),nl) = substr(read(cFileNameCurrent),windowsnl(),nl)
+		if substr(read(cCorrectFileName),windowsnl(),nl) = substr(read(cCurrentFileName),windowsnl(),nl)
 			style("PASS",:YellowBlack)
 			nPassCount++
 		else 
@@ -114,3 +115,16 @@ func DisplayFileName aTest
 	next
 	cCommand = JustFileName(cCommand)
 	see " (" + cCommand + ")"
+
+func GetOutputFile nIndex
+	cName = aTests[nIndex][:command]
+	cName = trim(cName)
+	cName = left(cName, substr(cName,".") - 1) # Remove .ring
+	if lower(left(cName,4)) = "ring"
+		cName = substr(cName,5)
+	ok
+	cName = trim(cName)
+	cName = substr(cName,"\","_")
+	cName = substr(cName,"/","_")
+	cName = cName + ".txt"
+	return cName

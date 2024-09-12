@@ -120,6 +120,7 @@ void ring_vm_socket_constant_ip_hdrincl(void *pPointer)
     RING_API_RETNUMBER(IP_HDRINCL);
 }
 
+/*
 void ring_vm_socket_constant_ip_mtu(void *pPointer)
 {
     RING_API_RETNUMBER(IP_MTU);
@@ -129,6 +130,7 @@ void ring_vm_socket_constant_ip_mtu_discover(void *pPointer)
 {
     RING_API_RETNUMBER(IP_MTU_DISCOVER);
 }
+*/
 
 void ring_vm_socket_constant_ip_multicast_loop(void *pPointer)
 {
@@ -175,10 +177,12 @@ void ring_vm_socket_constant_ip_unblock_source(void *pPointer)
     RING_API_RETNUMBER(IP_UNBLOCK_SOURCE);
 }
 
+/*
 void ring_vm_socket_constant_ip_unicast_if(void *pPointer)
 {
     RING_API_RETNUMBER(IP_UNICAST_IF);
 }
+*/
 
 void ring_vm_socket_constant_so_acceptconn(void *pPointer)
 {

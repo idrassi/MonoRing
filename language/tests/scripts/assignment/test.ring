@@ -1,4 +1,4 @@
-load "assignment/testlib.ring"
+load "guilib.ring"
 
 see "one" + nl
 new test
@@ -24,8 +24,8 @@ class test
 		see "five" + nl	
 		myobj = new point	
 		myobj = myobj.go("test")
-		myobj = new sqlite_ex()
-		myobj = myobj.getInstance("QSQLITE") 
+		myobj = new QSqlDatabase()
+		myobj = myobj.addDatabase("QSQLITE") 
 		myobj.close()
 
 class point x y z

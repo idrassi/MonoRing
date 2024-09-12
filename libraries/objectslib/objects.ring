@@ -19,6 +19,10 @@
 	C_RINGQT_OBJECTSLIST_ID 	= 1
 	C_RINGQT_OBJECTSLIST_OBJECT 	= 2
 
+# Ring Version 
+
+	C_RINGVERSION = Number(Version())
+
 # Better API without _ in function names
 
 	func OpenWindow cClass
@@ -32,6 +36,9 @@
 	
 	func OpenWindowAndLink cClass,oParent 
 		return Open_WindowAndLink( cClass,oParent )
+
+	func OpenWindowNoShowAndLink cClass,oParent 
+		return Open_WindowNoShowAndLink( cClass,oParent )
 	
 	func LastWindow 
 		return Last_Window() 
@@ -57,6 +64,8 @@ func Open_Window cClass
 	$RingQt_ObjectsList + [$RingQt_ObjectID,""]	
 	$RingQt_ObjName = "$RingQt_ObjectsList[Get_Window_Pos("+$RingQt_ObjectID+")]" +
 			 "[C_RINGQT_OBJECTSLIST_OBJECT]"
+
+
 	cCode = ""
 	if packagename() != NULL {
 		cCode += "import " + packagename()  + nl
@@ -66,6 +75,7 @@ func Open_Window cClass
 		"if isMethod(" + $RingQt_ObjName + ",:start)" + nl +
 		  $RingQt_ObjName + ".start()" + nl + "ok"
 	eval(cCode)	
+	
 	if cRingQt_ObjName != NULL {
 		$RingQt_ObjName = cRingQt_ObjName	# Restore the current Object
 	}
@@ -82,6 +92,7 @@ func Open_WindowInPackages cClass,aPackages
 	$RingQt_ObjectsList + [$RingQt_ObjectID,""]	
 	$RingQt_ObjName = "$RingQt_ObjectsList[Get_Window_Pos("+$RingQt_ObjectID+")]" +
 			 "[C_RINGQT_OBJECTSLIST_OBJECT]"
+
 	cCode = ""
 	if packagename() != NULL {
 		cCode += "import " + packagename()  + nl
@@ -93,6 +104,7 @@ func Open_WindowInPackages cClass,aPackages
 	cCode += $RingQt_ObjName + " = new " + cClass + nl + 
 		  $RingQt_ObjName + ".start()"
 	eval(cCode)	
+	
 	if cRingQt_ObjName != NULL {
 		$RingQt_ObjName = cRingQt_ObjName	# Restore the current Object
 	}
@@ -109,6 +121,7 @@ func Open_WindowNoShow cClass
 	$RingQt_ObjectsList + [$RingQt_ObjectID,""]	
 	$RingQt_ObjName = "$RingQt_ObjectsList[Get_Window_Pos("+$RingQt_ObjectID+")]" +
 			 "[C_RINGQT_OBJECTSLIST_OBJECT]"
+
 	cCode = ""
 	if packagename() != NULL {
 		cCode += "import " + packagename()  + nl
@@ -116,11 +129,12 @@ func Open_WindowNoShow cClass
 	}
 	cCode += $RingQt_ObjName + " = new " + cClass 
 	eval(cCode)	
+	
 	$RingQt_ObjName = cRingQt_ObjName	# Restore the current Object
 
 
 /*
-	The next function create new object, add the object to the $RingQt_ObjectsList
+	The next functions create new object, add the object to the $RingQt_ObjectsList
 	Then set $RingQt_ObjName to the object in the $RingQt_ObjectsList
 	Then call the start() method
 	The function link between the parent window and the child window
@@ -129,6 +143,13 @@ func Open_WindowNoShow cClass
 
 func Open_WindowAndLink cClass,oParent
 	Open_Window(cClass)
+	LinkOpenedWindow(cClass,oParent)
+
+func Open_WindowNoShowAndLink cClass,oParent
+	Open_WindowNoShow(cClass)
+	LinkOpenedWindow(cClass,oParent)
+
+func LinkOpenedWindow cClass,oParent
 	cClass = lower(cClass)
 	cParentClass = classname(oParent)
 	if  ( right(cClass,10) != "controller" ) or 

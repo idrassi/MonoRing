@@ -1,7 +1,7 @@
 # The Ring Natural Library
 # 2017, Mahmoud Fayed <msfclipper@yahoo.com>
 
-load "stdlib.ring"
+load "stdlibcore.ring"
 
 DefineNaturalCommand = new NaturalCommand
 
@@ -27,7 +27,7 @@ class NaturalCommand
 		eval(cCode)
 
 	func DefineAddAttributes
-		cCode = " 	f1 = func { AddAttribute(self,:#{f1}) } "
+		cCode = " 	f1 = func { if ! isAttribute(self,:#{f1}) AddAttribute(self,:#{f1}) ok } "
 		cCode = SubStr(cCode,"#{f1}",cKeyword)
 		eval(cCode)	
 		AddMethod(oObject,"AddAttributes_"+cKeyword,f1)

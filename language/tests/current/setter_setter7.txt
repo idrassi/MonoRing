@@ -1,0 +1,8 @@
+setter
+nice
+getter
+setter
+good
+getter
+2
+0

@@ -1,0 +1,14 @@
+100
+200
+300
+x: 10
+y: 20
+z: 30
+100
+200
+300
+
+Line 15 Error (R12) : Error in property name, property not found: extra 
+In method test() in file self/self4.ring
+
+Called from line 7 in file self/self4.ring 

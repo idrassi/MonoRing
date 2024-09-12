@@ -20,6 +20,12 @@ Package System.Web
 
 		lContentType = True
 
+		cJSJQueryPath = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+		cJSBootstrapPath = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"
+		cCSSBootstrapPath = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+
+		lNoJavaScript = False
+
 		func WebPrint cStr
 			if lPrint
 				see cStr
@@ -82,7 +88,8 @@ Package System.Web
 				cInput = substr(cInput,nPos+1) #remove before start
 				nPos = substr(cInput,'"')  # end of the name
 
-				NewVar + left(cInput,nPos-1)	# add Name to List
+				cVarName = left(cInput,nPos-1)
+				NewVar + cVarName	# add Name to List
 				cInput = substr(cInput,nPos+1) # after name	
 
 				if left(cInput,1) = ";"
@@ -99,6 +106,10 @@ Package System.Web
 
 					nPos = substr(cInput,cMark) 
 					NewVar + left(cInput,nPos-2)    # Get File content
+
+					VarsList + NewVar
+
+					NewVar = [cVarName,:ExtraData]
 					NewVar + cFile			# Add file Name
 					cInput = substr(cInput,nPos)
 					
@@ -129,7 +140,7 @@ Package System.Web
 		
 		Func GetFileName  aArray,cVar
 			for x in aArray
-				if len(x) >= 3
+				if len(x) = 3
 					if x[1] = cVar
 						return WL_justfilename(x[3])
 					ok
@@ -162,6 +173,10 @@ Package System.Web
 				nPos = substr(cStr,";")
 			end
 			return aOutput
+			
+		Func Redirect cStr
+			see "Location: "+ cStr
+			# This function will redirect the webpage. parameter requires destination page name.
 
 		Func URLEncode cStr
 			cOut = ""
@@ -175,15 +190,19 @@ Package System.Web
 				ok
 			next
 			return cOut	
-		
+	
+		Func NoJavaScript
+			lNoJavaScript = True
+	
 		Func ScriptLibs
+			if lNoJavaScript return ok
 			if lBootstrap
 				cStr = nl+'<meta name="viewport" content="width=device-width, initial-scale=1">' + nl +
-  				       '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">'+nl+
-				       '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>'+nl+
-			 	       '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>'+nl
+  				       '<link rel="stylesheet" href="'+cCSSBootstrapPath+'">'+nl+
+				       '<script src="'+cJSJQueryPath+'"></script>'+nl+
+			 	       '<script src="'+cJSBootstrapPath+'"></script>'+nl
 			else
-				cStr = nl+'<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>'+nl
+				cStr = nl+'<script src="'+cJSJQueryPath+'"></script>'+nl
 			ok	
 			return TabMLString(cStr)
 
@@ -214,6 +233,11 @@ Package System.Web
 			else 
 				return ""
 			ok
+
+		Func UseLocalFiles
+			cJSJQueryPath = "js/jquery.min.js"
+			cJSBootstrapPath = "js/bootstrap.min.js"
+			cCSSBootstrapPath = "css/bootstrap.min.css"
 
 		Private
 

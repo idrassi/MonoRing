@@ -1,1 +1,1 @@
-load "/../../extensions/ringraylib/src/raylib.ring"
+load "/../../extensions/ringraylib5/src/raylib.ring"

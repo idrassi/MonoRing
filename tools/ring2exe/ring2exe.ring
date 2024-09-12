@@ -125,7 +125,7 @@ func Main
 	else 
 		drawline()
 		see "Ring2EXE (Convert Ring Application To Executable File)" + nl
-		see "2017-2022, Mahmoud Fayed <msfclipper@yahoo.com>" + nl
+		see "2017-2024, Mahmoud Fayed <msfclipper@yahoo.com>" + nl
 		see "Usage : ring2exe filename.ring [Options]" + nl
 		drawline()
 		see RemoveTabs("
@@ -243,8 +243,8 @@ func GenerateCFile cFileName,aOptions
 
 	RingState *pRingState ;
 	pRingState = ring_state_new();	
-	pRingState->argc = argc;
-	pRingState->argv = argv;
+	pRingState->nArgc = argc;
+	pRingState->pArgv = argv;
 	ring_state_runobjectstring(pRingState,(char *) bytecode,"#{f1}");
 	ring_state_delete(pRingState);
 
@@ -322,9 +322,9 @@ func GenerateBatchGeneral aPara,aOptions
 			ok
 		# GUI Application 
 			if find(aOptions,"-gui")
-				cCode = substr(cCode,"#{f5}",' /SUBSYSTEM:WINDOWS,"5.01" ')
+				cCode = substr(cCode,"#{f5}",'advapi32.lib shell32.lib /STACK:8388608 /SUBSYSTEM:WINDOWS,"5.01" ')
 			else 
-				cCode = substr(cCode,"#{f5}",' /SUBSYSTEM:CONSOLE,"5.01" ')
+				cCode = substr(cCode,"#{f5}",' /STACK:8388608 /SUBSYSTEM:CONSOLE,"5.01" ')
 			ok
 		cCode = substr(cCode,"#{f6}",exefolder())
 		cCode = substr(cCode,"#{f7}",cBuildtarget)
@@ -409,13 +409,16 @@ func DistributeForWindows cBaseFolder,cFileName,aOptions
 			msg("Copy all libraries to target/windows")	
 			for aLibrary in aLibsInfo 
 				if not find(aOptions,"-no"+aLibrary[:name])
+					msg("Copy library files: "+aLibrary[:title])
 					if islist(aLibrary[:windowsfolders])
 						for cLibFolder in aLibrary[:windowsfolders]
+							msg("Copy folder: "+cLibFolder)
 							OSCopyFolder(exefolder(),cLibFolder)
 						next
 					ok
 					if islist(aLibrary[:windowsfiles])
 						for cLibFile in aLibrary[:windowsfiles]
+							msg("Copy file: "+cLibFile)
 							custom_OSCopyFile(exefolder(),cLibFile)
 						next
 					ok
@@ -429,11 +432,13 @@ func DistributeForWindows cBaseFolder,cFileName,aOptions
 					msg("Add "+aLibrary[:title]+" to target/windows")
 					if islist(aLibrary[:windowsfolders])
 						for cLibFolder in aLibrary[:windowsfolders]
+							msg("Copy folder: "+cLibFolder)
 							OSCopyFolder(exefolder(),cLibFolder)
 						next
 					ok
 					if islist(aLibrary[:windowsfiles])
 						for cLibFile in aLibrary[:windowsfiles]
+							msg("Copy file: "+cLibFile)
 							custom_OSCopyFile(exefolder(),cLibFile)
 						next
 					ok
@@ -480,6 +485,7 @@ func DistributeForLinux cBaseFolder,cFileName,aOptions
 				if not find(aOptions,"-no"+aLibrary[:name])
 					if islist(aLibrary[:linuxfiles])
 						for cLibFile in aLibrary[:linuxfiles]
+							msg("Copy file: "+cLibFile)
 							OSCopyFile(exefolder()+"/../lib/"+cLibFile)					
 							cInstallLibs = InstallLibLinux(cInstallLibs,cLibFile)
 						next
@@ -499,7 +505,8 @@ func DistributeForLinux cBaseFolder,cFileName,aOptions
 					msg("Add "+aLibrary[:title]+" to target/linux/lib")
 					if islist(aLibrary[:linuxfiles])
 						for cLibFile in aLibrary[:linuxfiles]
-							OSCopyFile(exefolder()+"/lib/"+cLibFile)
+							msg("Copy file: "+cLibFile)
+							OSCopyFile(exefolder()+"/../lib/"+cLibFile)
 							cInstallLibs = InstallLibLinux(cInstallLibs,cLibFile)
 						next
 					ok
@@ -642,7 +649,7 @@ func DistributeForMacOSX cBaseFolder,cFileName,aOptions
 					msg("Add "+aLibrary[:title]+" to target/macosx/lib")
 					if islist(aLibrary[:macosxfiles])
 						for cLibFile in aLibrary[:macosxfiles]
-							OSCopyFile(exefolder()+"/lib/"+cLibFile)
+							OSCopyFile(exefolder()+"/../lib/"+cLibFile)
 							cInstallLibs = InstallLibMacOSX(cInstallLibs,cLibFile)
 						next
 					ok

@@ -1,4 +1,4 @@
-load "assignment/testlib.ring"
+load "guilib.ring"
 
 new test
 
@@ -6,6 +6,6 @@ new test
 
 class test
 
-	myobj = new sqlite_ex()
-	myobj = myobj.getInstance("QSQLITE") 
+	myobj = new QSqlDatabase()
+	myobj = myobj.addDatabase("QSQLITE") 
 	myobj.close()

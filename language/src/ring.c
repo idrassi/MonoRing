@@ -1,4 +1,5 @@
-/* Copyright (c) 2013-2022 Mahmoud Fayed <msfclipper@yahoo.com> */
+/* Copyright (c) 2013-2024 Mahmoud Fayed <msfclipper@yahoo.com> */
+
 #include "ring.h"
 
 #ifdef _MSC_VER
@@ -13,8 +14,8 @@
 #endif
 #endif
 
-int main ( int argc, char *argv[] )
+int main ( int nArgc, char *pArgv[] )
 {
-    ring_state_main(argc,argv);
-    return 0 ;
+	ring_state_main(nArgc,pArgv);
+	return RING_EXIT_OK ;
 }

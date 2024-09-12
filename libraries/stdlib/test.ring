@@ -165,7 +165,7 @@ Puts("Test Permutation()")
 list = [1, 2, 3, 4]
 for perm = 1 to 24
      for i = 1 to len(list)
-          see list[i] + " "
+          see list[i] see " "
      next
      see nl
      Permutation(list)
@@ -220,30 +220,6 @@ See "Enter your Age? "
 nAge = getnumber()
 nAge++
 See "Your age after 1 year : " + nAge + nl
-
-# Sort a two-dimensional list on the first index.
-Puts("Test sortFirstSecond()")
-aList = [[2,2], [1,2], [3,2], [3,1], [1,1]]
-sortFirstSecond(aList, 1)
-
-for n=1 to len(aList)
-    for m=1 to 2
-        see string(aList[n][m]) + " "
-    next
-    see nl
-next
-
-# Sort a two-dimensional list on the second index.
-Puts("Test sortFirstSecond()")
-aList = [[2,2], [1,2], [3,2], [3,1], [1,1]]
-sortFirstSecond(aList, 2)
-
-for n=1 to len(aList)
-    for m=1 to 2
-        see string(aList[n][m]) + " "
-    next
-    see nl
-next
 
 # Test Main Source File
 see "IsMainSourceFile() : " + ismainsourcefile() + nl

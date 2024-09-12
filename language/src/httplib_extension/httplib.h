@@ -8,7 +8,7 @@
 #ifndef CPPHTTPLIB_HTTPLIB_H
 #define CPPHTTPLIB_HTTPLIB_H
 
-#define CPPHTTPLIB_VERSION "0.10.7"
+#define CPPHTTPLIB_VERSION "0.10.9"
 
 /*
  * Configuration
@@ -72,6 +72,10 @@
 
 #ifndef CPPHTTPLIB_PAYLOAD_MAX_LENGTH
 #define CPPHTTPLIB_PAYLOAD_MAX_LENGTH ((std::numeric_limits<size_t>::max)())
+#endif
+
+#ifndef CPPHTTPLIB_FORM_URL_ENCODED_PAYLOAD_MAX_LENGTH
+#define CPPHTTPLIB_FORM_URL_ENCODED_PAYLOAD_MAX_LENGTH 8192
 #endif
 
 #ifndef CPPHTTPLIB_TCP_NODELAY
@@ -166,7 +170,6 @@ using socket_t = SOCKET;
 #else // not _WIN32
 
 #include <arpa/inet.h>
-#include <cstring>
 #include <ifaddrs.h>
 #include <net/if.h>
 #include <netdb.h>
@@ -197,6 +200,7 @@ using socket_t = int;
 #include <cctype>
 #include <climits>
 #include <condition_variable>
+#include <cstring>
 #include <errno.h>
 #include <fcntl.h>
 #include <fstream>
@@ -2704,9 +2708,9 @@ inline socket_t create_client_socket(
       [&](socket_t sock2, struct addrinfo &ai) -> bool {
         if (!intf.empty()) {
 #ifdef USE_IF2IP
-          auto ip = if2ip(address_family, intf);
-          if (ip.empty()) { ip = intf; }
-          if (!bind_ip_address(sock2, ip.c_str())) {
+          auto ip_from_if = if2ip(address_family, intf);
+          if (ip_from_if.empty()) { ip_from_if = intf; }
+          if (!bind_ip_address(sock2, ip_from_if.c_str())) {
             error = Error::BindIPAddress;
             return false;
           }
@@ -3790,6 +3794,7 @@ public:
       switch (state_) {
       case 0: { // Initial boundary
         auto pattern = dash_ + boundary_ + crlf_;
+        buf_erase(buf_find(pattern));
         if (pattern.size() > buf_size()) { return true; }
         if (!buf_start_with(pattern)) { return false; }
         buf_erase(pattern.size());
@@ -3883,16 +3888,12 @@ public:
           if (buf_start_with(pattern)) {
             buf_erase(pattern.size());
             is_valid_ = true;
-            state_ = 5;
+            buf_erase(buf_size()); // Remove epilogue
           } else {
             return true;
           }
         }
         break;
-      }
-      case 5: { // Done
-        is_valid_ = false;
-        return false;
       }
       }
     }
@@ -4407,6 +4408,8 @@ inline void hosted_at(const char *hostname, std::vector<std::string> &addrs) {
       addrs.push_back(ip);
     }
   }
+
+  freeaddrinfo(result);
 }
 
 inline std::string append_query_params(const char *path, const Params &params) {
@@ -4687,7 +4690,7 @@ inline ssize_t SocketStream::read(char *ptr, size_t size) {
 inline ssize_t SocketStream::write(const char *ptr, size_t size) {
   if (!is_writable()) { return -1; }
 
-#ifdef _WIN32
+#if defined(_WIN32) && !defined(_WIN64)
   size =
       (std::min)(size, static_cast<size_t>((std::numeric_limits<int>::max)()));
 #endif
@@ -5092,14 +5095,16 @@ inline bool Server::write_response_core(Stream &strm, bool close_connection,
 
     // Flush buffer
     auto &data = bstrm.get_buffer();
-    strm.write(data.data(), data.size());
+    detail::write_data(strm, data.data(), data.size());
   }
 
   // Body
   auto ret = true;
   if (req.method != "HEAD") {
     if (!res.body.empty()) {
-      if (!strm.write(res.body)) { ret = false; }
+      if (!detail::write_data(strm, res.body.data(), res.body.size())) {
+        ret = false;
+      }
     } else if (res.content_provider_) {
       if (write_content_with_provider(strm, req, res, boundary, content_type)) {
         res.content_provider_success_ = true;
@@ -5189,7 +5194,7 @@ inline bool Server::read_content(Stream &strm, Request &req, Response &res) {
           })) {
     const auto &content_type = req.get_header_value("Content-Type");
     if (!content_type.find("application/x-www-form-urlencoded")) {
-      if (req.body.size() > CPPHTTPLIB_REQUEST_URI_MAX_LENGTH) {
+      if (req.body.size() > CPPHTTPLIB_FORM_URL_ENCODED_PAYLOAD_MAX_LENGTH) {
         res.status = 413; // NOTE: should be 414?
         return false;
       }
@@ -6316,8 +6321,9 @@ inline std::unique_ptr<Response> ClientImpl::send_with_content_provider(
           auto last = offset + data_len == content_length;
 
           auto ret = compressor.compress(
-              data, data_len, last, [&](const char *data, size_t data_len) {
-                req.body.append(data, data_len);
+              data, data_len, last,
+              [&](const char *compressed_data, size_t compressed_data_len) {
+                req.body.append(compressed_data, compressed_data_len);
                 return true;
               });
 
@@ -7222,63 +7228,65 @@ inline bool SSLSocketStream::is_writable() const {
 }
 
 inline ssize_t SSLSocketStream::read(char *ptr, size_t size) {
-  size_t readbytes = 0;
   if (SSL_pending(ssl_) > 0) {
-    auto ret = SSL_read_ex(ssl_, ptr, size, &readbytes);
-    if (ret == 1) { return static_cast<ssize_t>(readbytes); }
-    if (SSL_get_error(ssl_, ret) == SSL_ERROR_ZERO_RETURN) { return 0; }
-    return -1;
-  }
-  if (!is_readable()) { return -1; }
-
-  auto ret = SSL_read_ex(ssl_, ptr, size, &readbytes);
-  if (ret == 1) { return static_cast<ssize_t>(readbytes); }
-  auto err = SSL_get_error(ssl_, ret);
-  int n = 1000;
+    return SSL_read(ssl_, ptr, static_cast<int>(size));
+  } else if (is_readable()) {
+    auto ret = SSL_read(ssl_, ptr, static_cast<int>(size));
+    if (ret < 0) {
+      auto err = SSL_get_error(ssl_, ret);
+      int n = 1000;
 #ifdef _WIN32
-  while (--n >= 0 &&
-         (err == SSL_ERROR_WANT_READ ||
-          (err == SSL_ERROR_SYSCALL && WSAGetLastError() == WSAETIMEDOUT))) {
+      while (--n >= 0 && (err == SSL_ERROR_WANT_READ ||
+                          (err == SSL_ERROR_SYSCALL &&
+                           WSAGetLastError() == WSAETIMEDOUT))) {
 #else
-  while (--n >= 0 && err == SSL_ERROR_WANT_READ) {
+      while (--n >= 0 && err == SSL_ERROR_WANT_READ) {
 #endif
-    if (SSL_pending(ssl_) > 0) {
-      ret = SSL_read_ex(ssl_, ptr, size, &readbytes);
-      if (ret == 1) { return static_cast<ssize_t>(readbytes); }
-      if (SSL_get_error(ssl_, ret) == SSL_ERROR_ZERO_RETURN) { return 0; }
-      return -1;
+        if (SSL_pending(ssl_) > 0) {
+          return SSL_read(ssl_, ptr, static_cast<int>(size));
+        } else if (is_readable()) {
+          std::this_thread::sleep_for(std::chrono::milliseconds(1));
+          ret = SSL_read(ssl_, ptr, static_cast<int>(size));
+          if (ret >= 0) { return ret; }
+          err = SSL_get_error(ssl_, ret);
+        } else {
+          return -1;
+        }
+      }
     }
-    if (!is_readable()) { return -1; }
-    std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    ret = SSL_read_ex(ssl_, ptr, size, &readbytes);
-    if (ret == 1) { return static_cast<ssize_t>(readbytes); }
-    err = SSL_get_error(ssl_, ret);
+    return ret;
   }
-  if (err == SSL_ERROR_ZERO_RETURN) { return 0; }
   return -1;
 }
 
 inline ssize_t SSLSocketStream::write(const char *ptr, size_t size) {
-  if (!is_writable()) { return -1; }
-  size_t written = 0;
-  auto ret = SSL_write_ex(ssl_, ptr, size, &written);
-  if (ret == 1) { return static_cast<ssize_t>(written); }
-  auto err = SSL_get_error(ssl_, ret);
-  int n = 1000;
+  if (is_writable()) {
+    auto handle_size = static_cast<int>(
+        std::min<size_t>(size, std::numeric_limits<int>::max()));
+
+    auto ret = SSL_write(ssl_, ptr, static_cast<int>(handle_size));
+    if (ret < 0) {
+      auto err = SSL_get_error(ssl_, ret);
+      int n = 1000;
 #ifdef _WIN32
-  while (--n >= 0 &&
-         (err == SSL_ERROR_WANT_WRITE ||
-          (err == SSL_ERROR_SYSCALL && WSAGetLastError() == WSAETIMEDOUT))) {
+      while (--n >= 0 && (err == SSL_ERROR_WANT_WRITE ||
+                          (err == SSL_ERROR_SYSCALL &&
+                           WSAGetLastError() == WSAETIMEDOUT))) {
 #else
-  while (--n >= 0 && err == SSL_ERROR_WANT_WRITE) {
+      while (--n >= 0 && err == SSL_ERROR_WANT_WRITE) {
 #endif
-    if (!is_writable()) { return -1; }
-    std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    ret = SSL_write_ex(ssl_, ptr, size, &written);
-    if (ret == 1) { return static_cast<ssize_t>(written); }
-    err = SSL_get_error(ssl_, ret);
+        if (is_writable()) {
+          std::this_thread::sleep_for(std::chrono::milliseconds(1));
+          ret = SSL_write(ssl_, ptr, static_cast<int>(handle_size));
+          if (ret >= 0) { return ret; }
+          err = SSL_get_error(ssl_, ret);
+        } else {
+          return -1;
+        }
+      }
+    }
+    return ret;
   }
-  if (err == SSL_ERROR_ZERO_RETURN) { return 0; }
   return -1;
 }
 
@@ -7374,11 +7382,11 @@ inline SSL_CTX *SSLServer::ssl_context() const { return ctx_; }
 inline bool SSLServer::process_and_close_socket(socket_t sock) {
   auto ssl = detail::ssl_new(
       sock, ctx_, ctx_mutex_,
-      [&](SSL *ssl) {
+      [&](SSL *ssl2) {
         return detail::ssl_connect_or_accept_nonblocking(
-            sock, ssl, SSL_accept, read_timeout_sec_, read_timeout_usec_);
+            sock, ssl2, SSL_accept, read_timeout_sec_, read_timeout_usec_);
       },
-      [](SSL * /*ssl*/) { return true; });
+      [](SSL * /*ssl2*/) { return true; });
 
   bool ret = false;
   if (ssl) {
@@ -7572,31 +7580,31 @@ inline bool SSLClient::load_certs() {
 inline bool SSLClient::initialize_ssl(Socket &socket, Error &error) {
   auto ssl = detail::ssl_new(
       socket.sock, ctx_, ctx_mutex_,
-      [&](SSL *ssl) {
+      [&](SSL *ssl2) {
         if (server_certificate_verification_) {
           if (!load_certs()) {
             error = Error::SSLLoadingCerts;
             return false;
           }
-          SSL_set_verify(ssl, SSL_VERIFY_NONE, nullptr);
+          SSL_set_verify(ssl2, SSL_VERIFY_NONE, nullptr);
         }
 
         if (!detail::ssl_connect_or_accept_nonblocking(
-                socket.sock, ssl, SSL_connect, connection_timeout_sec_,
+                socket.sock, ssl2, SSL_connect, connection_timeout_sec_,
                 connection_timeout_usec_)) {
           error = Error::SSLConnection;
           return false;
         }
 
         if (server_certificate_verification_) {
-          verify_result_ = SSL_get_verify_result(ssl);
+          verify_result_ = SSL_get_verify_result(ssl2);
 
           if (verify_result_ != X509_V_OK) {
             error = Error::SSLServerVerification;
             return false;
           }
 
-          auto server_cert = SSL_get_peer_certificate(ssl);
+          auto server_cert = SSL_get_peer_certificate(ssl2);
 
           if (server_cert == nullptr) {
             error = Error::SSLServerVerification;
@@ -7613,8 +7621,8 @@ inline bool SSLClient::initialize_ssl(Socket &socket, Error &error) {
 
         return true;
       },
-      [&](SSL *ssl) {
-        SSL_set_tlsext_host_name(ssl, host_.c_str());
+      [&](SSL *ssl2) {
+        SSL_set_tlsext_host_name(ssl2, host_.c_str());
         return true;
       });
 

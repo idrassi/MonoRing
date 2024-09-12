@@ -1,0 +1,21 @@
+T
+e
+s
+t
+one
+two
+three
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+We can't use For-In loop with numbers
+
+Line 21 Error (R29) : Using bad data type in for loop 
+in file forinloop/test7.ring 

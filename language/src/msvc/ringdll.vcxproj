@@ -187,21 +187,33 @@
   <ItemGroup>
     <ClCompile Include="..\cjson_extension\cJSON.c" />
     <ClCompile Include="..\cjson_extension\cJSON_Utils.c" />
+    <ClCompile Include="..\codegen.c" />
     <ClCompile Include="..\consolecolors_extension\console-colors.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\dll_e.c" />
+    <ClCompile Include="..\expr.c" />
+    <ClCompile Include="..\ext.c" />
+    <ClCompile Include="..\file_e.c" />
+    <ClCompile Include="..\general.c" />
+    <ClCompile Include="..\genlib_e.c" />
+    <ClCompile Include="..\hashlib.c" />
     <ClCompile Include="..\libzip_extension\zip.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\list_e.c" />
+    <ClCompile Include="..\math_e.c" />
+    <ClCompile Include="..\meta_e.c" />
     <ClCompile Include="..\murmurhash_extension\MurmurHash1.c" />
     <ClCompile Include="..\murmurhash_extension\MurmurHash2.c" />
     <ClCompile Include="..\murmurhash_extension\MurmurHash3.c" />
+    <ClCompile Include="..\objfile.c" />
     <ClCompile Include="..\openssl_extension\encrypt_v1.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -220,62 +232,33 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\ring_api.c" />
+    <ClCompile Include="..\os_e.c" />
+    <ClCompile Include="..\parser.c" />
+    <ClCompile Include="..\rhtable.c" />
+    <ClCompile Include="..\ring.c" />
+    <ClCompile Include="..\ringapi.c" />
+    <ClCompile Include="..\ringw.c" />
     <ClCompile Include="..\ring_cjson_extension.c" />
-    <ClCompile Include="..\ring_codegen.c" />
     <ClCompile Include="..\ring_consolecolors_extension.c" />
-    <ClCompile Include="..\ring_dll_extension.c" />
-    <ClCompile Include="..\ring_expr.c" />
-    <ClCompile Include="..\ring_ext.c" />
-    <ClCompile Include="..\ring_file_extension.c" />
-    <ClCompile Include="..\ring_general.c" />
-    <ClCompile Include="..\ring_generallib_extension.c" />
-    <ClCompile Include="..\ring_hashlib.c" />
-    <ClCompile Include="..\ring_hashtable.c" />
     <ClCompile Include="..\ring_httplib_extension.cpp" />
     <ClCompile Include="..\ring_internet_extension.c" />
-    <ClCompile Include="..\ring_item.c" />
-    <ClCompile Include="..\ring_items.c" />
     <ClCompile Include="..\ring_libcurl_extension.c" />
     <ClCompile Include="..\ring_libui_extension.c" />
     <ClCompile Include="..\ring_libuv_extension.c" />
     <ClCompile Include="..\ring_libzip_extension.c" />
-    <ClCompile Include="..\ring_list.c" />
-    <ClCompile Include="..\ring_list_extension.c" />
-    <ClCompile Include="..\ring_math_extension.c" />
     <ClCompile Include="..\ring_murmurhash_extension.c" />
-    <ClCompile Include="..\ring_objfile.c" />
     <ClCompile Include="..\ring_odbc_extension.c" />
     <ClCompile Include="..\ring_openssl_extension.c" />
-    <ClCompile Include="..\ring_os_extension.c" />
-    <ClCompile Include="..\ring_parser.c" />
-    <ClCompile Include="..\ring_refmeta_extension.c" />
-    <ClCompile Include="..\ring_scanner.c" />
     <ClCompile Include="..\ring_sockets_extension.c" />
     <ClCompile Include="..\ring_sqlite_extension.c" />
-    <ClCompile Include="..\ring_state.c" />
     <ClCompile Include="..\ring_stbimage_extension.c" />
-    <ClCompile Include="..\ring_stmt.c" />
-    <ClCompile Include="..\ring_string.c" />
-    <ClCompile Include="..\ring_test.c" />
-    <ClCompile Include="..\ring_vm.c" />
-    <ClCompile Include="..\ring_vmcui.c" />
-    <ClCompile Include="..\ring_vmduprange.c" />
-    <ClCompile Include="..\ring_vmexit.c" />
-    <ClCompile Include="..\ring_vmexpr.c" />
-    <ClCompile Include="..\ring_vmfuncs.c" />
-    <ClCompile Include="..\ring_vmgc.c" />
-    <ClCompile Include="..\ring_vmjump.c" />
-    <ClCompile Include="..\ring_vmlists.c" />
-    <ClCompile Include="..\ring_vmoop.c" />
-    <ClCompile Include="..\ring_vmperformance.c" />
-    <ClCompile Include="..\ring_vmstackvars.c" />
-    <ClCompile Include="..\ring_vmstate.c" />
-    <ClCompile Include="..\ring_vmstrindex.c" />
-    <ClCompile Include="..\ring_vmtrycatch.c" />
-    <ClCompile Include="..\ring_vmvars.c" />
     <ClCompile Include="..\ring_winapi_extension.c" />
     <ClCompile Include="..\ring_wincreg_extension.cpp" />
+    <ClCompile Include="..\ritem.c" />
+    <ClCompile Include="..\ritems.c" />
+    <ClCompile Include="..\rlist.c" />
+    <ClCompile Include="..\rstring.c" />
+    <ClCompile Include="..\scanner.c" />
     <ClCompile Include="..\sockets_extension\constants.c">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -283,6 +266,27 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\sqlite_extension\sqlite3.c" />
+    <ClCompile Include="..\state.c" />
+    <ClCompile Include="..\stmt.c" />
+    <ClCompile Include="..\vm.c" />
+    <ClCompile Include="..\vmerror.c" />
+    <ClCompile Include="..\vmeval.c" />
+    <ClCompile Include="..\vmexit.c" />
+    <ClCompile Include="..\vmexpr.c" />
+    <ClCompile Include="..\vmfuncs.c" />
+    <ClCompile Include="..\vmgc.c" />
+    <ClCompile Include="..\vminfo_e.c" />
+    <ClCompile Include="..\vmjump.c" />
+    <ClCompile Include="..\vmlists.c" />
+    <ClCompile Include="..\vmoop.c" />
+    <ClCompile Include="..\vmperf.c" />
+    <ClCompile Include="..\vmrange.c" />
+    <ClCompile Include="..\vmstack.c" />
+    <ClCompile Include="..\vmstate.c" />
+    <ClCompile Include="..\vmstr.c" />
+    <ClCompile Include="..\vmthread.c" />
+    <ClCompile Include="..\vmtry.c" />
+    <ClCompile Include="..\vmvars.c" />
     <ClCompile Include="..\wincreg_extension\creg_registry.cpp" />
   </ItemGroup>
   <ItemGroup>

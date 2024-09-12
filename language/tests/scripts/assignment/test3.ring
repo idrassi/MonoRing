@@ -1,6 +1,6 @@
 # no problem
 
-load "assignment/testlib.ring"
+load "guilib.ring"
 
 o1 = new test  { go() }
 
@@ -11,6 +11,6 @@ class test
 	
 	func go
 
-	myobj = new sqlite_ex()
-	myobj = myobj.getInstance("QSQLITE") 
+	myobj = new QSqlDatabase()
+	myobj = myobj.addDatabase("QSQLITE") 
 	myobj.close()

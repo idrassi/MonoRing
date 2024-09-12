@@ -5,16 +5,20 @@ In this folder we have extensions for different code editors
 
 Supported Editors
 
-(1) Atom
+- Atom  => [Support ended](https://github.blog/2022-06-08-sunsetting-atom/)
 
-(2) Emacs
+- Emacs
 
-(3) Geany
+- Geany
 
-(4) Notepad++
+- nano
 
-(5) Sublime Text 2
+- Notepad++
 
-(6) Visual Studio 
+- Sublime Text 2
 
-(7) Visual Studio Code (VSCode)
+- Vim
+
+- Visual Studio 
+
+- Visual Studio Code (VSCode)

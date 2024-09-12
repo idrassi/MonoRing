@@ -1,16 +1,19 @@
 /*
-**  Copyright (c) 2013-2019 Mahmoud Fayed <msfclipper@yahoo.com> 
+**  Copyright (c) 2013-2024 Mahmoud Fayed <msfclipper@yahoo.com> 
 **  Include Files 
 */
+
 #include "ring.h"
 #include "ring_internet_extension.h"
-#define CURL_STATICLIB
 #include "curl/curl.h"
+
 /* Data */
+
 struct upload_status {
 	int lines_read  ;
 	List *pList  ;
 } ;
+
 /* Functions */
 
 void ring_vm_internet_loadfunctions ( RingState *pRingState )
@@ -19,7 +22,7 @@ void ring_vm_internet_loadfunctions ( RingState *pRingState )
 	RING_API_REGISTER("sendemail",ring_vm_curl_sendemail);
 }
 
-/* define in libcurl extension */
+/* defined in libcurl extension */
 extern size_t ring_getcurldata ( void *buffer, size_t size, size_t nmemb, void *pString );
 
 void ring_vm_curl_download ( void *pPointer )
@@ -41,6 +44,7 @@ void ring_vm_curl_download ( void *pPointer )
 	if ( curl ) {
 		/* We don't use ring_string_new_gc() because ring_getcurldata() don't know about Ring State */
 		pString = ring_string_new("");
+		curl_easy_setopt(curl, CURLOPT_USERAGENT,"curl/7.83.0"); 
 		curl_easy_setopt(curl, CURLOPT_URL,RING_API_GETSTRING(1));
 		curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION,1);
 		curl_easy_setopt(curl, CURLOPT_NOSIGNAL,1);
