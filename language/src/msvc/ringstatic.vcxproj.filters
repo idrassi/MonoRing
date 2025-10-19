@@ -150,6 +150,9 @@
     <ClInclude Include="..\..\include\ring_consolecolors_extension.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\ring_fastpro_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\include\ring_httplib_extension.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -190,6 +193,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\ring_wincreg_extension.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ring_winlib_extension.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\ritem.h">
@@ -317,6 +323,9 @@
     <ClCompile Include="..\ring_consolecolors_extension.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\ring_fastpro_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\ring_internet_extension.c">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -351,6 +360,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\ring_winapi_extension.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\ring_winlib_extension.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\ringapi.c">

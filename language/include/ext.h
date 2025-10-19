@@ -1,18 +1,18 @@
-/* Copyright (c) 2013-2024 Mahmoud Fayed <msfclipper@yahoo.com> */
+/* Copyright (c) 2013-2025 Mahmoud Fayed <msfclipper@yahoo.com> */
 
 #ifndef ringext_h
-	#define ringext_h
-	#define RING_VM_LISTFUNCS 1
-	#define RING_VM_MATH 1
-	#define RING_VM_FILE 1
-	#define RING_VM_OS 1
-	#define RING_VM_REFMETA 1
-	#define RING_VM_INFO 1
-	#if RING_NODLL
-		#define RING_VM_DLL 0
-	#else
-		#define RING_VM_DLL 1
-	#endif
+#define ringext_h
+#define RING_VM_LISTFUNCS 1
+#define RING_VM_MATH 1
+#define RING_VM_FILE 1
+#define RING_VM_OS 1
+#define RING_VM_REFMETA 1
+#define RING_VM_INFO 1
+#if RING_NODLL
+	#define RING_VM_DLL 0
+#else
+	#define RING_VM_DLL 1
+#endif
 	#ifndef RING_VM_NO_OPENSSL
 	#define RING_VM_OPENSSL 1
 	#endif
@@ -21,6 +21,9 @@
 	#endif
 	#ifndef RING_VM_NO_CC
 	#define RING_VM_CC 1
+	#endif
+	#ifndef RING_VM_NO_FASTPRO
+	#define RING_VM_FASTPRO 1
 	#endif
 	#ifndef RING_VM_NO_LIBCURL
 	#define RING_VM_LIBCURL 1
@@ -47,6 +50,9 @@
 		#ifndef RING_VM_NO_WINCREG
 		#define RING_VM_WINCREG 1
 		#endif
+		#ifndef RING_VM_NO_WINLIB
+		#define RING_VM_WINLIB 1
+		#endif
 	#endif
 	#ifndef RING_VM_NO_LIBZIP
 	#define RING_VM_LIBZIP 1
@@ -64,8 +70,9 @@
 	#define RING_VM_LIBUV 1
 	#endif
 
-	#define RING_FILE FILE *
-	#define RING_OPENFILE(cFile,cMode) fopen(cFile,cMode)
-	#define RING_CLOSEFILE(pFile) fclose(pFile)
-	#define RING_READCHAR(pFile,cOut,nCount) cOut = getc(pFile)  /* nCount is unused here = number of characters - default = 1 */
+#define RING_FILE FILE *
+#define RING_OPENFILE(cFile, cMode) fopen(cFile, cMode)
+#define RING_CLOSEFILE(pFile) fclose(pFile)
+#define RING_READCHAR(pFile, cOut, nCount)                                                                             \
+	cOut = getc(pFile) /* nCount is unused here = number of characters - default = 1 */
 #endif

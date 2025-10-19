@@ -2,19 +2,32 @@ echo off
 setlocal enableextensions enabledelayedexpansion
 set path=%~dp0\bin;%path%
 set rootdir=%~dp0
+set RINGEXEPATH="%rootdir%\bin\ring.exe"
+set RINGARCHPATH="%rootdir%\bin\buildarch.ring"
+
+rem run buildarch.ring to get ring.exe architecture
+rem we use trick documented at https://devblogs.microsoft.com/oldnewthing/20120731-00/?p=7003
+for /f %%i in ('call %RINGEXEPATH% %RINGARCHPATH%') do set ringbuildtarget=%%i
 
 cd %rootdir%\extensions\ringqt
-call gencodeqt515_nobluetooth.bat
-call buildqt515_nobluetooth.bat
+call gencode_core.bat
+call buildvc_core.bat
+pause
 
-call gencodeqt515_light.bat
-call buildqt515_light.bat
+call gencode_light.bat
+call buildvc_light.bat
+pause
 
-call gencodeqt515_core.bat
-call buildqt515_core.bat
+call gencode_nobluetooth.bat
+call buildvc_nobluetooth.bat
+pause
 
 cd binupdate
-call installqt515.bat
+if /I ["%ringbuildtarget%"]==["x64"] (
+    call installqt515_x64.bat
+) else (
+    call installqt515_x86.bat
+)
 
 cd %rootdir%\extensions\ringqt\binupdate
 ring removedebugdlls.ring

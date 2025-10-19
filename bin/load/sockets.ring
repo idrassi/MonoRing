@@ -66,4 +66,3 @@
     SO_RCVLOWAT         = get_SO_RCVLOWAT()
     SO_SNDLOWAT         = get_SO_SNDLOWAT()
     SO_RCVTIMEO         = get_SO_RCVTIMEO()
-    

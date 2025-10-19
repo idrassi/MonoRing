@@ -1,7 +1,1 @@
-
-
-Error (E9) : Can't open file guilib.ring 
-
-assignment/test3.ring Line (3) Error (C27) : Syntax Error!
-
-assignment/test3.ring errors count : 1 
+done

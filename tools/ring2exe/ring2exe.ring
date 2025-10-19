@@ -125,7 +125,7 @@ func Main
 	else 
 		drawline()
 		see "Ring2EXE (Convert Ring Application To Executable File)" + nl
-		see "2017-2024, Mahmoud Fayed <msfclipper@yahoo.com>" + nl
+		see "2017-2025, Mahmoud Fayed <msfclipper@yahoo.com>" + nl
 		see "Usage : ring2exe filename.ring [Options]" + nl
 		drawline()
 		see RemoveTabs("
@@ -298,10 +298,10 @@ func GenerateBatchGeneral aPara,aOptions
 			cBuildConfig = "debug"
 			cLinkIgnoreLib = "/NODEFAULTLIB:libcmt.lib"
 		ok
-		cCode = "setlocal enableextensions enabledelayedexpansion" + nl + "call "+exefolder()+"../language/src/locatevc.bat " + cBuildtarget + " " + cBuildConfig + nl +
+		cCode = "setlocal enableextensions enabledelayedexpansion" + nl + "call "+exefolder()+"../language/build/locatevc.bat " + cBuildtarget + " " + cBuildConfig + nl +
 			'set "ifErr=set foundErr=1&(if errorlevel 0 if not errorlevel 1 set foundErr=)&if defined foundErr"' + nl +
 			"#{f3}" + nl +
-			'cl %ringcflags% #{f1}.c #{f2} #{f4} -I"#{f6}..\language\include" -I"#{f6}../language/src/" /link ' + cLinkIgnoreLib + ' Advapi32.lib User32.lib Crypt32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib Iphlpapi.lib Userenv.lib #{f5} /OPT:REF /OUT:#{f1}.exe' + nl +
+			'cl %ringcflags% #{f1}.c #{f2} #{f4} -I"#{f6}..\language\include" -I"#{f6}../language/src/" /link ' + cLinkIgnoreLib + ' Advapi32.lib User32.lib Crypt32.lib Secur32.lib Ws2_32.lib shlwapi.lib shell32.lib odbc32.lib kernel32.lib gdi32.lib comctl32.lib uxtheme.lib msimg32.lib comdlg32.lib d2d1.lib dwrite.lib ole32.lib oleaut32.lib oleacc.lib uuid.lib windowscodecs.lib Wldap32.lib Normaliz.lib Iphlpapi.lib Userenv.lib #{f5} /OPT:REF /OUT:#{f1}.exe' + nl +
 			'timeout 2 /nobreak' +nl +
 			'mt.exe -manifest #{f1}.exe.manifest -outputresource:#{f1}.exe;1' + nl +
 			'%ifErr% (' +nl +

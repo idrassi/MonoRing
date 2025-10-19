@@ -39,7 +39,7 @@ cd %RINGSCRIPTPATH%
 
 copy %RINGSCRIPTPATH%ring2exe.exe %RINGSCRIPTPATH%..\..\bin\ring2exe.exe
 
-cleartemp</Command>
+</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\..\bin\ring2exe.exe</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">set RINGSCRIPTPATH=$(ProjectDir)..\..\..\tools\ring2exe\
@@ -56,7 +56,7 @@ cd %RINGSCRIPTPATH%
 
 copy %RINGSCRIPTPATH%ring2exe.exe %RINGSCRIPTPATH%..\..\bin\ring2exe.exe
 
-cleartemp</Command>
+</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\..\..\bin\ring2exe.exe</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\..\bin\ring.exe;$(ProjectDir)..\..\..\lib\ringstatic.lib;</AdditionalInputs>

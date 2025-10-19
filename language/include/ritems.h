@@ -1,21 +1,23 @@
-/* Copyright (c) 2013-2024 Mahmoud Fayed <msfclipper@yahoo.com> */
+/* Copyright (c) 2013-2025 Mahmoud Fayed <msfclipper@yahoo.com> */
 
 #ifndef ring_items_h
-	#define ring_items_h
-	typedef struct Items {
-		struct Item *pValue  ;
-		struct Items *pNext  ;
-		struct Items *pPrev  ;
-		unsigned char lDelete  ;
-	} Items ;
+#define ring_items_h
+typedef struct Items {
+	struct Item *pValue;
+	struct Items *pNext;
+	struct Items *pPrev;
+	unsigned char lDelete;
+} Items;
 
-	Items * ring_items_new_gc ( void *pState ) ;
+RING_API Items *ring_items_new_gc(void *pState);
 
-	Items * ring_items_delete_gc ( void *pState,Items *pItems ) ;
+RING_API Items *ring_items_delete_gc(void *pState, Items *pItems);
 
-	void ring_items_print ( Items *pItems ) ;
+RING_API void ring_items_print_gc(void *pState, Items *pItems);
 
-	Items * ring_items_new ( void ) ;
+RING_API Items *ring_items_new(void);
 
-	Items * ring_items_delete ( Items *pItems ) ;
+RING_API Items *ring_items_delete(Items *pItems);
+
+RING_API void ring_items_print(Items *pItems);
 #endif

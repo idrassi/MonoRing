@@ -195,6 +195,7 @@
     <ClInclude Include="..\..\include\ringapi.h" />
     <ClInclude Include="..\..\include\ring_cjson_extension.h" />
     <ClInclude Include="..\..\include\ring_consolecolors_extension.h" />
+    <ClInclude Include="..\..\include\ring_fastpro_extension.h" />
     <ClInclude Include="..\..\include\ring_httplib_extension.h" />
     <ClInclude Include="..\..\include\ring_internet_extension.h" />
     <ClInclude Include="..\..\include\ring_libcurl_extension.h" />
@@ -209,6 +210,7 @@
     <ClInclude Include="..\..\include\ring_stbimage_extension.h" />
     <ClInclude Include="..\..\include\ring_winapi_extension.h" />
     <ClInclude Include="..\..\include\ring_wincreg_extension.h" />
+    <ClInclude Include="..\..\include\ring_winlib_extension.h" />
     <ClInclude Include="..\..\include\ritem.h" />
     <ClInclude Include="..\..\include\ritems.h" />
     <ClInclude Include="..\..\include\rlist.h" />
@@ -290,6 +292,7 @@
     <ClCompile Include="..\ringw.c" />
     <ClCompile Include="..\ring_cjson_extension.c" />
     <ClCompile Include="..\ring_consolecolors_extension.c" />
+    <ClCompile Include="..\ring_fastpro_extension.c" />
     <ClCompile Include="..\ring_httplib_extension.cpp" />
     <ClCompile Include="..\ring_internet_extension.c" />
     <ClCompile Include="..\ring_libcurl_extension.c" />
@@ -304,6 +307,7 @@
     <ClCompile Include="..\ring_stbimage_extension.c" />
     <ClCompile Include="..\ring_winapi_extension.c" />
     <ClCompile Include="..\ring_wincreg_extension.cpp" />
+    <ClCompile Include="..\ring_winlib_extension.c" />
     <ClCompile Include="..\ritem.c" />
     <ClCompile Include="..\ritems.c" />
     <ClCompile Include="..\rlist.c" />

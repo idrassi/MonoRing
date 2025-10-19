@@ -10,7 +10,7 @@ set ringbuildtarget=x86
 set ringcflags=/O2 /EHsc /MT
 set ringldflags=
 set ringdebug=0
-set ringsubsystem=5.01
+set ringsubsystem=6.01
 
 rem compute requested target and short-circuit if already initialized 
 rem requested target is either first arg or second arg when first is "auto"
@@ -53,7 +53,7 @@ if /I ["%1"]==["auto"] (
 )
 
 if /I ["%ringbuildtarget%"]==["x64"] (
-	set ringsubsystem=5.02
+	set ringsubsystem=6.02
 )
 if /I ["%ringbuildtarget%"]==["arm64"] (
 	set ringsubsystem=6.03

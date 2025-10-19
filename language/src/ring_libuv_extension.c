@@ -13,16 +13,32 @@ uv_mutex_t *pMutexLibUV;
 
 #define RINGLIBUV_EVENTPARA  4
 
-void ring_libuv_start(RingState *pRingState);
+RING_API void ring_libuv_start(RingState *pRingState);
 
 void *uv_new_mutex(void);
+
+static void *ringlibuv_mutex_create(void) {
+	return uv_new_mutex();
+}
+
+static void ringlibuv_mutex_lock(void *mutex) {
+	uv_mutex_lock((uv_mutex_t *) mutex);
+}
+
+static void ringlibuv_mutex_unlock(void *mutex) {
+	uv_mutex_unlock((uv_mutex_t *) mutex);
+}
+
+static void ringlibuv_mutex_destroy(void *mutex) {
+	uv_mutex_destroy((uv_mutex_t *) mutex);
+}
+
 
 void ring_vm_libuv_loadfunctions ( RingState *pRingState )
 {
 	pVMLibUV = pRingState->pVM;
-	ring_vm_mutexfunctions(pVMLibUV,uv_new_mutex,
-uv_mutex_lock,uv_mutex_unlock,uv_mutex_destroy);
-	ring_libuv_start(pRingState) ;
+	ring_vm_mutexfunctions(pVMLibUV, ringlibuv_mutex_create,ringlibuv_mutex_lock, ringlibuv_mutex_unlock, ringlibuv_mutex_destroy);
+	ring_libuv_start(pRingState);
 }
 
 
@@ -253,12 +269,12 @@ void uv_fs_callback(uv_fs_t *req)
 
 void *uv_new_mutex(void)
 {
+	uv_mutex_t *pMutex;
+	pMutex = (uv_mutex_t *) malloc(sizeof(uv_mutex_t));
+	uv_mutex_init(pMutex);
 	if (pMutexLibUV == NULL)
-	{
-		pMutexLibUV = (uv_mutex_t *) malloc(sizeof(uv_mutex_t));
-		uv_mutex_init(pMutexLibUV);
-	}
-	return pMutexLibUV;
+		pMutexLibUV = pMutex;
+	return pMutex;
 }
 
 void uv_thread_callback(void *obj)
@@ -10278,7 +10294,7 @@ RING_FUNC(ring_uv_os_gethostname)
 	RING_API_RETNUMBER(uv_os_gethostname((char *) RING_API_GETCPOINTER(1,"char"),(size_t *) RING_API_GETCPOINTER(2,"size_t")));
 }
 
-void ring_libuv_start ( RingState *pRingState )
+RING_API void ring_libuv_start(RingState *pRingState)
 {
 	RING_API_REGISTER("uv_callback",ring_uv_callback);
 	RING_API_REGISTER("uv_eventpara",ring_uv_eventpara);

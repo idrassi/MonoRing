@@ -2,7 +2,7 @@
 **  Copyright (c) 2013-2024 Mahmoud Fayed <msfclipper@yahoo.com> 
 **  Include Files 
 */
-
+#define CURL_STATICLIB
 #include "ring.h"
 #include "ring_internet_extension.h"
 #include "curl/curl.h"

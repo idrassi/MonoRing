@@ -103,7 +103,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Secur32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <StackReserveSize>8388608</StackReserveSize>
     </Link>
@@ -126,7 +126,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Secur32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <StackReserveSize>8388608</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
@@ -143,7 +143,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Secur32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
       <StackReserveSize>8388608</StackReserveSize>
     </Link>
@@ -166,7 +166,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ringstatic.lib;Advapi32.lib;User32.lib;Crypt32.lib;Secur32.lib;Ws2_32.lib;shlwapi.lib;shell32.lib;odbc32.lib;kernel32.lib;gdi32.lib;comctl32.lib;uxtheme.lib;msimg32.lib;comdlg32.lib;d2d1.lib;dwrite.lib;ole32.lib;oleaut32.lib;oleacc.lib;uuid.lib;windowscodecs.lib;Wldap32.lib;Normaliz.lib;Iphlpapi.lib;Userenv.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <StackReserveSize>8388608</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
